@@ -1,16 +1,27 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-base-50: oklch(97.05% 0.0147 33.16deg);
-    --color-base-100: oklch(90.68% 0.0484 29.15deg);
-    --color-base-200: oklch(84.36% 0.0861 29.59deg);
-    --color-base-300: oklch(77.95% 0.1293 29.53deg);
-    --color-base-400: oklch(71.73% 0.1771 29.78deg);
-    --color-base-500: oklch(65.29% 0.1915 29.52deg);
-    --color-base-600: oklch(56.52% 0.2165 29.55deg);
-    --color-base-700: oklch(44.49% 0.1802 29.67deg);
-    --color-base-800: oklch(32.18% 0.1302 29.69deg);
-    --color-base-900: oklch(21.06% 0.0843 30.06deg);
+    --color-apricot-50: oklch(97.05% 0.0147 33.16deg);
+    --color-apricot-100: oklch(90.68% 0.0484 29.15deg);
+    --color-apricot-200: oklch(84.36% 0.0861 29.59deg);
+    --color-apricot-300: oklch(77.95% 0.1293 29.53deg);
+    --color-apricot-400: oklch(71.73% 0.1771 29.78deg);
+    --color-apricot-500: oklch(65.29% 0.1915 29.52deg);
+    --color-apricot-600: oklch(56.52% 0.2165 29.55deg);
+    --color-apricot-700: oklch(44.49% 0.1802 29.67deg);
+    --color-apricot-800: oklch(32.18% 0.1302 29.69deg);
+    --color-apricot-900: oklch(21.06% 0.0843 30.06deg);
+
+    --color-mist-50: oklch(96.93% 0.0144 264.53deg);
+    --color-mist-100: oklch(82.26% 0.0358 265.96deg);
+    --color-mist-200: oklch(67.5% 0.0349 264.31deg);
+    --color-mist-300: oklch(52.71% 0.0353 265.1deg);
+    --color-mist-400: oklch(37.94% 0.0364 265.82deg);
+    --color-mist-500: oklch(23.23% 0.0392 264.25deg);
+    --color-mist-600: oklch(18.57% 0.0645 264.76deg);
+    --color-mist-700: oklch(12.33% 0.0854 264.05deg);
+    --color-mist-800: oklch(5.81% 0.0403 264.05deg);
+    --color-mist-900: oklch(0% 0 none);
 
     --font-mono: 'IBM Plex Mono', monospace;
     --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Noto Color Emoji';
