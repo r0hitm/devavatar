@@ -36,7 +36,7 @@
     }
 }
 
-@utility fg-theme {
+@utility text-fg {
     color: var(--color-apricot-900);
 
     @variant dark {
@@ -75,4 +75,3 @@
         border-color: var(--color-apricot-500);
     }
 }
-

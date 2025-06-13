@@ -1,15 +1,9 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import RootLayout from '@/layouts/RootLayout.astro';
 ---
 
 <!-- TODO: a new layout that is not a blogpost layout -->
-<Layout
-    title='About Me'
-    description='Lorem ipsum dolor sit amet'
-    pubDatetime={new Date('August 08 2021')}
-    author='Rohit Mehta'
-    tags={[]}
->
+<RootLayout title='About Me' description='Lorem ipsum dolor sit amet' pubDatetime={new Date('August 08 2021')}>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis
@@ -57,4 +51,4 @@ import Layout from '../layouts/BlogPost.astro';
         praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique
         magna.
     </p>
-</Layout>
+</RootLayout>
