@@ -1,0 +1,25 @@
+{
+    "Post Frontmatter": {
+        "scope": "markdown",
+        "prefix": "frontmatter",
+        "body": [
+            "---",
+            "title: $1",
+            "description: $2",
+            "draft: ${3|true,false|}",
+            "tags:",
+            "  - $4",
+            "pubDatetime: $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000Z",
+            "modDatetime: $5",
+            "---"
+        ],
+        "description": "Adds the frontmatter block for markdown blogpost"
+    },
+
+    "Post Template": {
+        "scope": "markdown",
+        "prefix": "template",
+        "body": ["${1:frontmatter}", "", "${2: Intro}", "", "## Table of contents", "", "## ${3: heading 1}"],
+        "description": "Basic Outline for markdown blogpost"
+    }
+}
