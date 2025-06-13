@@ -12,10 +12,7 @@
             "label": "pnpm: dev",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "dev"
-            ],
+            "args": ["run", "dev"],
             "problemMatcher": [],
             "detail": "astro dev"
         },
@@ -23,10 +20,7 @@
             "label": "pnpm: build",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "build"
-            ],
+            "args": ["run", "build"],
             "problemMatcher": [],
             "detail": "astro check && astro build"
         },
@@ -34,10 +28,7 @@
             "label": "pnpm: preview",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "preview"
-            ],
+            "args": ["run", "preview"],
             "problemMatcher": [],
             "detail": "astro preview"
         },
@@ -45,10 +36,7 @@
             "label": "pnpm: start",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "start"
-            ],
+            "args": ["run", "start"],
             "problemMatcher": [],
             "detail": "astro dev"
         },
@@ -56,10 +44,7 @@
             "label": "pnpm: sync",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "sync"
-            ],
+            "args": ["run", "sync"],
             "problemMatcher": [],
             "detail": "astro sync"
         },
@@ -67,10 +52,7 @@
             "label": "pnpm: format:check",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "format:check"
-            ],
+            "args": ["run", "format:check"],
             "problemMatcher": [],
             "detail": "prettier --plugin-search-dir=. --check ."
         },
@@ -78,10 +60,7 @@
             "label": "pnpm: format",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "format"
-            ],
+            "args": ["run", "format"],
             "problemMatcher": [],
             "detail": "prettier --plugin-search-dir=. --write ."
         },
@@ -89,10 +68,7 @@
             "label": "pnpm: lint",
             "type": "shell",
             "command": "pnpm",
-            "args": [
-                "run",
-                "lint"
-            ],
+            "args": ["run", "lint"],
             "problemMatcher": [],
             "detail": "eslint ."
         }
