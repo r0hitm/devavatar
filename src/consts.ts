@@ -1,5 +1,21 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+type SiteType = {
+    website: string;
+    author: string;
+    description: string;
+    title: string;
+    ogImage?: string;
+    scheduledPostMargin: number;
+};
 
-export const SITE_TITLE = 'Dev Avatar';
-export const SITE_DESCRIPTION = 'My Space on the internet!';
+export const SITE: SiteType = {
+    website: 'https://devavatar.come',
+    author: 'Rohit Mehta',
+    description: 'My space on the wild-wild internet',
+    title: 'Dev Avatar',
+    scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
+} as const;
+
+export const LOCALE = {
+    lang: 'en',
+    langTag: ['en-EN'] // BCP 47 langauge tag
+} as const;
