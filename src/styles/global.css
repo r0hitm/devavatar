@@ -27,3 +27,52 @@
     --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Noto Color Emoji';
     --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
 }
+
+@utility bg-theme {
+    background-color: var(--color-apricot-50);
+
+    @variant dark {
+        background-color: var(--color-apricot-900);
+    }
+}
+
+@utility fg-theme {
+    color: var(--color-apricot-900);
+
+    @variant dark {
+        color: var(--color-apricot-50);
+    }
+}
+
+@utility accent-theme {
+    color: var(--color-apricot-500);
+
+    @variant dark {
+        color: var(--color-apricot-600);
+    }
+}
+
+@utility card {
+    background-color: var(--color-mist-100);
+
+    @variant dark {
+        background-color: var(--color-mist-700);
+    }
+}
+
+@utility card-muted {
+    background-color: var(--color-mist-200);
+
+    @variant dark {
+        background-color: var(--color-mist-600);
+    }
+}
+
+@utility border-theme {
+    border-color: var(--color-apricot-300);
+
+    @variant dark {
+        border-color: var(--color-apricot-500);
+    }
+}
+
