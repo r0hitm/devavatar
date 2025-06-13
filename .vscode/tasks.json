@@ -28,7 +28,7 @@
                 "build"
             ],
             "problemMatcher": [],
-            "detail": "astro build"
+            "detail": "astro check && astro build"
         },
         {
             "label": "pnpm: preview",
@@ -40,6 +40,61 @@
             ],
             "problemMatcher": [],
             "detail": "astro preview"
+        },
+        {
+            "label": "pnpm: start",
+            "type": "shell",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "start"
+            ],
+            "problemMatcher": [],
+            "detail": "astro dev"
+        },
+        {
+            "label": "pnpm: sync",
+            "type": "shell",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "sync"
+            ],
+            "problemMatcher": [],
+            "detail": "astro sync"
+        },
+        {
+            "label": "pnpm: format:check",
+            "type": "shell",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "format:check"
+            ],
+            "problemMatcher": [],
+            "detail": "prettier --plugin-search-dir=. --check ."
+        },
+        {
+            "label": "pnpm: format",
+            "type": "shell",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "format"
+            ],
+            "problemMatcher": [],
+            "detail": "prettier --plugin-search-dir=. --write ."
+        },
+        {
+            "label": "pnpm: lint",
+            "type": "shell",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "lint"
+            ],
+            "problemMatcher": [],
+            "detail": "eslint ."
         }
     ]
 }
