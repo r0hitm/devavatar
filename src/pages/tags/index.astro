@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import { SITE } from "@/consts";
+import getUniqueTags from "@/utils/getUniqueTags";
+import RootLayout from "@/layouts/RootLayout.astro";
+import Tag from "@/components/Tag.astro";
+
+const posts = await getCollection("blog");
+
+let tags = getUniqueTags(posts);
+---
+
+<RootLayout title={`Tags | ${SITE.title}`}>
+    <h1 class="text-2xl font-semibold sm:text-3xl">Tags</h1>
+    <p class="italic">Explore posts by tags.</p>
+    <ul>
+        {tags.map(({ tag }) => <Tag {tag} size="lg" />)}
+    </ul>
+</RootLayout>

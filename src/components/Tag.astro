@@ -1,0 +1,35 @@
+---
+import { Hash } from "@lucide/astro";
+
+export interface Props {
+    tag: string;
+    size?: "sm" | "lg";
+}
+
+const { tag, size = "sm" } = Astro.props;
+
+const tiltLeft = Math.random() > 0.5;
+---
+
+<li
+    class:list={[
+        `inline-block ${
+            size === "sm"
+                ? "my-1 underline-offset-4"
+                : "mx-1 my-3 underline-offset-8"
+        }`,
+        tiltLeft ? "-rotate-1" : "rotate-1"
+    ]}
+>
+    <a
+        href={`/tags/${tag}`}
+        transition:name={tag}
+        class:list={[
+            "group hover:text-d-accent border-d-border focus-visible:bg-d-accent focus-visible:text-apricot-50 relative inline-block rounded border border-dashed px-2 hover:-top-0.5",
+            size === "sm" ? "text-sm" : "text-lg"
+        ]}
+    >
+        <Hash class="inline-block size-4 align-middle" />
+        <span>{tag}</span>
+    </a>
+</li>
