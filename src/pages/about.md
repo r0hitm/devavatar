@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: 'About Me, aka Dev Avatar'
+title: "About Me, aka Dev Avatar"
 ---
 
 Hi! I'm Rohit, and I love creating things that make life easier and more fun. When I'm not coding, you'll find me deep into anime, exploring the latest Legend of Zelda adventure, vibing to music, or dabbling in something cute and creative. Also a huge fan of Japanese culture.
