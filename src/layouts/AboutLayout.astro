@@ -1,0 +1,24 @@
+---
+import { SITE } from "@/consts";
+import RootLayout from "./RootLayout.astro";
+// TODO: import Breadcrumbs from "@components/Breadcrumbs.astro";
+// Note: put the breadcrumbds in the root layout
+
+interface Props {
+    frontmatter: {
+        title: string;
+        description?: string;
+    };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<RootLayout title={`${frontmatter.title} | ${SITE.title}`}>
+    <section class="prose">
+        <h1 class="mb-4 text-2xl font-bold tracking-wider sm:text-3xl">
+            {frontmatter.title}
+        </h1>
+        <slot />
+    </section>
+</RootLayout>
