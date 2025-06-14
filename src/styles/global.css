@@ -29,56 +29,39 @@
 
     --color-d-fill: var(--color-apricot-50);
     --color-d-txt-base: var(--color-apricot-900);
-    --color-d-accent: var(--color-red-500);
+    --color-d-accent: var(--color-apricot-500);
     --color-d-card: var(--color-apricot-200);
-    --color-d-card-muted: var(--color-mist-100);
+    --color-d-card-muted: var(--color-apricot-300);
     --color-d-border: var(--color-apricot-700);
 }
 
-/* @utility bg-color {
-    background-color: var(--color-apricot-50);
+@layer base {
+    a {
+        @apply hover:text-d-accent decoration-d-accent focus-visible:outline-d-accent break-words underline underline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
+    }
 
-    /* @variant dark { */
-/* background-color: var(--color-apricot-900); */
-/* } *
+    html {
+        overflow-y: scroll;
+    }
+
+    /* custom scrollbar */
+    /* width */
+    ::-webkit-scrollbar {
+        @apply w-3;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        @apply bg-d-fill;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-d-card;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-d-card-muted;
+    }
 }
-
-@utility text-fg {
-    color: var(--color-apricot-900);
-
-    /* @variant dark { */
-/* color: var(--color-apricot-50); */
-/* } *
-}
-
-@utility accent-theme {
-    color: var(--color-apricot-500);
-
-    /* @variant dark { */
-/* color: var(--color-apricot-600); */
-/* } *
-}
-
-@utility card {
-    background-color: var(--color-mist-100);
-
-    /* @variant dark { */
-/* background-color: var(--color-mist-700); */
-/* } *
-}
-
-@utility card-muted {
-    background-color: var(--color-mist-200);
-
-    /* @variant dark { */
-/* background-color: var(--color-mist-600); */
-/* } *
-}
-
-@utility border-theme {
-    border-color: var(--color-apricot-300);
-
-    /* @variant dark { */
-/* border-color: var(--color-apricot-500); */
-/* } *
-} */
