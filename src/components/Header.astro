@@ -54,7 +54,7 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
             >
                 <Moon class="size-5" />
             </button>
-            <button id="mobile-menu-button" class="p-2">
+            <button id="hamburger-menu" class="p-2">
                 <Menu class="size-6" id="menu-icon" />
                 <X class="hidden size-6" id="close-icon" />
             </button>
@@ -62,7 +62,7 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
     </div>
 
     {/* Mobile Navigation Menu (hidden by default) */}
-    <div id="mobile-nav-menu" class="mt-2 hidden flex-col sm:hidden">
+    <div id="mobile-nav-items" class="mt-2 hidden flex-col sm:hidden">
         <nav class="w-full">
             <ul
                 class="border-d-accent flex flex-col items-start gap-1 border-t pt-2"
@@ -100,7 +100,7 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
                         href="/search"
                         class={"like-button w-full py-2 px-2 hover:bg-d-accent/10 rounded-md flex items-center gap-2"}
                     >
-                        <Search class="size-4" /> Search
+                        <Search class="size-4" />
                     </HeaderLink>
                 </li>
             </ul>
@@ -121,23 +121,34 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
         console.error("TODO: Mobile theme toggle placeholder.");
     });
 
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileNavMenu = document.getElementById("mobile-nav-menu");
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
+    // Toggle Menu (mobile only)
+    function toggleMobileMenu() {
+        const mobileMenuButton = document.getElementById("hamburger-menu");
+        const mobileNavMenu = document.getElementById("mobile-nav-items");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
 
-    mobileMenuButton?.addEventListener("click", () => {
-        const isHidden = mobileNavMenu?.classList.contains("hidden");
-        if (isHidden) {
-            mobileNavMenu?.classList.remove("hidden");
-            mobileNavMenu?.classList.add("flex");
-            menuIcon?.classList.add("hidden");
-            closeIcon?.classList.remove("hidden");
-        } else {
-            mobileNavMenu?.classList.add("hidden");
-            mobileNavMenu?.classList.remove("flex");
-            menuIcon?.classList.remove("hidden");
-            closeIcon?.classList.add("hidden");
-        }
-    });
+        mobileMenuButton?.addEventListener("click", () => {
+            const isHidden = mobileNavMenu?.classList.contains("hidden");
+            if (isHidden) {
+                mobileNavMenu?.classList.remove("hidden");
+                mobileNavMenu?.classList.add("flex");
+                menuIcon?.classList.add("hidden");
+                closeIcon?.classList.remove("hidden");
+                mobileMenuButton.setAttribute("aria-expanded", "false");
+                mobileMenuButton.setAttribute("aria-label", "Open Menu");
+            } else {
+                mobileNavMenu?.classList.add("hidden");
+                mobileNavMenu?.classList.remove("flex");
+                menuIcon?.classList.remove("hidden");
+                closeIcon?.classList.add("hidden");
+                mobileMenuButton.setAttribute("aria-expanded", "true");
+                mobileMenuButton.setAttribute("aria-label", "Close Menu");
+            }
+        });
+    }
+
+    toggleMobileMenu();
+
+    document.addEventListener("astro:after-swap", toggleMobileMenu);
 </script>
