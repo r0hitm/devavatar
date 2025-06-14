@@ -19,7 +19,15 @@
     "Post Template": {
         "scope": "markdown",
         "prefix": "template",
-        "body": ["${1:frontmatter}", "", "${2: Intro}", "", "## Table of contents", "", "## ${3: heading 1}"],
+        "body": [
+            "${1:frontmatter}",
+            "",
+            "${2: Intro}",
+            "",
+            "## Table of contents",
+            "",
+            "## ${3: heading 1}"
+        ],
         "description": "Basic Outline for markdown blogpost"
     }
 }

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
     --color-apricot-50: oklch(97.05% 0.0147 33.16deg);
@@ -23,9 +23,11 @@
     --color-mist-800: oklch(5.81% 0.0403 264.05deg);
     --color-mist-900: oklch(0% 0 none);
 
-    --font-mono: 'IBM Plex Mono', monospace;
-    --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif, 'Noto Color Emoji';
-    --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
+    --font-mono: "IBM Plex Mono", monospace;
+    --font-sans:
+        "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif,
+        "Noto Color Emoji";
+    --font-serif: "IBM Plex Serif", ui-serif, Georgia, serif;
 
     --color-d-fill: var(--color-apricot-50);
     --color-d-txt-base: var(--color-apricot-900);

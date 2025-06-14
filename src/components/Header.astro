@@ -1,34 +1,37 @@
 ---
-import HeaderLink from '@/components/HeaderLink.astro';
-import { SITE } from '@/consts';
-import { Moon, Search } from '@lucide/astro';
+import HeaderLink from "@/components/HeaderLink.astro";
+import { SITE } from "@/consts";
+import { Moon, Search } from "@lucide/astro";
 ---
 
-<header class='border-d-accent mx-auto w-full max-w-4xl border-b py-2 sm:py-4'>
-    <div class='flex items-center justify-between'>
-        <div class=''>
-            <a href='/' class='logo text-xl font-semibold whitespace-nowrap sm:text-2xl'>
+<header class="border-d-accent mx-auto w-full max-w-4xl border-b py-2 sm:py-4">
+    <div class="flex items-center justify-between">
+        <div class="">
+            <a
+                href="/"
+                class="logo text-xl font-semibold whitespace-nowrap sm:text-2xl"
+            >
                 {SITE.title}
             </a>
         </div>
 
-        <div class='flex items-center justify-end gap-4'>
+        <div class="flex items-center justify-end gap-4">
             <nav>
-                <ul class='flex items-center justify-end gap-4'>
+                <ul class="flex items-center justify-end gap-4">
                     <li>
-                        <HeaderLink href='/posts'>posts</HeaderLink>
+                        <HeaderLink href="/posts">posts</HeaderLink>
                         <li>
-                            <HeaderLink href='/projects'>projects</HeaderLink>
+                            <HeaderLink href="/projects">projects</HeaderLink>
                         </li>
                         <li>
-                            <HeaderLink href='/tags'>tags</HeaderLink>
+                            <HeaderLink href="/tags">tags</HeaderLink>
                         </li>
                         <li>
-                            <HeaderLink href='/about'>about</HeaderLink>
+                            <HeaderLink href="/about">about</HeaderLink>
                         </li>
                         <li>
-                            <HeaderLink href='/search'>
-                                <Search class='size-4' />
+                            <HeaderLink href="/search">
+                                <Search class="size-4" />
                             </HeaderLink>
                         </li>
                     </li>
@@ -36,15 +39,18 @@ import { Moon, Search } from '@lucide/astro';
             </nav>
 
             <!-- TODO: A theme toggler -->
-            <button class='hover:text-d-accent inline-block cursor-pointer' id='toggle-theme'>
-                <Moon class='size-4' />
+            <button
+                class="hover:text-d-accent inline-block cursor-pointer"
+                id="toggle-theme"
+            >
+                <Moon class="size-4" />
             </button>
         </div>
     </div>
     <script>
-        const themeToggler = document.getElementById('toggle-theme');
-        themeToggler?.addEventListener('click', () => {
-            alert('TODO: This is a placeholder for now.');
+        const themeToggler = document.getElementById("toggle-theme");
+        themeToggler?.addEventListener("click", () => {
+            alert("TODO: This is a placeholder for now.");
         });
     </script>
 </header>

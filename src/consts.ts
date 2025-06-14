@@ -8,14 +8,14 @@ type SiteType = {
 };
 
 export const SITE: SiteType = {
-    website: 'https://devavatar.come',
-    author: 'Rohit Mehta',
-    description: 'My space on the wild-wild internet',
-    title: 'Dev Avatar',
+    website: "https://devavatar.come",
+    author: "Rohit Mehta",
+    description: "My space on the wild-wild internet",
+    title: "Dev Avatar",
     scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
 } as const;
 
 export const LOCALE = {
-    lang: 'en',
-    langTag: ['en-EN'] // BCP 47 langauge tag
+    lang: "en",
+    langTag: ["en-EN"] // BCP 47 langauge tag
 } as const;
