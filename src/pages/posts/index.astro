@@ -2,11 +2,12 @@
 import { getCollection } from 'astro:content';
 import FormattedDate from '@/components/FormattedDate.astro';
 import RootLayout from '@/layouts/RootLayout.astro';
+import { SITE } from '@/consts';
 
 const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf());
 ---
 
-<RootLayout>
+<RootLayout title=`Posts | ${SITE.title}`>
     <main>
         <section>
             <ul>
