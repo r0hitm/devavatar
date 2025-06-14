@@ -97,7 +97,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.or
         class='bg-d-fill text-d-txt-base selection:bg-d-accent/70 selection:text-d-fill flex min-h-[100svh] flex-col p-4 font-mono'
     >
         <Header />
-        <main id='main-content' class='mx-auto max-w-3xl'>
+        <main id='main-content' class='mx-auto w-full max-w-3xl'>
             <slot />
         </main>
         <Footer />
