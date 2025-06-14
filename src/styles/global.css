@@ -40,7 +40,7 @@
 }
 
 @layer base {
-    a:not(.logo) {
+    .prose a {
         @apply hover:text-d-accent decoration-d-accent focus-visible:outline-d-accent break-words underline underline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
     }
 
