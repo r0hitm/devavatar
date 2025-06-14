@@ -94,9 +94,10 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.or
         <!-- <script is:inline src='/toggle-theme.js'></script> -->
     </head>
     <body
-        class='bg-d-fill text-d-txt-base selection:bg-d-accent/70 selection:text-d-fill flex min-h-[100svh] flex-col p-4 font-mono'>
+        class='bg-d-fill text-d-txt-base selection:bg-d-accent/70 selection:text-d-fill flex min-h-[100svh] flex-col p-4 font-mono'
+    >
         <Header />
-        <main id='main-content' class="max-w-3xl mx-auto">
+        <main id='main-content' class='mx-auto max-w-3xl'>
             <slot />
         </main>
         <Footer />

@@ -35,8 +35,12 @@
     --color-d-border: var(--color-apricot-700);
 }
 
+@utility decoration-none {
+    text-decoration: none;
+}
+
 @layer base {
-    a {
+    a:not(.logo) {
         @apply hover:text-d-accent decoration-d-accent focus-visible:outline-d-accent break-words underline underline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
     }
 
