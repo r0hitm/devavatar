@@ -8,7 +8,5 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     site: 'https://devavatar.com',
     integrations: [mdx(), sitemap()],
-    vite: {
-        plugins: [tailwindcss()]
-    }
+    vite: { plugins: [tailwindcss()] }
 });

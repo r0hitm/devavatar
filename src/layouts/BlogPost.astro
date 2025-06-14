@@ -5,11 +5,7 @@ import RootLayout from './RootLayout.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const {
-    title,
-    pubDatetime,
-    modDatetime,
-} = Astro.props;
+const { title, pubDatetime, modDatetime } = Astro.props;
 
 // TODO: view transition api : https://docs.astro.build/en/guides/view-transitions/
 ---
