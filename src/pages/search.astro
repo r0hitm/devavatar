@@ -1,0 +1,31 @@
+---
+// import { getCollection } from "astro:content";
+import { SITE } from "@/consts";
+import RootLayout from "@/layouts/RootLayout.astro";
+
+// const posts = await getCollection("blog", ({ data }) => !data.draft);
+// const sortedPosts = getSortedPosts(posts);
+
+// const searchList = posts.map(({ data }) => ({
+//     title: data.title,
+//     description: data.description,
+//     data
+// }));
+
+// TODO: this connects to a react component! Below is just a placeholder.
+---
+
+<RootLayout title={`Search | ${SITE.title}`}>
+    <form class="flex flex-col">
+        <label for="search">Search Posts</label>
+        <input
+            id="search"
+            type="search"
+            class="border-d-border mx-auto w-3/5 border"
+        />
+    </form>
+
+    <p class="text-xl italic">
+        TODO: this is a placeholder page. Nothing works.
+    </p>
+</RootLayout>

@@ -12,7 +12,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 <a
     href={href}
     class:list={[
-        "decoration-none inline-block text-center font-medium",
+        "decoration-none hover:text-d-accent inline-block text-center font-medium",
         isActive && "active",
         className
     ]}
@@ -22,7 +22,13 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 </a>
 
 <style>
+    @reference "../styles/global.css";
+
     a.active {
         @apply underline decoration-wavy decoration-2 underline-offset-4;
+    }
+
+    a.active.like-button {
+        @apply text-d-accent;
     }
 </style>
