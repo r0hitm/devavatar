@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
     --color-apricot-50: oklch(97.05% 0.0147 33.16deg);
@@ -42,9 +43,9 @@
 }
 
 @layer base {
-    .prose a {
+    /* .prose a {
         @apply hover:text-d-accent decoration-d-accent focus-visible:outline-d-accent break-words underline underline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
-    }
+    } */
 
     html {
         overflow-y: scroll;
