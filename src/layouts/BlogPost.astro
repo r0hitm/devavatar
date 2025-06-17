@@ -3,36 +3,99 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import RootLayout from "./RootLayout.astro";
 import Prose from "@/components/Prose.astro";
+import { ChevronLeft, Calendar, Share2 } from "@lucide/astro";
+import Tag from "@/components/Tag.astro";
+import { slugify } from "@/utils/slugify";
+import { SITE } from "@/consts";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDatetime, modDatetime } = Astro.props;
-
-// TODO: view transition api : https://docs.astro.build/en/guides/view-transitions/
+const {
+    title,
+    author,
+    description,
+    pubDatetime,
+    modDatetime,
+    tags
+    // ogImage
+} = Astro.props;
 ---
 
-<RootLayout>
-    <article>
-        <!-- <div class='hero-image'>
-            {typeof ogImage === 'string' && <img width={1020} height={510} src={ogImage} alt='' />}
+<RootLayout
+    title={`${title} | ${SITE.title}`}
+    description={description}
+    author={author}
+    pubDatetime={pubDatetime}
+    modDatetime={modDatetime}
+>
+    <!-- <div class="hero-image">
+             TODO: og images 
+             {
+                typeof ogImage === "string" && (
+                    <img width={1020} height={510} src={ogImage} alt="" />
+                )
+            } 
         </div> -->
+    <div class="my-4">
+        <button
+            class="flex cursor-pointer items-center justify-start gap-2 transition-opacity hover:opacity-75"
+            onclick="history.back()"
+        >
+            <ChevronLeft class="size-4 stroke-2" />
+            <span class="inline-block">Go back</span>
+        </button>
+    </div>
+
+    <h1 class="mb-2 text-3xl font-bold" transition:name={slugify(title)}>
+        {title}
+    </h1>
+
+    <div class="my-2 flex items-center text-sm italic opacity-80">
+        <Calendar class="mr-1 size-4" />
+        {!modDatetime && "Updated:"}
+        &nbsp;
+        <FormattedDate date={modDatetime || pubDatetime} />
+    </div>
+
+    <article role="article">
         <Prose>
-            <div class="title">
-                <div class="date">
-                    <FormattedDate date={pubDatetime} />
-                    {
-                        modDatetime && (
-                            <div class="last-updated-on">
-                                Last updated on{" "}
-                                <FormattedDate date={modDatetime} />
-                            </div>
-                        )
-                    }
-                </div>
-                <h1 transition:name={title.replaceAll(/\s/g, "-")}>{title}</h1>
-                <hr />
-            </div>
             <slot />
         </Prose>
     </article>
+
+    <ul class="my-8 flex flex-wrap gap-3">
+        {tags.map(tag => <Tag tag={slugify(tag)} />)}
+    </ul>
+
+    <div class="my-4">
+        <button
+            id="share-btn"
+            class="focus-outline flex cursor-pointer items-center justify-start gap-2 py-1 whitespace-nowrap hover:opacity-75"
+        >
+            <Share2 class="size-4" />
+            Share
+        </button>
+    </div>
 </RootLayout>
+
+<script is:inline>
+    function share() {
+        const shareBtn = document.getElementById("share-btn");
+
+        shareBtn?.addEventListener("click", async () => {
+            try {
+                await navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                });
+                console.log("Page shared successfully");
+            } catch (error) {
+                console.error("Error sharing page:", error);
+            }
+        });
+    }
+
+    share();
+
+    document.addEventListener("astro:after-swap", share);
+</script>
