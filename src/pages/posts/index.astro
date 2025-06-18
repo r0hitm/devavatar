@@ -4,9 +4,7 @@ import Card from "@/components/Card.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { SITE } from "@/consts";
 
-const posts = (await getPosts()).sort(
-    (a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf()
-);
+const posts = await getPosts();
 ---
 
 <RootLayout
