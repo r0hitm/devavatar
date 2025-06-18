@@ -4,6 +4,7 @@ import { LOCALE, SITE } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -127,6 +128,7 @@ const socialImageURL = new URL(
         <main id="main-content" class="mx-auto w-full max-w-3xl py-4 sm:py-8">
             <slot />
         </main>
+        <ScrollToTop client:idle />
         <Footer />
     </body>
 </html>
