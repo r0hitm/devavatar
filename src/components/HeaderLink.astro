@@ -10,6 +10,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
 <a
+    data-astro-prefetch="load"
     href={href}
     class:list={[
         "decoration-none hover:text-d-accent inline-block text-center font-medium",
