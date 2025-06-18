@@ -8,15 +8,17 @@ import Tag from "@/components/Tag.astro";
 import { slugify } from "@/utils/slugify";
 import { SITE } from "@/consts";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & { postId: string };
 
 const {
+    postId,
     title,
     author,
     description,
     pubDatetime,
     modDatetime,
-    tags
+    tags,
+    draft
     // ogImage
 } = Astro.props;
 ---
@@ -46,16 +48,22 @@ const {
         </button>
     </div>
 
-    <h1 class="mb-2 text-3xl font-bold" transition:name={slugify(title)}>
+    <h1 class="mb-2 text-3xl font-bold" transition:name={postId}>
         {title}
     </h1>
 
-    <div class="my-2 flex items-center text-sm italic opacity-80">
-        <Calendar class="mr-1 size-4" />
-        {!modDatetime && "Updated:"}
-        &nbsp;
-        <FormattedDate date={modDatetime || pubDatetime} />
-    </div>
+    {
+        draft ? (
+            <div class="text-d-card-muted text-sm uppercase">[Draft]</div>
+        ) : (
+            <div class="my-2 flex items-center text-sm italic opacity-80">
+                <Calendar class="mr-1 size-4" />
+                {!modDatetime && "Updated:"}
+                &nbsp;
+                <FormattedDate date={modDatetime || pubDatetime} />
+            </div>
+        )
+    }
 
     <article role="article">
         <Prose>
