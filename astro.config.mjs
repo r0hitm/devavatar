@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
+import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
@@ -43,7 +44,13 @@ export default defineConfig({
             theme: "one-dark-pro",
             wrap: true
         },
-        remarkPlugins: [[remarkToc, { heading: "Table of contents" }]]
+        remarkPlugins: [[remarkToc, { heading: "Table of contents" }]],
+        rehypePlugins: [
+            [
+                rehypeExternalLinks,
+                { rel: ["nofollow", "noopener", "noreferrer"] }
+            ]
+        ]
     },
     vite: { plugins: [tailwindcss()] }
 });
