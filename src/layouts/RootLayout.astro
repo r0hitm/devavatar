@@ -65,22 +65,22 @@ const socialImageURL = new URL(
         <link rel="canonical" href={canonicalURL} />
 
         <!-- Primary Meta Tags -->
-        <title>{title}</title>
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
-        <meta name="author" content={author} />
+        <title>{title ?? SITE.title}</title>
+        <meta name="title" content={title ?? SITE.title} />
+        <meta name="description" content={description ?? SITE.description} />
+        <meta name="author" content={author ?? SITE.author} />
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content={title ?? SITE.title} />
+        <meta property="og:description" content={description ?? SITE.description} />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:image" content={socialImageURL} />
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={canonicalURL} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
+        <meta property="twitter:title" content={title ?? SITE.title} />
+        <meta property="twitter:description" content={description ?? SITE.description} />
         <meta property="twitter:image" content={socialImageURL} />
 
         <!-- Article Published/Modified time -->
@@ -101,7 +101,7 @@ const socialImageURL = new URL(
             )
         }
 
-        <meta name="theme-color" content="#e83123" />
+        <!-- <meta name="theme-color" content="#e83123" /> -->
 
         <link rel="me" href="https://mastodon.social/@_r0hitm" />
 
