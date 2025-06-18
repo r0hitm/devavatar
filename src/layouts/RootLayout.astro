@@ -72,7 +72,10 @@ const socialImageURL = new URL(
 
         <!-- Open Graph / Facebook -->
         <meta property="og:title" content={title ?? SITE.title} />
-        <meta property="og:description" content={description ?? SITE.description} />
+        <meta
+            property="og:description"
+            content={description ?? SITE.description}
+        />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:image" content={socialImageURL} />
 
@@ -80,7 +83,10 @@ const socialImageURL = new URL(
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={canonicalURL} />
         <meta property="twitter:title" content={title ?? SITE.title} />
-        <meta property="twitter:description" content={description ?? SITE.description} />
+        <meta
+            property="twitter:description"
+            content={description ?? SITE.description}
+        />
         <meta property="twitter:image" content={socialImageURL} />
 
         <!-- Article Published/Modified time -->

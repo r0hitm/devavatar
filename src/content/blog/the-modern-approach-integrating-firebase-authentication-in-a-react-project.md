@@ -4,8 +4,8 @@ description: Learn how to implement Firebase authentication in React using moder
 pubDatetime: 2023-07-09T00:00:00.000Z
 modDatetime: 2024-03-25T04:34:31.411Z
 tags:
-  - tutorial
-  - web
+    - tutorial
+    - web
 ---
 
 Firebase is one of the most popular Backend-as-a-Service solutions for frontend applications, providing a range of functionalities like authentication, database management, and more. Last week, I wanted to add authentication and cloud sync functionality to one of my old projects, which I made in vanilla JS while following [The Odin Project](https://www.theodinproject.com/). Instead of just doing just that, I decided to redo that project in React and it was here that I encountered some challenges, especially when it came to finding resources that utilized the recommended `createBrowserRouter` from React Router v6.4. Additionally, the Firebase documentation wasn't the most user-friendly (though it did bring out a few laughs!), and asking AI tools led me astray and wasted three whole days of my time (Lesson learned: Don't trust AI tools).
@@ -54,15 +54,15 @@ npm install firebase
 /* firebase.js */
 import { initializeApp } from "firebase/app";
 import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    signOut
 } from "firebase/auth";
 
 const firebaseConfig = {
-  // Code you copied in setp 4 above
+    // Code you copied in setp 4 above
 };
 
 const app = initializeApp(firebaseConfig);
@@ -75,7 +75,7 @@ const auth = getAuth(app); // Get the authentication service
  * @returns {Promise<UserCredential>} - A promise that resolves with a UserCredential object on success.
  */
 const register = (email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
 };
 
 /**
@@ -85,7 +85,7 @@ const register = (email, password) => {
  * @returns {Promise<UserCredential>} - A promise that resolves with a UserCredential object on success.
  */
 const login = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
 };
 
 /**
@@ -94,7 +94,7 @@ const login = (email, password) => {
  * @returns {Promise<void>} - A promise that resolves when the email is sent.
  */
 const resetPassword = email => {
-  return sendPasswordResetEmail(auth, email);
+    return sendPasswordResetEmail(auth, email);
 };
 
 /**
@@ -102,7 +102,7 @@ const resetPassword = email => {
  * @returns {Promise<void>} - A promise that resolves when the user is signed out.
  */
 const logout = () => {
-  return signOut(auth);
+    return signOut(auth);
 };
 
 export { auth, register, login, resetPassword, logout };
@@ -117,30 +117,30 @@ import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../firebase";
 
 function useAuth() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  // Subscribe to the Firebase Auth listener
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
-      if (user) {
-        console.log("User is signed in.");
-        setUser(user);
-      } else {
-        console.log("User is not signed in.");
-        setUser(null);
-      }
-      setLoading(false);
-    });
+    // Subscribe to the Firebase Auth listener
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            if (user) {
+                console.log("User is signed in.");
+                setUser(user);
+            } else {
+                console.log("User is not signed in.");
+                setUser(null);
+            }
+            setLoading(false);
+        });
 
-    // Cleanup subscription on unmount
-    return () => unsubscribe();
-  }, []);
+        // Cleanup subscription on unmount
+        return () => unsubscribe();
+    }, []);
 
-  return {
-    user,
-    loading,
-  };
+    return {
+        user,
+        loading
+    };
 }
 
 export { useAuth };
@@ -169,30 +169,36 @@ With the route components in place, we can proceed to implement the necessary lo
 import { Form, Link } from "react-router-dom";
 
 export default function Login() {
-  return (
-    <div className="login">
-      <h1>Login</h1>
-      <Form method="POST">
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" required />
+    return (
+        <div className="login">
+            <h1>Login</h1>
+            <Form method="POST">
+                <div className="form-field">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div className="form-field">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                    />
+                </div>
+                <div className="form-field">
+                    <button type="submit">Login</button>
+                </div>
+            </Form>
+            <p>
+                Don't have an account? <Link to="/register">Register</Link>
+            </p>
+            <p>
+                Forgot your password?{" "}
+                <Link to="/reset-password">Reset Password</Link>
+            </p>
         </div>
-        <div className="form-field">
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" required />
-        </div>
-        <div className="form-field">
-          <button type="submit">Login</button>
-        </div>
-      </Form>
-      <p>
-        Don't have an account? <Link to="/register">Register</Link>
-      </p>
-      <p>
-        Forgot your password? <Link to="/reset-password">Reset Password</Link>
-      </p>
-    </div>
-  );
+    );
 }
 ```
 
@@ -201,36 +207,41 @@ export default function Login() {
 import { Form, Link } from "react-router-dom";
 
 export default function Register() {
-  return (
-    <div className="register">
-      <h1>Register</h1>
-      <Form method="POST">
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" required />
+    return (
+        <div className="register">
+            <h1>Register</h1>
+            <Form method="POST">
+                <div className="form-field">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div className="form-field">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        required
+                    />
+                </div>
+                <div className="form-field">
+                    <label htmlFor="password-confirm">Confirm Password</label>
+                    <input
+                        type="password"
+                        name="password-confirm"
+                        id="password-confirm"
+                        required
+                    />
+                </div>
+                <div className="form-field">
+                    <button type="submit">Register</button>
+                </div>
+            </Form>
+            <p>
+                Already have an account? <Link to="/login">Login</Link>
+            </p>
         </div>
-        <div className="form-field">
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" required />
-        </div>
-        <div className="form-field">
-          <label htmlFor="password-confirm">Confirm Password</label>
-          <input
-            type="password"
-            name="password-confirm"
-            id="password-confirm"
-            required
-          />
-        </div>
-        <div className="form-field">
-          <button type="submit">Register</button>
-        </div>
-      </Form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
-    </div>
-  );
+    );
 }
 ```
 
@@ -243,56 +254,56 @@ import { resetPassword } from "../firebase";
 const MINUTE = 60 * 1000;
 
 export default function ResetPassword() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-  return (
-    <div className="reset-password">
-      <h1>Reset Password</h1>
-      <form
-        method="POST"
-        onSubmit={async e => {
-          e.preventDefault();
-          setCount(MINUTE);
-          const interval = setInterval(() => {
-            setCount(count => count - 1000);
-          }, 1000);
-          setTimeout(() => {
-            clearInterval(interval);
-            setCount(0);
-          }, MINUTE);
+    return (
+        <div className="reset-password">
+            <h1>Reset Password</h1>
+            <form
+                method="POST"
+                onSubmit={async e => {
+                    e.preventDefault();
+                    setCount(MINUTE);
+                    const interval = setInterval(() => {
+                        setCount(count => count - 1000);
+                    }, 1000);
+                    setTimeout(() => {
+                        clearInterval(interval);
+                        setCount(0);
+                    }, MINUTE);
 
-          const email = e.target.email.value;
-          try {
-            console.log("Resetting password...");
-            await resetPassword(email);
-            alert("Check your email to reset your password!");
-          } catch (err) {
-            console.error(err);
-            alert(
-              "Error sending password reset email. Make sure you entered your email correctly."
-            );
-          }
-        }}
-      >
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" required />
+                    const email = e.target.email.value;
+                    try {
+                        console.log("Resetting password...");
+                        await resetPassword(email);
+                        alert("Check your email to reset your password!");
+                    } catch (err) {
+                        console.error(err);
+                        alert(
+                            "Error sending password reset email. Make sure you entered your email correctly."
+                        );
+                    }
+                }}
+            >
+                <div className="form-field">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div className="form-field">
+                    <button type="submit" disabled={count > 0}>
+                        Send Password Reset Link
+                    </button>
+                    <p>
+                        Wait {Math.floor(count / 1000)} seconds before sending
+                        another email.
+                    </p>
+                    <p>
+                        Resetted your password? <Link to="/login">Login</Link>
+                    </p>
+                </div>
+            </form>
         </div>
-        <div className="form-field">
-          <button type="submit" disabled={count > 0}>
-            Send Password Reset Link
-          </button>
-          <p>
-            Wait {Math.floor(count / 1000)} seconds before sending another
-            email.
-          </p>
-          <p>
-            Resetted your password? <Link to="/login">Login</Link>
-          </p>
-        </div>
-      </form>
-    </div>
-  );
+    );
 }
 ```
 
@@ -321,30 +332,30 @@ import ResetPassword from "./routes/ResetPassword.jsx";
 import { registerAction, loginAction } from "./actions.js";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-    action: loginAction,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-    action: registerAction,
-  },
-  {
-    path: "/reset-password",
-    element: <ResetPassword />,
-  },
+    {
+        path: "/",
+        element: <App />
+    },
+    {
+        path: "/login",
+        element: <Login />,
+        action: loginAction
+    },
+    {
+        path: "/register",
+        element: <Register />,
+        action: registerAction
+    },
+    {
+        path: "/reset-password",
+        element: <ResetPassword />
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
 );
 ```
 
@@ -425,11 +436,11 @@ import AuthProvider from "./AuthProvider.jsx";
 // ...rest of the code
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <AuthProvider>
+            <RouterProvider router={router} />
+        </AuthProvider>
+    </React.StrictMode>
 );
 
 // ...rest of the code
@@ -452,14 +463,14 @@ import { Navigate, useLocation } from "react-router-dom";
 import AuthContext from "./AuthContext";
 
 function Protected({ children }) {
-  const user = useContext(AuthContext);
-  const location = useLocation();
+    const user = useContext(AuthContext);
+    const location = useLocation();
 
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
+    if (!user) {
+        return <Navigate to="/login" replace />;
+    }
 
-  return children;
+    return children;
 }
 
 export default Protected;
@@ -474,13 +485,13 @@ import { Navigate, useLocation } from "react-router-dom";
 import AuthContext from "./AuthContext";
 
 function Unprotected({ children }) {
-  const user = useContext(AuthContext);
+    const user = useContext(AuthContext);
 
-  if (user) {
-    return <Navigate to="/" replace />;
-  }
+    if (user) {
+        return <Navigate to="/" replace />;
+    }
 
-  return children;
+    return children;
 }
 
 export default Unprotected;
@@ -496,40 +507,40 @@ import Unprotected from "./Unprotected.jsx";
 // ...rest of code
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <Protected>
-        <App />
-      </Protected>
-    ),
-  },
-  {
-    path: "/login",
-    element: (
-      <Unprotected>
-        <Login />
-      </Unprotected>
-    ),
-    action: loginAction,
-  },
-  {
-    path: "/register",
-    element: (
-      <Unprotected>
-        <Register />
-      </Unprotected>
-    ),
-    action: registerAction,
-  },
-  {
-    path: "/reset-password",
-    element: (
-      <Unprotected>
-        <ResetPassword />
-      </Unprotected>
-    ),
-  },
+    {
+        path: "/",
+        element: (
+            <Protected>
+                <App />
+            </Protected>
+        )
+    },
+    {
+        path: "/login",
+        element: (
+            <Unprotected>
+                <Login />
+            </Unprotected>
+        ),
+        action: loginAction
+    },
+    {
+        path: "/register",
+        element: (
+            <Unprotected>
+                <Register />
+            </Unprotected>
+        ),
+        action: registerAction
+    },
+    {
+        path: "/reset-password",
+        element: (
+            <Unprotected>
+                <ResetPassword />
+            </Unprotected>
+        )
+    }
 ]);
 // ...rest of code
 ```

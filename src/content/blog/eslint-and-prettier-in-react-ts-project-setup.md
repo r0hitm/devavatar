@@ -4,9 +4,9 @@ description: Learn how to set up ESLint and Prettier in a React + TypeScript Vit
 pubDatetime: 2024-03-19T09:30:00Z
 modDatetime: 2025-03-02T16:44:48.590Z
 tags:
-  - tutorial
-  - react
-  - typescript
+    - tutorial
+    - react
+    - typescript
 ---
 
 This will be a short post on how to set up linting and (auto-) formatting in a React project that uses Vite as the bundler.
@@ -36,36 +36,36 @@ npm install -D eslint-plugin-react eslint-config-prettier
 
 ```js
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "prettier",
-  ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-  plugins: ["react-refresh"],
-  rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
+    root: true,
+    env: {
+        browser: true,
+        es2021: true
+    },
+    extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "prettier"
     ],
-    "react/react-in-jsx-scope": "off",
-  },
+    ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        project: ["./tsconfig.json", "./tsconfig.node.json"],
+        tsconfigRootDir: __dirname
+    },
+    plugins: ["react-refresh"],
+    rules: {
+        "react-refresh/only-export-components": [
+            "warn",
+            { allowConstantExport: true }
+        ],
+        "react/react-in-jsx-scope": "off"
+    }
 };
 ```
 

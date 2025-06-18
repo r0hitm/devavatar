@@ -4,7 +4,7 @@ description: Subtyping enables polymorphism in static typing through width, perm
 pubDatetime: 2023-05-14T00:00:00.000Z
 modDatetime: 2024-03-25T04:26:28.200Z
 tags:
-  - programming
+    - programming
 ---
 
 Subtyping is a fundamental concept in statically typed programming languages. It refers to the ability of a type to be used in place of another type. That is, if `t1` is a subtype of `t2` then `t1` must be usable in every way `t2` is. This is called **Principle of Substitutability**. It is a fundamental concept that provides flexibility in statically typed programming languages, and it is used to achieve polymorphism.

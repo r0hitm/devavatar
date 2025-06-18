@@ -4,8 +4,8 @@ description: I'm sick of the fact that Windows keeps adding bloatware, spyware a
 pubDatetime: 2024-10-19T17:53:48.595Z
 modDatetime: 2024-10-21T16:25:46.866Z
 tags:
-  - tutorial
-  - windows
+    - tutorial
+    - windows
 ---
 
 I'm sick of the fact that Windows keeps adding bloatware and unnecessary "AI" features like Copilot and Recall 🗑️. If you're fed up too, let's walk through how to clean it all up! Or switch to Linux (no pressure!) 😉
@@ -27,7 +27,7 @@ If you want to use a local account, when the installation reboots and asks you t
 
 1. Press `Shift + F10` to open the command prompt.
 2. Type `oobe\bypassnro` and press enter. This will cause a reboot. You can now skip the internet setup and/or use a local account.
-   - **TIP:** Use Rufus when creating the installation media to automate this.
+    - **TIP:** Use Rufus when creating the installation media to automate this.
 
 ## 3. (Optional) Disable BitLocker (Windows 11 Pro)
 

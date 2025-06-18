@@ -3,8 +3,8 @@ title: "Devlog: Moving My Blog from Hashnode to AstroJS"
 description: Follow my journey migrating from Hashnode to a custom Astro site, including challenges faced and lessons learned during the transition process.
 pubDatetime: 2024-03-04T15:20:29.169Z
 tags:
-  - devlog
-  - web
+    - devlog
+    - web
 ---
 
 I've been maintaining a technical blog since last year, which all began with a simple experiment, thanks to the free domain offer by Name.com from GitHub in my student developer pack back in March 2023. At that time, I wasn't sure what I wanted from a blog or if I'd even enjoy it. So, to avoid the hassle of building a site from scratch, I opted for Hashnode and added my custom domain. This way, if my blog took off, I'd have all the traffic directed to my domain, and if it did not, I could let it fade away since the domain was free for only one year. (Though this didn't go as planned due to a funny-tragic incident, which I will get back to below).

@@ -4,7 +4,7 @@ description: Exploring the benefits and drawbacks of free and open-source softwa
 pubDatetime: 2023-04-02T00:00:00.000Z
 modDatetime: 2024-01-29T11:29:01.593Z
 tags:
-  - opinion
+    - opinion
 ---
 
 Free and Open-Source Software (FOSS) is an incredibly powerful concept that has changed the software landscape for the better. FOSS provides users with access to software that is not only free, but also allows for the inspection and modification of its source code, giving users a high level of control. The FOSS community is also quite robust, with Linux being a prime example of a large and thriving community.

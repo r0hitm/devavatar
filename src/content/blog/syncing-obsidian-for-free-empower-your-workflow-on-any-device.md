@@ -4,7 +4,7 @@ description: Step-by-Step tutorial for setting up Obsidian Vault sync across dev
 pubDatetime: 2023-06-07T00:00:00.000Z
 modDatetime: 2024-12-30T07:30:26.160Z
 tags:
-  - tutorial
+    - tutorial
 ---
 
 [Obsidian](https://obsidian.md/) is more than just a note-taking app — it's a powerful tool for organizing your thoughts and ideas. In this blog post, I'll be sharing my personal setup for syncing Obsidian notes between multiple devices (except iPhone) using Git/GitHub and Syncthing.

@@ -4,7 +4,7 @@ description: Progress update on Playlisty app development, focusing on challenge
 pubDatetime: 2024-03-28T08:15:00.000Z
 modDatetime: 2024-04-02T11:38:54.128Z
 tags:
-  - devlog
+    - devlog
 ---
 
 This is a continuation of the previous devlog on Project Playlisty, which I am currently working on. If you haven't read it yet or need a refresher on what this project is about, you can check out the previous post: [Project Playlisty Devlog: Week 1 Update](/posts/project-playlisty-devlog-week-1).

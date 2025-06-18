@@ -3,8 +3,8 @@ title: "Do not put your passwords on someone else's computer"
 description: "Why I switched from Bitwarden to KeePassXC, and why you should too."
 pubDatetime: 2025-01-21T07:29:08.459Z
 tags:
-  - Tutorial
-  - Security
+    - Tutorial
+    - Security
 ---
 
 I had been using Bitwarden for about 3 years. It is a great password manager with enough features to be useful on the free tier. Recently, though, I moved to KeePassXC for two main reasons: 1) I wanted full control over my data, and 2) I needed offline access to my passwords.

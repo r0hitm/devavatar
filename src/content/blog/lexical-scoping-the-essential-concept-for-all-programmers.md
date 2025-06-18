@@ -4,7 +4,7 @@ description: Learn about lexical scoping and closures, two fundamental concepts 
 pubDatetime: 2023-04-25T00:00:00.000Z
 modDatetime: 2024-03-25T04:21:03.152Z
 tags:
-  - programming
+    - programming
 ---
 
 Programming languages provide us with a set of tools to work with data, perform operations on it, and automate various tasks. Two of the most important concepts in programming are lexical scoping and closures. These concepts are closely related and provide us with powerful ways to write code that is concise, readable, and reusable. Understanding lexical scoping is essential for understanding closures, and both concepts are fundamental to writing efficient and effective code in many programming languages.

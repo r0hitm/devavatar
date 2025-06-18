@@ -4,7 +4,7 @@ description: Manage your configuration files using GNU Stow, a symlink farm mana
 pubDatetime: 2023-06-17T00:00:00.000Z
 modDatetime: 2024-03-25T04:17:27.719Z
 tags:
-  - tutorial
+    - tutorial
 ---
 
 As a developer, you likely have a set of configuration files, or "dotfiles," that you use to customize your development environment. These dotfiles can range from your `.bashrc` file to your Vim configuration and custom aliases.

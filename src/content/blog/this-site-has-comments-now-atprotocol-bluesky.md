@@ -4,9 +4,9 @@ modDatetime: 2025-05-16T07:03:38.171Z
 title: "This site has comments now using AT Protocol and Bluesky"
 description: "I integrated the decentralized AT Protocol from Bluesky to add a commenting system to my personal website."
 tags:
-  - devlog
-  - bluesky
-  - at-protocol
+    - devlog
+    - bluesky
+    - at-protocol
 ---
 
 **Update**: This is not working at the moment, because Bluesky removed public API search. Details are in [this issue](https://github.com/czue/bluesky-comments/issues/26).

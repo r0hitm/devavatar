@@ -3,7 +3,7 @@ title: Update on Rebuilding Dev Avatar
 description: Essentially, TinaCMS didn't work for my use case due to bugs and unexpected behavior. I asked for help on their Discord server, and
 pubDatetime: 2024-10-20T09:28:42.650Z
 tags:
-  - devlog
+    - devlog
 ---
 
 This blog post is long overdue because I got caught up in other things. This post follows from the [last devlog post](/posts/rebuilding-devavatar-devlog-1). Essentially, TinaCMS didn't work for my use case due to bugs and unexpected behavior. I asked for help on their Discord server, and one of the maintainers said I had to do some extra stuff to make a separate content repo work (I don't remember exactly, since it was last month), but it didn't work. Then they asked me to send my website code so they could look into it and reproduce the issue. I never heard back from them.

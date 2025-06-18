@@ -3,9 +3,9 @@ title: "Tutorial: Setup TinaCMS and AstroJS with Separate Content Repo"
 description: AstroJS for the website code, and tinaCMS for managing the content.
 pubDatetime: 2024-11-17T08:42:11.237Z
 tags:
-  - TinaCMS
-  - Astro
-  - Tutorial
+    - TinaCMS
+    - Astro
+    - Tutorial
 ---
 
 I am rebuilding Dev Avatar (as I posted before [here](/posts/rebuilding-devavatar-devlog-1) and [here](/posts/rebuilding-devavatar-update)). At one point, I almost cancelled the rebuild because the TinaCMS documentation was frustratingly unclear, and their Discord server had been unresponsive. However, they finally responded last week (after almost a month 😬). It turned out that a few key details were missing from the docs. By the time you read this, the official docs _might_ already be updated. In this post, I'll document my working setup since, as of now, they're not fully there yet.

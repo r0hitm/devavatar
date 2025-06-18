@@ -2,10 +2,10 @@
 pubDatetime: 2025-04-22T07:47:07.381Z
 title: "Codingame Spring Challenge 2025: Recap"
 tags:
-  - optimization
-  - codingame
-  - competitive programming
-  - recap
+    - optimization
+    - codingame
+    - competitive programming
+    - recap
 description: "My experience tackling the Codingame Spring Challenge 2025 - Cehpalopod Game Simulation, Optimization problem."
 ---
 

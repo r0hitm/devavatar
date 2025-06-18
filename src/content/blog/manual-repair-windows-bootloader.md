@@ -2,9 +2,9 @@
 pubDatetime: 2025-04-30T14:20:59.782Z
 title: "Repair Windows 10/11 Bootloader Manually Without Re-installing Windows"
 tags:
-  - tutorial
-  - debug
-  - windows
+    - tutorial
+    - debug
+    - windows
 description: "Cannot boot Windows? Broken EFI partition? Repair it without doing a reinstallation."
 ---
 

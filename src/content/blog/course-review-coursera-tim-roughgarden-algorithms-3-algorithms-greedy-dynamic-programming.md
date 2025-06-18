@@ -2,10 +2,10 @@
 pubDatetime: 2025-05-24T07:02:20.725Z
 title: "Course Review: Tim Roughgarden's Algorithms: Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming"
 tags:
-  - review
-  - algorithms
-  - computer-science
-  - coursera
+    - review
+    - algorithms
+    - computer-science
+    - coursera
 description: "Review of third course of the Algorithms specialization - greedy algorithms and dynamic programming - and its prerequisites."
 ---
 

@@ -4,10 +4,10 @@ description: "My review of Tim Roughgarden's Coursera algorithms class covering 
 pubDatetime: 2025-02-20T15:39:32.431Z
 modDatetime: 2025-03-30T16:19:22.416Z
 tags:
-  - review
-  - algorithms
-  - computer-science
-  - coursera
+    - review
+    - algorithms
+    - computer-science
+    - coursera
 ---
 
 [Divide and Conquer, Sorting and Searching, and Randomized Algorithms](https://www.coursera.org/learn/algorithms-divide-conquer)
@@ -32,9 +32,9 @@ This module explores the "Divide-and-Conquer" paradigm through:
 - **Strassen's matrix multiplication algorithm**: This one was amazing! Like people had given up on making the matrix multiplication faster (O(n^3)), and then Strassen came up with a way to do it in O(n^2) time. The key insight was to perform the carefully chosen 7 products and add/subtract them. I won't spoil the fun, but it's a must-learn algorithm.
 - **Closest pair of points in a plane problem**: This was the most challenging part of the module. You have some points in a 2D plane, and you need to find the closest pair of points. Here again, we divide the problem, here a plane, into smaller and smaller parts, find the closest pair in each part, and then combine the results. And a key insight during the combination is that we only need to check the points that are within a certain distance from the dividing line. This reduces the number of points we need to consider drastically from n^2 to nLog(n).
 - [**The Master Method**](<https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>) for solving recurrence relations for divide and conquer algorithms. This is more math-y part of the paradigm, where we write an recurrence relation for the recursive algorithm, mostly in the form of T(n) = aT(n/b) + O(n^d), and then use the Master Method to find the time complexity of the algorithm. Here, a = number of subproblems at each step, b = factor by which the input size is reduced, and d = exponent in the running time of the "combine" step. How these variables are related depends on the implemenation, and we get one of the three cases of the Master Method:
-  - Case 1: If a = b^d, then the time complexity is O(n^d * log(n)); *number of subproblems at each step is equal to the factor by which the input size is reduced\*
-  - Case 2: If a < b^d, then the time complexity is O(n^d); _number of subproblems at each step is less than the factor by which the input size is reduced - more work is done towards the root of the recursion tree_
-  - Case 3: If a > b^d, then the time complexity is O(n^log*b(a)); \_number of subproblems at each step is more than the factor by which the input size is reduced - more work is done towards the leaves of the recursion tree*
+    - Case 1: If a = b^d, then the time complexity is O(n^d * log(n)); *number of subproblems at each step is equal to the factor by which the input size is reduced\*
+    - Case 2: If a < b^d, then the time complexity is O(n^d); _number of subproblems at each step is less than the factor by which the input size is reduced - more work is done towards the root of the recursion tree_
+    - Case 3: If a > b^d, then the time complexity is O(n^log*b(a)); \_number of subproblems at each step is more than the factor by which the input size is reduced - more work is done towards the leaves of the recursion tree*
 
 ## Module 3: Quick Sort
 

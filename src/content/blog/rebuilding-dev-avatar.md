@@ -4,8 +4,8 @@ description: "I made the mistake of mixing content with code, combined with issu
 pubDatetime: 2024-09-09T12:21:51.718Z
 # modDatetime: only add after modification (optional)
 tags:
-  - devlog
-  - web
+    - devlog
+    - web
 ---
 
 I started out on Hashnode, then [moved to devavatar.com](/posts/move-hashnode-blog-to-astrojs), built with Astro using the Astro Paper template as a starting point. This week, I was working on decoupling the content from the code — something that, for whatever reason, didn’t occur to me last year — and I decided to use TinaCMS, a markdown CMS with self-hosting. After setting it up on dev-cli and working on removing the Astro content to integrate TinaCMS with a separate content repo, I realized that the template creator had made everything tightly integrated—especially with the blog schema and other parts.

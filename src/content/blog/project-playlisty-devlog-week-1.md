@@ -4,7 +4,7 @@ description: "Week 1 of building Playlisty, a React app that helps Spotify users
 pubDatetime: 2024-03-26T05:40:42.343Z
 modDatetime: 2024-04-02T11:38:40.480Z
 tags:
-  - devlog
+    - devlog
 ---
 
 I recently embarked on a new project to address a personal issue that I believe others may also encounter.

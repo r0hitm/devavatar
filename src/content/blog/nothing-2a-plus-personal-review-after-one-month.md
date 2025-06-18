@@ -3,9 +3,9 @@ title: "My Experience with the Nothing Phone (2a) Plus"
 description: After one month of daily use, here’s my honest review of the Nothing Phone (2a) Plus.
 pubDatetime: 2024-11-16T17:21:13.181Z
 tags:
-  - review
-  - opinion
-  - tech
+    - review
+    - opinion
+    - tech
 ---
 
 I got the Nothing Phone (2a) Plus roughly one month ago (at the time of writing this post), and it has been a pleasant surprise. It exceeded my expectations, especially given the price I paid for it. Of course, no device is perfect — there are a few quirks — but in my experience, these are relatively minor.

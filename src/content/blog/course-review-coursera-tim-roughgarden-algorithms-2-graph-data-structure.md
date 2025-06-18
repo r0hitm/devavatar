@@ -3,10 +3,10 @@ pubDatetime: 2025-03-30T16:19:38.084Z
 title: "Course Review: Tim Roughgarden's Graph Search, Shortest Paths, and Data Structures"
 description: "Review of second course of the Algorithms specialization - graphs and shortest paths - and its prerequisites."
 tags:
-  - review
-  - algorithms
-  - computer-science
-  - coursera
+    - review
+    - algorithms
+    - computer-science
+    - coursera
 ---
 
 [Graph Search, Shortest Paths, and Data Structures](https://www.coursera.org/learn/algorithms-graphs-data-structures) (henceforth called Algo2) is the second course after Divide and Conquer, about which you can read in the [previous post here](/posts/course-review-coursera-tim-roughgarden-algorithms-1-divide-and-conquer). I completed Algo2 between 2025 Feb 17 and 2025 Mar 25. Similar to the review of Algo1, this review covers the module's content, difficulty, and prerequisites, sprinkled with my own opinions.

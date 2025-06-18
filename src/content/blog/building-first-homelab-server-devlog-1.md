@@ -3,8 +3,8 @@ title: "Building First Homelab Server | Devlog Week 1"
 description: "Documenting my journey of getting started with a homelab server - missaps, learnings - everything!"
 pubDatetime: 2024-10-31T13:21:41.528Z
 tags:
-  - devlog
-  - homelab
+    - devlog
+    - homelab
 ---
 
 I recently got my father's old computer, which was in working condition. Since I always wanted to dabble in setting up a homelab and playing around with self-hosting, I decided to use it. I know nothing about homelabbing, and I will be documenting my journey in these devlogs. Perhaps you’ll find these valuable for getting started yourself or find the mishaps amusing!

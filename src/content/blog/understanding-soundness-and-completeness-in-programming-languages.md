@@ -4,7 +4,7 @@ description: Explore how static code analysis ensures program correctness throug
 pubDatetime: 2023-04-30T00:00:00.000Z
 modDatetime: 2024-03-25T04:37:15.073Z
 tags:
-  - programming
+    - programming
 ---
 
 In this blog post, I'll share what I learned about the concept of soundness and completeness while completing the MOOC [Programming Languages, Part B](https://www.coursera.org/learn/programming-languages-part-b).

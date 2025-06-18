@@ -3,7 +3,7 @@ title: "Rebuilding Dev Avatar | DevLog Week 1"
 description: 'By "this week," I mean last week... since this post is a little late, haha. But let’s talk about the progress I made in that time.'
 pubDatetime: 2024-09-23T14:18:40.836Z
 tags:
-  - devlog
+    - devlog
 ---
 
 In the [last blog post](/posts/rebuilding-dev-avatar), I mentioned my decision to rebuild Dev Avatar. To give a quick recap: 1) I wanted to separate the content from the website code, and 2) revisit some design decisions, especially the ones tied to the starter template I used previously.
@@ -28,12 +28,12 @@ This time around, I’m treating this as a proper personal blog, which I was hes
 - **Pages:** Home, all posts, topics (plus per-topic pages), about.
 - **Tagging:** "One post, one ~~tag~~ topic"— and, removing the search bar for now.
 - **Post Topics:** this will replace multi-tag setup that I currently use.
-  - **Programming:** For CS & theory, tutorials, etc.
-  - **Devlog:** For Project updates, etc.
-  - **Web Development:** (Still debating the name and function...)
-  - **日本語 (Japanese):** TBD
-  - **Opinions:** TBD
-  - **Misc:** TBD
+    - **Programming:** For CS & theory, tutorials, etc.
+    - **Devlog:** For Project updates, etc.
+    - **Web Development:** (Still debating the name and function...)
+    - **日本語 (Japanese):** TBD
+    - **Opinions:** TBD
+    - **Misc:** TBD
 - **No pagination** on the /posts/ page.
 - **Social Links:** Fewer of them.
 - **Sitemap Improvements:** Adding last modified date, priority settings, etc.

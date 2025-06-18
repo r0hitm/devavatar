@@ -4,7 +4,7 @@ description: "Playlisty for Spotify is functional. This post covers how I worked
 pubDatetime: 2024-04-05T13:54:30.183Z
 modDatetime: 2024-04-08T17:53:11.906Z
 tags:
-  - devlog
+    - devlog
 ---
 
 This is a continuation and the final devlog on [Project Playlisty](https://github.com/r0hitm/playlisty), which is now complete and functional. Links to the previous devlogs:

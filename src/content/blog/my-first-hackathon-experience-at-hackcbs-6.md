@@ -4,9 +4,9 @@ description: My journey participating in India's largest student-run hackathon a
 pubDatetime: 2023-11-28T00:00:00.000Z
 modDatetime: 2024-03-25T04:21:03.152Z
 tags:
-  - review
-  - hackathon
-  - web
+    - review
+    - hackathon
+    - web
 ---
 
 Earlier this month, I had the incredible opportunity to attend HackCBS 6.0, India's largest student-run hackathon. In this blog post, I want to share my experience from the moment I registered to the final day of the event.
