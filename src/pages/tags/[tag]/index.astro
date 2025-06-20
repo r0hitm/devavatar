@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import RootLayout from "@/layouts/RootLayout.astro";
+import getPosts from "@/utils/getPosts";
+import getUniqueTags from "@/utils/getUniqueTags";
+import Card from "@/components/Card.astro";
+
+export const getStaticPaths = (async () => {
+    const posts = await getPosts();
+
+    const tags = getUniqueTags(posts);
+    return tags.map(({ tag, tagName }) => {
+        return {
+            params: { tag },
+            props: { tag, tagName, posts }
+        };
+    });
+}) satisfies GetStaticPaths;
+
+const { tag, tagName, posts } = Astro.props;
+---
+
+<RootLayout
+    title={`Tag: ${tagName}`}
+    description={`All the posts with ${tagName} tag.`}
+>
+    <!-- TODO: breadcrumbs -->
+
+    <h1 class="mb-2 text-3xl font-bold" transition:name={tag}>
+        Tag: {tagName}
+    </h1>
+
+    <p class="italic">
+        There are {posts.length} posts tagged
+        <span class="decoration-d-border underline underline-offset-4">
+            {tagName}
+        </span>
+    </p>
+
+    <ul>
+        {
+            posts.map(({ data, id }) => (
+                <Card href={`/posts/${id}`} postId={id} frontmatter={data} />
+            ))
+        }
+    </ul>
+</RootLayout>

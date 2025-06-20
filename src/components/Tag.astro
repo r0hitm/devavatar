@@ -3,10 +3,11 @@ import { Hash } from "@lucide/astro";
 
 export interface Props {
     tag: string;
+    tagName: string;
     size?: "sm" | "lg";
 }
 
-const { tag, size = "sm" } = Astro.props;
+const { tag, tagName, size = "sm" } = Astro.props;
 
 const tiltLeft = Math.random() > 0.5;
 ---
@@ -30,6 +31,6 @@ const tiltLeft = Math.random() > 0.5;
         ]}
     >
         <Hash class="inline-block size-4 align-middle" />
-        <span>{tag}</span>
+        <span>{tagName}</span>
     </a>
 </li>
