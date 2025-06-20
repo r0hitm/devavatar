@@ -5,29 +5,43 @@ const currentYear = new Date().getFullYear();
 <footer
     class="border-d-border mx-auto mt-6 w-full max-w-4xl border-t px-4 pt-8 pb-4 opacity-90"
 >
+    <div class="mb-4 flex justify-center space-x-2 text-sm">
+        <a
+            href="/support"
+            class="hover:underline hover:decoration-wavy hover:underline-offset-4"
+        >
+            Support
+        </a>
+        <span>・</span>
+        <a
+            href="https://github.com/r0hitm/devavatar-kaisei/issues"
+            class="hover:underline hover:decoration-wavy hover:underline-offset-4"
+            target="_blank"
+        >
+            Report an issue
+        </a>
+    </div>
+
     <div
-        class="flex flex-col items-center space-y-2 sm:flex-row sm:justify-between sm:space-y-0"
+        class="flex flex-col items-center space-y-2 sm:flex-row sm:justify-center sm:space-y-0"
     >
         <p class="text-sm">
             &copy; {currentYear}
             Rohit Mehta
         </p>
-        <div class="flex gap-4">
-            <p class="text-sm">
-                <a
-                    href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-                    class="hover:underline hover:decoration-wavy hover:underline-offset-4"
-                    target="_blank"
-                >
-                    CC BY-NC-SA 4.0
-                </a>
-            </p>
-        </div>
+        <p class="hidden text-sm sm:mx-2 sm:block">・</p>
+        <p class="text-sm">
+            <a
+                href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                class="hover:underline hover:decoration-wavy hover:underline-offset-4"
+                target="_blank"
+            >
+                CC BY-NC-SA 4.0
+            </a>
+        </p>
     </div>
 
-    <!-- TODO: report an issue (links to github issues) -->
-
-    <p class="mt-4 text-center text-xs">
+    <p class="mt-4 text-center text-sm">
         No cookies, no ads, no tracking ― just blog.
     </p>
 </footer>
