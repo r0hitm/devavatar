@@ -15,7 +15,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
 
 <div
     class:list={[
-        "flex flex-wrap items-center gap-x-4",
+        "flex flex-wrap items-center space-y-2 gap-x-4",
         { "justify-center": centered }
     ]}
 >
@@ -26,11 +26,16 @@ const activeSocials = SOCIALS.filter(social => social.active);
                 <a
                     href={social.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     aria-label={social.linkTitle}
                     title={social.linkTitle}
+                    class="group"
                 >
-                    <div class="size-6 transition-colors" set:html={icon} />
+                    <div
+                        class="group-hover:text-d-accent size-6 group-hover:scale-105"
+                        set:html={icon}
+                    />
+                    <span class="sr-only">{social.linkTitle}</span>
                 </a>
             );
         })
@@ -45,7 +50,8 @@ const activeSocials = SOCIALS.filter(social => social.active);
                 title="RSS feed"
                 class="group"
             >
-                <Rss class="size-6" />
+                <Rss class="group-hover:text-d-accent size-6 stroke-2 align-middle group-hover:scale-105" />
+                <span class="sr-only">Rss Feed</span>
             </a>
         )
     }

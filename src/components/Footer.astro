@@ -1,36 +1,46 @@
 ---
+import Socials from "./Socials.astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
     class="border-d-border mx-auto mt-6 w-full max-w-4xl border-t px-4 pt-8 pb-4 opacity-90"
 >
-    <div class="mb-4 flex justify-center space-x-2 text-sm">
+    <Socials centered showRss />
+
+    <div
+        class="mt-2 flex flex-col items-center justify-center gap-y-2 text-sm sm:flex-row sm:gap-x-4"
+    >
         <a
             href="/support"
-            class="hover:underline hover:decoration-wavy hover:underline-offset-4"
+            class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
         >
-            Support
+            Buy me a coffee
         </a>
-        <span>・</span>
+        <span class="hidden sm:block">・</span>
         <a
             href="https://github.com/r0hitm/devavatar-kaisei/issues"
-            class="hover:underline hover:decoration-wavy hover:underline-offset-4"
-            target="_blank"
+            class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
+            rel="noopener noreferrer"
         >
             Report an issue
         </a>
     </div>
 
+    <p class="mt-4 text-center text-sm">
+        No cookies, no ads, no tracking ― just blog.
+    </p>
+
     <div
-        class="flex flex-col items-center space-y-2 sm:flex-row sm:justify-center sm:space-y-0"
+        class="mt-2 flex flex-col items-center justify-center gap-y-2 text-sm sm:flex-row sm:gap-x-4"
     >
-        <p class="text-sm">
+        <span>
             &copy; {currentYear}
             Rohit Mehta
-        </p>
-        <p class="hidden text-sm sm:mx-2 sm:block">・</p>
-        <p class="text-sm">
+        </span>
+        <span class="hidden sm:block">・</span>
+        <span>
             <a
                 href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
                 class="hover:underline hover:decoration-wavy hover:underline-offset-4"
@@ -38,10 +48,6 @@ const currentYear = new Date().getFullYear();
             >
                 CC BY-NC-SA 4.0
             </a>
-        </p>
+        </span>
     </div>
-
-    <p class="mt-4 text-center text-sm">
-        No cookies, no ads, no tracking ― just blog.
-    </p>
 </footer>
