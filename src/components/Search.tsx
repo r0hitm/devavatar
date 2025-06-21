@@ -39,10 +39,10 @@ export default function Search({ searchList }: Props) {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
                 event.preventDefault();
-                setIsOpen(true);
+                setIsOpen(prev => !prev);
             }
 
-            if (event.key === "Escape" && isOpen) {
+            if (event.key === "Escape") {
                 console.log("Escape key fired");
                 event.preventDefault();
                 setIsOpen(false);
