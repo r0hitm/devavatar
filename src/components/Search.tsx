@@ -25,7 +25,7 @@ export default function Search({ searchList }: Props) {
                 keys: ["title", "description"],
                 includeMatches: true,
                 minMatchCharLength: 2,
-                threshold: 0.3
+                threshold: 0.5
             }),
         [searchList]
     );
