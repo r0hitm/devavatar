@@ -1,7 +1,18 @@
 ---
 import HeaderLink from "@/components/HeaderLink.astro";
 import { SITE } from "@/consts";
-import { Menu, Moon, Search, X } from "@lucide/astro";
+import { Menu, Moon, X } from "@lucide/astro";
+import Search from "./Search";
+import getPosts from "@/utils/getPosts";
+
+const posts = await getPosts();
+
+const searchList = posts.map(({ data, id }) => ({
+    title: data.title,
+    description: data.description,
+    data,
+    postId: id
+}));
 ---
 
 <header class="border-d-border mx-auto w-full max-w-4xl border-b py-2 sm:py-4">
@@ -31,13 +42,8 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
                     <li>
                         <HeaderLink href="/about">about</HeaderLink>
                     </li>
-                    <!-- <li>
-                        <HeaderLink href="/support">support</HeaderLink>
-                    </li> -->
                     <li>
-                        <HeaderLink href="/search" class={"like-button"}>
-                            <Search class="size-4" />
-                        </HeaderLink>
+                        <Search searchList={searchList} client:load />
                     </li>
                 </ul>
             </nav>
@@ -98,19 +104,8 @@ import { Menu, Moon, Search, X } from "@lucide/astro";
                         >about</HeaderLink
                     >
                 </li>
-                <!-- <li>
-                    <HeaderLink
-                        href="/support"
-                        class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >support</HeaderLink
-                    >
-                </li> -->
                 <li>
-                    <HeaderLink
-                        href="/search"
-                        class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >search</HeaderLink
-                    >
+                    <Search searchList={searchList} client:load />
                 </li>
             </ul>
         </nav>
