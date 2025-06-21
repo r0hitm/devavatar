@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "@/components/HeaderLink.astro";
 import { SITE } from "@/consts";
-import { Menu, Moon, X } from "@lucide/astro";
+import { Menu, X } from "@lucide/astro";
 import Search from "./Search";
 import getPosts from "@/utils/getPosts";
 
@@ -47,12 +47,13 @@ const searchList = posts.map(({ data, id }) => ({
                     </li>
                 </ul>
             </nav>
-            <button
+            <!-- TODO: themem -->
+            <!-- <button
                 class="hover:text-d-accent inline-block cursor-pointer"
                 id="toggle-theme-desktop"
             >
                 <Moon class="size-4" />
-            </button>
+            </button> -->
         </div>
 
         {/* Search Button & Mobile Menu */}
@@ -100,14 +101,15 @@ const searchList = posts.map(({ data, id }) => ({
                         >about</HeaderLink
                     >
                 </li>
-                <li>
+                <!-- TODO: Theme toggler -->
+                <!-- <li>
                     <button
                         class="hover:text-d-accent inline-block cursor-pointer p-2"
                         id="toggle-theme-mobile"
                     >
                         <Moon class="size-5" />
                     </button>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>
