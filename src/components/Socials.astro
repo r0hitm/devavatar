@@ -1,3 +1,52 @@
 ---
-// TODO
+import socialIcons from "@/assets/socialIcons";
+import { SOCIALS } from "@/consts";
+import { Rss } from "@lucide/astro";
+
+export interface Props {
+    centered?: boolean;
+    showRss?: boolean;
+}
+
+const { centered = false, showRss = false } = Astro.props;
+
+const activeSocials = SOCIALS.filter(social => social.active);
 ---
+
+<div
+    class:list={[
+        "flex flex-wrap items-center gap-x-4",
+        { "justify-center": centered }
+    ]}
+>
+    {
+        activeSocials.map(social => {
+            const icon = socialIcons[social.name];
+            return (
+                <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.linkTitle}
+                    title={social.linkTitle}
+                >
+                    <div class="size-6 transition-colors" set:html={icon} />
+                </a>
+            );
+        })
+    }
+    {
+        showRss && (
+            <a
+                href="/rss.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RSS feed"
+                title="RSS feed"
+                class="group"
+            >
+                <Rss class="size-6" />
+            </a>
+        )
+    }
+</div>

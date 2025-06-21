@@ -71,4 +71,10 @@
     ::-webkit-scrollbar-thumb:hover {
         @apply bg-d-card-muted;
     }
+
+    /* socialIcons.ts */
+    /* TODO: remomve this. I hate @apply rules */
+    svg.icon-tabler {
+        @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
+    }
 }
