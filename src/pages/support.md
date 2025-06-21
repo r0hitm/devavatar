@@ -1,12 +1,12 @@
 ---
 layout: ../layouts/PageLayout.astro
-title: Support
+title: Support Me
 ---
 
-If you find my work valuable, please consider supporting me.
+If you find my work valuable, consider supporting me through one of the following platforms:
 
 - **GitHub Sponsors:** [Sponsor @r0hitm](https://github.com/sponsors/r0hitm)
-- **Ko-fi:**: [Buy Me Coffee](https://ko-fi.com/devavatar)
+- **Ko-fi:** [Buy Me a Coffee](https://ko-fi.com/devavatar)
 - **Buy Me a Coffee:** [Buy me a coffee](https://www.buymeacoffee.com/r0hitm)
 
-I'm available for contract and full-time opportunities. You can reach me at `rohitm09 [at] proton.me`.
+**P.S.**: For other services or opportunities, you can contact me at `rohitm09 [at] proton.me`.
