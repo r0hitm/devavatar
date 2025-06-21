@@ -55,14 +55,10 @@ const searchList = posts.map(({ data, id }) => ({
             </button>
         </div>
 
-        {/* Mobile Menu Button & Theme Toggle */}
+        {/* Search Button & Mobile Menu */}
         <div class="flex items-center gap-2 sm:hidden">
-            <button
-                class="hover:text-d-accent inline-block cursor-pointer p-2"
-                id="toggle-theme-mobile"
-            >
-                <Moon class="size-5" />
-            </button>
+            <Search searchList={searchList} client:load />
+
             <button id="hamburger-menu" class="p-2">
                 <Menu class="size-6" id="menu-icon" />
                 <X class="hidden size-6" id="close-icon" />
@@ -105,7 +101,12 @@ const searchList = posts.map(({ data, id }) => ({
                     >
                 </li>
                 <li>
-                    <Search searchList={searchList} client:load />
+                    <button
+                        class="hover:text-d-accent inline-block cursor-pointer p-2"
+                        id="toggle-theme-mobile"
+                    >
+                        <Moon class="size-5" />
+                    </button>
                 </li>
             </ul>
         </nav>
