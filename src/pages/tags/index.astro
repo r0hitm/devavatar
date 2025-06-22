@@ -16,7 +16,7 @@ let tags = getUniqueTags(posts);
     <ul>
         {
             tags.map(({ tag, tagName }) => (
-                <Tag {tag} tagName={tagName} size="lg" />
+                <Tag tag={tag} tagName={tagName} size="lg" />
             ))
         }
     </ul>
