@@ -3,7 +3,7 @@ import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
-import { BrushCleaning, Rss } from "@lucide/astro";
+import { ArrowRight, BrushCleaning, Rss } from "@lucide/astro";
 
 const posts = await getPosts();
 ---
@@ -67,6 +67,17 @@ const posts = await getPosts();
                 )
             }
         </ul>
+        <div class="my-4 text-center">
+            <a
+                href="/posts"
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
+            >
+                All Posts
+                <ArrowRight
+                    class="group-hover:text-d-accent text-d-txt-base size-4"
+                />
+            </a>
+        </div>
     </section>
 
     <Hr />
