@@ -24,6 +24,17 @@
     --color-mist-800: oklch(5.81% 0.0403 264.05deg);
     --color-mist-900: oklch(0% 0 none);
 
+    --color-warm-night-50: oklch(97.02% 0.0043 17.64deg);
+    --color-warm-night-100: oklch(82.9% 0.0034 17.67deg);
+    --color-warm-night-200: oklch(68.87% 0.0035 17.6deg);
+    --color-warm-night-300: oklch(54.78% 0.0037 17.54deg);
+    --color-warm-night-400: oklch(40.73% 0.0027 17.54deg);
+    --color-warm-night-500: oklch(26.59% 0.0075 17.7deg);
+    --color-warm-night-600: oklch(21.37% 0.0316 20.02deg);
+    --color-warm-night-700: oklch(14.1% 0.0564 16.46deg);
+    --color-warm-night-800: oklch(6.7% 0.0275 29.23deg);
+    --color-warm-night-900: oklch(0% 0 none);
+
     --font-mono: "IBM Plex Mono", monospace;
     --font-sans:
         "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif,
@@ -43,19 +54,15 @@
 }
 
 @layer base {
-    /* .prose a {
-        @apply hover:text-d-accent decoration-d-accent focus-visible:outline-d-accent break-words underline underline-offset-1 focus-visible:no-underline focus-visible:outline-dashed;
-    } */
-
     html {
         overflow-y: scroll;
 
         @variant dark {
-            --color-d-fill: var(--color-mist-700);
-            --color-d-txt-base: var(--color-apricot-50);
+            --color-d-fill: var(--color-warm-night-500);
+            --color-d-txt-base: var(--color-warm-night-100);
             --color-d-accent: var(--color-apricot-400);
-            --color-d-card: var(--color-mist-200);
-            --color-d-card-muted: var(--color-apricot-400);
+            --color-d-card: var(--color-warm-night-200);
+            --color-d-card-muted: var(--color-warm-night-300);
             --color-d-border: var(--color-apricot-500);
         }
     }
