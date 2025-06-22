@@ -69,6 +69,7 @@ const socialImageURL = new URL(
         <meta name="title" content={title ?? SITE.title} />
         <meta name="description" content={description ?? SITE.description} />
         <meta name="author" content={author ?? SITE.author} />
+        <meta name="color-scheme" content="light dark" />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:title" content={title ?? SITE.title} />
@@ -107,7 +108,7 @@ const socialImageURL = new URL(
             )
         }
 
-        <!-- <meta name="theme-color" content="#e83123" /> -->
+        <!-- <meta name="theme-color" content="" /> -->
 
         <link rel="me" href="https://mastodon.social/@_r0hitm" />
 
@@ -124,8 +125,6 @@ const socialImageURL = new URL(
         }
 
         <ClientRouter />
-
-        <!-- <script is:inline src='/toggle-theme.js'></script> -->
     </head>
     <body
         class="bg-d-fill text-d-txt-base selection:bg-d-accent/70 selection:text-d-fill relative flex min-h-[100svh] flex-col scroll-smooth p-4 font-mono"
