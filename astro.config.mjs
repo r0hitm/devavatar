@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import rehypeExternalLinks from "rehype-external-links";
-import { SITE } from "@/consts";
+import { SITE } from "./src/consts";
 
 // https://astro.build/config
 export default defineConfig({
