@@ -49,6 +49,15 @@
 
     html {
         overflow-y: scroll;
+
+        @variant dark {
+            --color-d-fill: var(--color-mist-700);
+            --color-d-txt-base: var(--color-apricot-50);
+            --color-d-accent: var(--color-apricot-400);
+            --color-d-card: var(--color-mist-200);
+            --color-d-card-muted: var(--color-apricot-400);
+            --color-d-border: var(--color-apricot-500);
+        }
     }
 
     /* custom scrollbar */
