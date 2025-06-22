@@ -10,9 +10,10 @@ type SiteType = {
 };
 
 export const SITE: SiteType = {
-    website: "https://devavatar.come",
+    website: "https://devavatar.com/",
     author: "Rohit Mehta",
-    description: "My space on the wild-wild internet",
+    description:
+        "My space on the wild-wild internet! For all things tech and more",
     title: "Dev Avatar",
     scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
 } as const;

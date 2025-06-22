@@ -6,10 +6,11 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import rehypeExternalLinks from "rehype-external-links";
+import { SITE } from "@/consts";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://devavatar.com",
+    site: SITE.website,
     prefetch: true,
     integrations: [
         mdx(),
