@@ -12,34 +12,7 @@ import { SITE } from "./src/consts";
 export default defineConfig({
     site: SITE.website,
     prefetch: true,
-    integrations: [
-        mdx(),
-        sitemap({
-            serialize(sitemap_item) {
-                // THIS IS FROM LEGACY DevAvatar
-                const url = sitemap_item.url;
-                const isRoot = /devavatar.com\/$/.test(url);
-                const isAbout = /about\/$/.test(url);
-                const isCredits = /credits\/$/.test(url);
-                const postSlug =
-                    url.match(/\/posts\/([^/]+)\/?$/)?.[1] ?? false;
-                const isPost = postSlug && isNaN(Number(postSlug));
-
-                if (isRoot || isAbout || isCredits || isPost) {
-                    if (isPost) {
-                        sitemap_item.priority = 1;
-                    }
-                    return sitemap_item;
-                } else {
-                    return undefined;
-                }
-            },
-            changefreq: "weekly",
-            lastmod: new Date(),
-            priority: 0.8
-        }),
-        react()
-    ],
+    integrations: [mdx(), sitemap(), react()],
     markdown: {
         shikiConfig: {
             theme: "one-dark-pro",
