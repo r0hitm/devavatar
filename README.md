@@ -1,10 +1,6 @@
-# Dev Avatar (回生)
+# Dev Avatar
 
-Rebuilding devavatar.com, from scratch.
-
-> My space on the internet. This repository contains the source code for my personal website, [devavatar.com](https://devavatar.com).
-
-[GitHub](https://github.com/r0hitm) | [Bluesky](https://bsky.app/profile/devavatar.com)
+My space on the wild-wild internet! For all things tech and more. This repository contains the source code, and content for my personal website: [devavatar.com](https://devavatar.com).
 
 ## 📜 License
 
