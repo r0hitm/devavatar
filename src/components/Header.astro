@@ -4,6 +4,7 @@ import { SITE } from "@/consts";
 import { Menu, X } from "@lucide/astro";
 import Search from "./Search";
 import getPosts from "@/utils/getPosts";
+import ThemeBtn from "./ThemeBtn.astro";
 
 const posts = await getPosts();
 
@@ -45,15 +46,11 @@ const searchList = posts.map(({ data, id }) => ({
                     <li>
                         <Search searchList={searchList} client:load />
                     </li>
+                    <li>
+                        <ThemeBtn />
+                    </li>
                 </ul>
             </nav>
-            <!-- TODO: themem -->
-            <!-- <button
-                class="hover:text-d-accent inline-block cursor-pointer"
-                id="toggle-theme-desktop"
-            >
-                <Moon class="size-4" />
-            </button> -->
         </div>
 
         {/* Search Button & Mobile Menu */}
@@ -101,34 +98,15 @@ const searchList = posts.map(({ data, id }) => ({
                         >about</HeaderLink
                     >
                 </li>
-                <!-- TODO: Theme toggler -->
-                <!-- <li>
-                    <button
-                        class="hover:text-d-accent inline-block cursor-pointer p-2"
-                        id="toggle-theme-mobile"
-                    >
-                        <Moon class="size-5" />
-                    </button>
-                </li> -->
+                <li>
+                    <ThemeBtn />
+                </li>
             </ul>
         </nav>
     </div>
 </header>
 
 <script>
-    const themeTogglerDesktop = document.getElementById("toggle-theme-desktop");
-    themeTogglerDesktop?.addEventListener("click", () => {
-        // TODO: Implement theme toggling logic or call a global function
-        console.error("TODO: Desktop theme toggle placeholder.");
-    });
-
-    const themeTogglerMobile = document.getElementById("toggle-theme-mobile");
-    themeTogglerMobile?.addEventListener("click", () => {
-        // TODO: Implement theme toggling logic or call a global function
-        console.error("TODO: Mobile theme toggle placeholder.");
-    });
-
-    // Toggle Menu (mobile only)
     function toggleMobileMenu() {
         const mobileMenuButton = document.getElementById("hamburger-menu");
         const mobileNavMenu = document.getElementById("mobile-nav-items");

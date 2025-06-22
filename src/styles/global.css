@@ -49,6 +49,8 @@
     --color-d-border: var(--color-apricot-700);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @utility decoration-none {
     text-decoration: none;
 }
