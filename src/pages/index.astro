@@ -1,6 +1,7 @@
 ---
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
+import Prose from "@/components/Prose.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, BrushCleaning, Rss } from "@lucide/astro";
@@ -11,8 +12,7 @@ const posts = await getPosts();
 <RootLayout>
     <section>
         <h1 class="my-4 text-3xl font-bold">
-            Welcome!
-            <!-- TODO: Maybe more this to header top-left -->
+            Ahoy!
             <a
                 target="_blank"
                 href="/rss.xml"
@@ -26,27 +26,24 @@ const posts = await getPosts();
             </a>
         </h1>
 
-        <article>
-            <p>
-                Hi there! I'm Rohit, and welcome to Dev Avatar, my technical
-                blog where I write about things I am working/learning,
-                development logs, and other things involving a computer. Major
-                interests and likes include computers, japanese culture, anime,
-                and exercise.
-            </p>
-            <p>
-                I'm rebuilding Dev Avatar at the moment. You are on the rebuild,
-                the current site is on <a href="https://devavatar.com"
-                    >devavatar</a
-                >
-            </p>
-            <p class="mt-4">
-                <a
-                    href="https://discord.gg/H92KUTAFds"
-                    rel="noreferrer noopener">Join the discord</a
-                >
-            </p>
-        </article>
+        <Prose>
+            <article>
+                <p>
+                    Ahoy! I'm Rohit, and this is my corner of the internet for
+                    all things tech and more! I write about software
+                    development, share project devlogs, and document my learning
+                    journey. You'll find posts about coding adventures, new
+                    technologies I'm exploring, and the occasional deep dive
+                    into interesting problems I've solved.
+                </p>
+                <p>
+                    Outside of computers, I'm passionate about Japanese culture,
+                    anime, music, hitting the gym, and all things adorably cute.
+                    I'm always excited to share discoveries from these worlds
+                    too!
+                </p>
+            </article>
+        </Prose>
     </section>
 
     <Hr />
