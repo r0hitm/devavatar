@@ -4,6 +4,7 @@ import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Card from "@/components/Card.astro";
+import { slugifyAll } from "@/utils/slugify";
 
 export const getStaticPaths = (async () => {
     const posts = await getPosts();
@@ -18,6 +19,10 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { tag, tagName, posts } = Astro.props;
+
+const postsByTag = posts.filter(post =>
+    slugifyAll(post.data.tags).includes(tag)
+);
 ---
 
 <RootLayout
@@ -31,7 +36,7 @@ const { tag, tagName, posts } = Astro.props;
     </h1>
 
     <p class="italic">
-        There are {posts.length} posts tagged
+        There are {postsByTag.length} posts tagged
         <span class="decoration-d-border underline underline-offset-4">
             {tagName}
         </span>
@@ -39,7 +44,7 @@ const { tag, tagName, posts } = Astro.props;
 
     <ul>
         {
-            posts.map(({ data, id }) => (
+            postsByTag.map(({ data, id }) => (
                 <Card href={`/posts/${id}`} postId={id} frontmatter={data} />
             ))
         }
