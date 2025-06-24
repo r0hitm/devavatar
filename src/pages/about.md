@@ -1,16 +1,15 @@
 ---
 layout: ../layouts/PageLayout.astro
-title: "About Me, aka Dev Avatar"
+title: "About Me 😎"
+lastUpdated: 2025-06-24T11:08:07.294Z
 ---
 
-Hi! I'm Rohit, and I love creating things that make life easier and more fun. When I'm not coding, you'll find me deep into anime, exploring the latest Legend of Zelda adventure, vibing to music, or dabbling in something cute and creative. Also a huge fan of Japanese culture.
+Hi there! Hello! I'm Rohit. I love creating things that make life easier and more fun via computers, and I'm a huge fan of Japanese culture. Outside of development, I enjoy anime, reading, gaming (especially titles like The Legend of Zelda and Sekiro!), music, and hitting the gym.
 
-I speak Hindi, English, and conversational Japanese — 今年、絶対に日本語能力が上がるように頑張ります。I am planning to write some articles in Japanese (i11n) soon, so stay tuned!
+I speak Hindi, English, and Japanese. I passed the JLPT N3 last year and am aiming for the N1 this year. I'm considering adding Japanese localization to my site soon, so stay tuned!
 
-On the technical side, I studied Electronics at the University of Delhi and worked on my niche interests through [OSSU's Computer Science curriculum](https://github.com/ossu/computer-science) and, finished [The Odin Project](https://www.theodinproject.com/) some time ago. Now, I am part of the moderation team at the official OSSU discord community, helping facilitate the peer-learning experience, and maintain the quality of the community.
+On the technical side, I graduated from the University of Delhi with a BSc (Hons) in Electronics. I've pursued my interests through [OSSU's Computer Science curriculum](https://github.com/ossu/computer-science) and recently finished [The Odin Project](https://www.theodinproject.com/). I was also a moderator for the official OSSU Discord community for over two years. I'm about to finish Tim Roughgarden's Algorithms specialization. Afterwards, I'm torn between grinding LeetCode or diving into _"Operating Systems: Three Easy Pieces"_. I haven't decided yet, so if you have an opinion, please do reach out!
 
-Currently, working as Lead Front-End developer at a Netherlands-based startup - we're building something cool on the Cardano blockchain. If you're interested in my work or projects, check out my [GitHub](https://github.com/r0hitm) or [LinkedIn](https://www.linkedin.com/in/r0hitm) profiles.
+Currently, I'm working full-time as a remote Lead Front-End Developer for a startup based in the Netherlands. I'm in the process of adding my projects to this website (the rebuild of DevAvatar is still a work in progress—stay tuned!). For more details, check out my [GitHub](https://github.com/r0hitm) or [LinkedIn](https://www.linkedin.com/in/r0hitm).
 
-I'm always up for interesting conversations, collaborations, or just chatting about anime! Find me through the links below or drop me a line at `rohitm09 [at] proton [dot] me`.
-
-**Last updated**: 2025-01-05
+I'm always open to interesting conversations, collaborations, or just a general chat! Feel free to contact me via email or join the Discord server, both of which are linked in the footer.

@@ -2,11 +2,14 @@
 import { SITE } from "@/consts";
 import RootLayout from "./RootLayout.astro";
 import Prose from "@/components/Prose.astro";
+import { Calendar } from "@lucide/astro";
+import FormattedDate from "@/components/FormattedDate.astro";
 // TODO: import Breadcrumbs from "@components/Breadcrumbs.astro";
 
 interface Props {
     frontmatter: {
         title: string;
+        lastUpdated?: string;
         description?: string;
     };
 }
@@ -21,6 +24,16 @@ const { frontmatter } = Astro.props;
     <h1 class="mb-2 text-3xl font-bold">
         {frontmatter.title}
     </h1>
+    {
+        frontmatter.lastUpdated && (
+            <div class="my-2 flex items-center text-sm italic opacity-80">
+                <Calendar class="mr-1 size-4" />
+                Updated:&nbsp;
+                <FormattedDate date={new Date(frontmatter.lastUpdated)} />
+            </div>
+        )
+    }
+
     <article role="article">
         <Prose>
             <slot />
