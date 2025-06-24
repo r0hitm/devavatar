@@ -18,9 +18,15 @@ const {
     pubDatetime,
     modDatetime,
     tags,
-    draft
-    // ogImage
+    draft,
+    ogImage
 } = Astro.props;
+
+const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
+const ogUrl = new URL(
+    ogImageUrl ?? `/posts/${postId}/index.png`,
+    Astro.url.origin
+).href;
 ---
 
 <RootLayout
@@ -29,15 +35,8 @@ const {
     author={author}
     pubDatetime={pubDatetime}
     modDatetime={modDatetime}
+    ogImage={ogUrl}
 >
-    <!-- <div class="hero-image">
-             TODO: og images 
-             {
-                typeof ogImage === "string" && (
-                    <img width={1020} height={510} src={ogImage} alt="" />
-                )
-            } 
-        </div> -->
     <div class="my-4">
         <button
             class="flex cursor-pointer items-center justify-start gap-2 transition-opacity hover:opacity-75"
