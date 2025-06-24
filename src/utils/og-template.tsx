@@ -15,7 +15,7 @@ export default (
             height: "100%",
             // 背景色: --color-warm-night-800 -> #2a211e
             backgroundColor: "#2a211e",
-            fontFamily: '"IBM Plex Sans", sans-serif'
+            position: "relative"
         }}
     >
         <div
@@ -62,10 +62,11 @@ export default (
                         fontWeight: 700,
                         lineHeight: 1.2,
                         letterSpacing: "-0.02em",
-                        display: "-webkit-box",
-                        lineClamp: 3,
                         overflow: "hidden",
-                        textOverflow: "ellipsis"
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 3
                     }}
                 >
                     {title}
@@ -78,10 +79,11 @@ export default (
                         lineHeight: 1.3,
                         marginTop: "16px",
                         letterSpacing: "-0.01em",
-                        display: "-webkit-box",
-                        lineClamp: 2,
                         overflow: "hidden",
-                        textOverflow: "ellipsis"
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2
                     }}
                 >
                     {description}
