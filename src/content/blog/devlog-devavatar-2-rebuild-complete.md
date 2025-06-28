@@ -19,6 +19,8 @@ Finally completed the rebuild of devavatar from scratch. The major reason for do
 9.  Minor layout changes on the posts
 10. Added mdx support + setup preprocessing to add nofollow noreferrer to all links that direct outside of devavatar
 11. Using tailwind v4 now
+12. New Open-graph images
+13. Scroll to top floating button (See your bottom-right edge).
 
 The old repo for devavatar has been archived now. There are a couple more things that I want to add so keep an eye out for that!
 All in all, I'm pretty happy with how this turned out to be!
