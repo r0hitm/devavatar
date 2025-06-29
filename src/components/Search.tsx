@@ -73,7 +73,7 @@ export default function Search({ searchList }: Props) {
                     onClick={() => setIsOpen(false)}
                 >
                     <div
-                        className="bg-d-fill text-d-txt-base w-full max-w-xl rounded-lg p-4 shadow-lg"
+                        className="bg-d-fill text-d-txt-base border-d-border/30 w-full max-w-xl rounded-lg border p-4 shadow-lg"
                         onClick={e => e.stopPropagation()}
                     >
                         <div className="relative">
@@ -98,10 +98,10 @@ export default function Search({ searchList }: Props) {
                                             <li key={item.postId}>
                                                 <a
                                                     href={`/posts/${item.postId}`}
-                                                    className="hover:bg-d-card-muted block rounded-md p-3"
+                                                    className="hover:bg-d-card-muted/30 block rounded-md p-3"
                                                 >
                                                     <h3
-                                                        className="font-semibold"
+                                                        className="text-d-accent font-semibold"
                                                         // style={{
                                                         //     viewTransitionName:
                                                         //         item.postId
