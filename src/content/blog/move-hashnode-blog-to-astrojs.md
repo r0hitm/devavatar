@@ -2,10 +2,13 @@
 title: "Devlog: Moving My Blog from Hashnode to AstroJS"
 description: Follow my journey migrating from Hashnode to a custom Astro site, including challenges faced and lessons learned during the transition process.
 pubDatetime: 2024-03-04T15:20:29.169Z
+modDatetime: 2025-07-02T08:09:09.598Z
 tags:
     - devlog
     - web
 ---
+
+**Update**: Most of this is out-of-date, I no longer use Obsidian for writing my blogs, I find it more convinient to just use my editor and dev server. Also I did a rebuild of the site, whose devlog is [here](/posts/devlog-devavatar-2-rebuild-complete).
 
 I've been maintaining a technical blog since last year, which all began with a simple experiment, thanks to the free domain offer by Name.com from GitHub in my student developer pack back in March 2023. At that time, I wasn't sure what I wanted from a blog or if I'd even enjoy it. So, to avoid the hassle of building a site from scratch, I opted for Hashnode and added my custom domain. This way, if my blog took off, I'd have all the traffic directed to my domain, and if it did not, I could let it fade away since the domain was free for only one year. (Though this didn't go as planned due to a funny-tragic incident, which I will get back to below).
 
@@ -17,7 +20,7 @@ As the expiry date for the old domain approached, I began planning my transition
 
 I set up the redirect from the old domain root to the new domain root, but I made an embarrassing mistake of deleting my blogs from Hashnode, and I could not set up proper canonical links from old to the new website. There goes some of my SEO rankings... oops!
 
-I tried 11ty but quickly decided not to use it because of its convoluted documentation and incomplete information. And I settled on Astro for its touted speed and high-quality documentation. After bootstrapping my site using the Astro-paper theme, investing several weeks to migrate my blogs and add all the necessary front matter to each markdown file - a tedious but necessary task, set up Obsidian as my content vault with all necessary plugins and getting some help from a friend for the logo and footer design (See [credits](/credits)). The site is finally complete.
+I tried 11ty but quickly decided not to use it because of its convoluted documentation and incomplete information. And I settled on Astro for its touted speed and high-quality documentation. After bootstrapping my site using the Astro-paper theme, investing several weeks to migrate my blogs and add all the necessary front matter to each markdown file - a tedious but necessary task, set up Obsidian as my content vault with all necessary plugins and getting some help from a friend for the help with the logo. The site is finally complete.
 
 Despite facing delays due to college exams and unexpected challenges during the setup process, I'm pleased to announce that the transition is complete and my site is live on GitHub Pages and hosted under the custom domain [devavatar.com](/). I have not set up any analytics on the site because privacy-friendly ones are not free, and I do not want ads, cookies, or tracking on my site by using something like Google Analytics. I hate ads, and I don't want my readers getting annoyed by them either.
 
