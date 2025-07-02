@@ -6,7 +6,9 @@ export default async function getPosts(): Promise<CollectionEntry<"blog">[]> {
         ? await getCollection("blog")
         : await getCollection("blog", ({ data }) => !data.draft);
 
-    return posts.sort(
-        (a, b) => b.data.pubDatetime.valueOf() - a.data.pubDatetime.valueOf()
-    );
+    return posts.sort((a, b) => {
+        const dateA = a.data.modDatetime ?? a.data.pubDatetime;
+        const dateB = b.data.modDatetime ?? b.data.pubDatetime;
+        return dateB.valueOf() - dateA.valueOf();
+    });
 }
