@@ -1,5 +1,6 @@
 ---
 pubDatetime: 2025-05-24T07:02:20.725Z
+modDatetime: 2025-07-23T21:56:24.000Z
 title: "Course Review: Tim Roughgarden's Algorithms: Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming"
 tags:
     - review
@@ -9,7 +10,7 @@ tags:
 description: "Review of third course of the Algorithms specialization - greedy algorithms and dynamic programming - and its prerequisites."
 ---
 
-[Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy/home/welcome) (henceforth refered to as Algo3) is the third course in the Algorithms Specialization (on Coursera) and in OSSU Core Theory curriculum. I finished the course yesterday, and as continuation for previous (prereq) courses (check [Algo1 review here](/posts/course-review-coursera-tim-roughgarden-algorithms-2-graph-data-structure) and [Algo2 review here](/posts/course-review-coursera-tim-roughgarden-algorithms-1-divide-and-conquer)), this is my personal review of the course.
+[Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming](https://www.coursera.org/learn/algorithms-greedy/home/welcome) (henceforth refered to as Algo3) is the third course in the Algorithms Specialization (on Coursera) and in OSSU Core Theory curriculum. I finished the course yesterday, and as continuation for previous (prereq) courses (check [Algo2 review here](/posts/course-review-coursera-tim-roughgarden-algorithms-2-graph-data-structure) and [Algo1 review here](/posts/course-review-coursera-tim-roughgarden-algorithms-1-divide-and-conquer)), this is my personal review of the course.
 
 ## Table of contents
 
