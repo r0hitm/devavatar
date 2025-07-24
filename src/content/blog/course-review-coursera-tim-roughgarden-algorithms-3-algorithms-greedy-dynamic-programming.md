@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2025-05-24T07:02:20.725Z
-modDatetime: 2025-07-23T21:56:24.000Z
+modDatetime: 2025-07-24T18:24:00.336Z
 title: "Course Review: Tim Roughgarden's Algorithms: Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming"
 tags:
     - review
@@ -48,5 +48,7 @@ The final module continues with dynamic programming, using the problems in the s
 ## Conclusion
 
 Overall, this was a great course, and I learned a lot. However, I need to practice more dynamic programming problems, which I will do alongside the next and final course of this specialization: [Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete).
+
+**Update**: I completed it! [Review is up here](/posts/course-review-coursera-tim-roughgarden-algorithms-npcomplete).
 
 <img width=300 height=200 src="https://media1.tenor.com/m/8b2-2a17wIAAAAAC/wow-world-of-warcraft.gif" alt="kobayashi glasses matrix anime gif" />
