@@ -1,0 +1,31 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import { SITE } from "@/consts";
+import { getCollection } from "astro:content";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Prose from "@/components/Prose.astro";
+
+const projects = (await getCollection("project")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<RootLayout
+    title={`Projects | ${SITE.title}`}
+    description="Some of my personal projects"
+>
+    <Prose>
+        <h1 class="mb-2 text-3xl font-bold">Projects</h1>
+        <p>
+            Here are some of my personal projects I've worked on. You can find
+            more on my
+            <a href="https://github.com/r0hitm?tab=repositories" target="_blank"
+                >GitHub</a
+            >.
+        </p>
+    </Prose>
+
+    <ul class="mt-8 space-y-4">
+        {projects.map(project => <ProjectCard {...project.data} />)}
+    </ul>
+</RootLayout>

@@ -1,5 +1,5 @@
 import { SITE } from "@/consts";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -27,4 +27,18 @@ const blog = defineCollection({
         })
 });
 
-export const collections = { blog };
+const project = defineCollection({
+    loader: file("src/content/data/projects.json"),
+    schema: () =>
+        z.object({
+            id: z.string(),
+            name: z.string(),
+            description: z.string().default("Personal Project"),
+            tags: z.array(z.string()).default(["project"]),
+            date: z.coerce.date(), // Only used for sorting by most recent
+            projectUrl: z.string().default("#"),
+            liveUrl: z.string().default("#")
+        })
+});
+
+export const collections = { blog, project };
