@@ -1,0 +1,53 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import { SITE } from "@/consts";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("project")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const lastModifiedDate = projects[0].data.date;
+---
+
+<RootLayout
+    title={`My Projects | ${SITE.title}`}
+    description="A list of projects I've worked on."
+    pubDatetime={lastModifiedDate}
+>
+    <div class="animate page-content">
+        <h1 class="text-4xl font-bold">My Projects</h1>
+        <p class="mt-4 text-zinc-500">
+            Here are some of the projects I've worked on. You can find more on
+            my
+            <a
+                href="https://github.com/r0hitm"
+                target="_blank"
+                class="underline">GitHub</a
+            >.
+        </p>
+        <ul class="mt-8 space-y-4">
+            {
+                projects
+                    .filter(p => !p.data.draft)
+                    .map(project => (
+                        <li class="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
+                            <h2 class="text-xl font-semibold">
+                                {project.data.name}
+                            </h2>
+                            <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+                                {project.data.description}
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                {project.data.tags.map(tag => (
+                                    <span class="rounded-full bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </li>
+                    ))
+            }
+        </ul>
+    </div>
+</RootLayout>

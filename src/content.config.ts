@@ -1,5 +1,5 @@
 import { SITE } from "@/consts";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
@@ -27,4 +27,20 @@ const blog = defineCollection({
         })
 });
 
-export const collections = { blog };
+const project = defineCollection({
+    loader: file("src/content/data/projects.json"),
+    schema: () =>
+        z.object({
+            id: z.string(),
+            author: z.string().default(SITE.author),
+            name: z.string(),
+            description: z.string().default("Personal Project"),
+            draft: z.boolean().optional(),
+            tags: z.array(z.string()).default(["project"]),
+            date: z.coerce.date(),
+            url: z.string().default("#"),
+            isLegacy: z.boolean().default(false)
+        })
+});
+
+export const collections = { blog, project };
