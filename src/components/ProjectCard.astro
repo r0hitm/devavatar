@@ -1,0 +1,55 @@
+---
+import { ExternalLink, CodeIcon } from "@lucide/astro";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"project">["data"];
+
+const { description, name, tags, projectUrl, liveUrl } = Astro.props;
+---
+
+<li class="group border-d-border my-6 list-none">
+    <div class="flex items-center justify-between">
+        <h2 class="inline-block text-lg font-semibold">
+            <span class="text-d-border italic">$</span>
+            <span class="text-d-accent/90">{name}</span>
+        </h2>
+        <div class="flex items-center gap-4">
+            {
+                projectUrl && (
+                    <a
+                        href={projectUrl}
+                        target="_blank"
+                        class="text-d-card-muted hover:text-d-accent inline-block"
+                        title="View Repo"
+                        aria-label="View Repo"
+                    >
+                        <CodeIcon class="size-5" />
+                    </a>
+                )
+            }
+            {
+                liveUrl && (
+                    <a
+                        href={liveUrl}
+                        target="_blank"
+                        title="Live"
+                        aria-label="View Live"
+                        class="text-d-card-muted hover:text-d-accent inline-block"
+                    >
+                        <ExternalLink class="size-5" />
+                    </a>
+                )
+            }
+        </div>
+    </div>
+    <p class="my-2 text-sm">{description}</p>
+    <ul class="mt-2 flex flex-wrap gap-2">
+        {
+            tags.map(tag => (
+                <li class="border-d-border/40 text-d-txt-base/60 rounded-full border px-2 py-0.5 text-sm">
+                    {tag}
+                </li>
+            ))
+        }
+    </ul>
+</li>

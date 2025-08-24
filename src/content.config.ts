@@ -32,14 +32,12 @@ const project = defineCollection({
     schema: () =>
         z.object({
             id: z.string(),
-            author: z.string().default(SITE.author),
             name: z.string(),
             description: z.string().default("Personal Project"),
-            draft: z.boolean().optional(),
             tags: z.array(z.string()).default(["project"]),
-            date: z.coerce.date(),
-            url: z.string().default("#"),
-            isLegacy: z.boolean().default(false)
+            date: z.coerce.date(), // Only used for sorting by most recent
+            projectUrl: z.string().default("#"),
+            liveUrl: z.string().default("#")
         })
 });
 
