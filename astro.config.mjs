@@ -11,6 +11,10 @@ import { SITE } from "./src/consts";
 // https://astro.build/config
 export default defineConfig({
     site: SITE.website,
+    i18n: {
+        locales: ["en", "ja-JP"],
+        defaultLocale: "en"
+    },
     prefetch: true,
     integrations: [mdx(), sitemap(), react()],
     markdown: {
