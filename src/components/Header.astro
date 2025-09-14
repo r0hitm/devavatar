@@ -67,7 +67,7 @@ const searchList = posts.map(({ data, id }) => ({
         <div class="flex items-center gap-2 sm:hidden">
             <Search searchList={searchList} client:load />
 
-            <button id="hamburger-menu" class="p-2">
+            <button id="hamburger-menu" class="p-2" aria-label="Menu Button">
                 <Menu class="size-6" id="menu-icon" />
                 <X class="hidden size-6" id="close-icon" />
             </button>

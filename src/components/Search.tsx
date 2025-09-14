@@ -62,7 +62,11 @@ export default function Search({ searchList }: Props) {
 
     return (
         <>
-            <button className="group p-2" onClick={() => setIsOpen(true)}>
+            <button
+                className="group p-2"
+                onClick={() => setIsOpen(true)}
+                aria-label="Search"
+            >
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
                 <span className="sr-only">Search</span>
             </button>
