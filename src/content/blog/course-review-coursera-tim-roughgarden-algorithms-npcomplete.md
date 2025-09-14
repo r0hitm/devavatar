@@ -7,6 +7,7 @@ tags:
     - computer-science
     - coursera
 pubDatetime: 2025-07-24T18:27:23.887Z
+modDatetime: 2025-09-06T18:06:15.000Z
 ---
 
 [Shortest Paths Revisited, NP-Complete Problems and What To Do About Them](https://www.coursera.org/learn/algorithms-npcomplete) (henceforth referred to as Algo4) is the fourth and the last course in the Algorithms Specialization by Stanford Online. And I feel very excited to announce that I finished it last week 🕺.
@@ -49,5 +50,7 @@ The final module continues with discussing more NP-complete problems, namely the
 ## Conclusion
 
 With that, I have completed all of the courses in the Algorithms Specialization! I have not decided where to focus my studies next; however, I'll be taking a week off for the time being. Doing some LeetCode problems is not out of the question, or taking CMU's database course, or catching up on my Japanese studies. Man, I feel so great!
+
+**Update**: I decided to [start learning Systems Programming](/posts/x64-assembly-csapp-intro-to-computer-systems) using the book Computer Applications: A Programmer's Perspective, and CMU's 15-213:Intro to Systems course.
 
 ![anime proud gif](https://media1.tenor.com/m/WpjmnZCt4oUAAAAC/anime-boy.gif)
