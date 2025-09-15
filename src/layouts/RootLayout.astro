@@ -28,7 +28,6 @@ const {
     modDatetime
 } = Astro.props;
 
-// TODO: og-image generation. This is broken
 const socialImageURL = new URL(
     ogImage ?? SITE.ogImage ?? "og.png",
     Astro.url.origin
