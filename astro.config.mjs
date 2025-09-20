@@ -13,7 +13,14 @@ export default defineConfig({
     site: SITE.website,
     i18n: {
         locales: ["en", "ja-JP"],
-        defaultLocale: "en"
+        defaultLocale: "en",
+        fallback: {
+            "ja-JP": "en"
+        },
+        routing: {
+            prefixDefaultLocale: false,
+            fallbackType: "rewrite"
+        }
     },
     prefetch: true,
     integrations: [mdx(), sitemap(), react()],
