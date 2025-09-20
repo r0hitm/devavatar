@@ -40,6 +40,7 @@ configure sitemap() so that it generates i18n routes in the post-build site:
             i18n: {
                 defaultLocale: "en",
                 locales: {
+                    en: "en-US", // default must also be here
                     ja: "ja-JP" // must match above
                 }
             }
@@ -49,3 +50,17 @@ configure sitemap() so that it generates i18n routes in the post-build site:
 
 default (english): `devavatar.com/`
 localized (japanese): `devavatar.com/ja/`
+
+## setting up UI
+
+I have a global config folder where I defined this for my UI use later:
+
+```ts
+export const languages = {
+    en: "English",
+    ja: "日本語"
+} as const;
+```
+
+Let's setup lang attribute on our root layout using `Astro.currentLocale`.
+I setup this on my root layout html lang attribute, and input to format date.
