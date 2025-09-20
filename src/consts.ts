@@ -18,9 +18,13 @@ export const SITE: SiteType = {
     scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
 } as const;
 
-export const LOCALE = {
-    lang: "en",
-    langTag: ["en-EN"] // BCP 47 langauge tag
+// i18n
+
+// Available w/ display name.
+// Keys must match the i18n confing in astro.config
+export const languages = {
+    en: "English",
+    ja: "日本語"
 } as const;
 
 export type SocialObjects = {

@@ -14,14 +14,14 @@ const isProd = import.meta.env.PROD;
 export default defineConfig({
     site: isProd ? SITE.website : "http://localhost:4321",
     i18n: {
-        locales: ["en", "ja-JP"],
+        locales: ["en", "ja"],
         defaultLocale: "en",
         fallback: {
-            "ja-JP": "en"
+            ja: "en"
         },
         routing: {
             prefixDefaultLocale: false,
-            fallbackType: "rewrite"
+            fallbackType: "rewrite" // TODO: later add not-translated warning to those pages
         }
     },
     prefetch: true,
@@ -31,7 +31,8 @@ export default defineConfig({
             i18n: {
                 defaultLocale: "en",
                 locales: {
-                    ja: "ja-JP"
+                    en: "en",
+                    ja: "ja"
                 }
             }
         }),
