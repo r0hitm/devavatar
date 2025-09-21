@@ -45,9 +45,14 @@ export const en = {
     INDEX: {
         heading: "Ahoy!!",
         "para-1":
-            "Ahoy! I'm Rohit, and this is my corner of the internet for all things tech and more! I write about software development, share project devlogs, and document my learning journey. You'll find posts about coding adventures, new technologies I'm exploring, and the occasional deep dive into interesting problems I've solved.",
+            "Ahoy! I'm Rohit, and this is my corner of the internet for all things tech and more!\
+             I write about software development, share project devlogs, and document my learning \
+             journey. You'll find posts about coding adventures, new technologies I'm exploring,\
+             and the occasional deep dive into interesting problems I've solved.",
         "para-2":
-            "Outside of computers, I'm passionate about Japanese culture, anime, music, hitting the gym, and all things adorably cute. I'm always excited to share discoveries from these worlds too!",
+            "Outside of computers, I'm passionate about Japanese culture, anime, music, hitting \
+            the gym, and all things adorably cute. I'm always excited to share discoveries from \
+            these worlds too!",
 
         recentposts: "Recent Posts",
         allposts: "All Posts",
