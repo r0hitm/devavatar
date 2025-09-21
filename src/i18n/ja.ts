@@ -28,8 +28,7 @@ export const ja: Translations = {
     footer: {
         support: "コーヒーを買ってください",
         report: "バグ報告",
-        "no-cookie": "クッキーなし、広告なし、トラッキングなしーブログだけ",
-        me: "ロヒット・メヘタ"
+        "no-cookie": "クッキーなし、広告なし、トラッキングなしーブログだけ"
     },
     bloglayout: {
         goback: "戻る",

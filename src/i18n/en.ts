@@ -24,8 +24,7 @@ export const en = {
     footer: {
         support: "Buy me a coffee",
         report: "Report an issue",
-        "no-cookie": "No cookies, no ads, no tracking - just blog.",
-        me: "Rohit Mehta"
+        "no-cookie": "No cookies, no ads, no tracking - just blog."
     },
     bloglayout: {
         goback: "Go back",

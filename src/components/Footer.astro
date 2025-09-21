@@ -1,7 +1,11 @@
 ---
+import { useTranslations } from "@/i18n";
 import Socials from "./Socials.astro";
 
 const currentYear = new Date().getFullYear();
+
+const currentLang = Astro.currentLocale;
+const localized = useTranslations(currentLang);
 ---
 
 <footer
@@ -16,7 +20,7 @@ const currentYear = new Date().getFullYear();
             href="/support"
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
         >
-            Buy me a coffee
+            {localized.footer.support}
         </a>
         <span class="hidden sm:block">・</span>
         <a
@@ -24,12 +28,12 @@ const currentYear = new Date().getFullYear();
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
             rel="noopener noreferrer"
         >
-            Report an issue
+            {localized.footer.report}
         </a>
     </div>
 
     <p class="mt-4 text-center text-sm">
-        No cookies, no ads, no tracking ― just blog.
+        {localized.footer["no-cookie"]}
     </p>
 
     <div
