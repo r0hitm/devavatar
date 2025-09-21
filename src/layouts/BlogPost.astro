@@ -7,6 +7,7 @@ import { ChevronLeft, Calendar, Share2 } from "@lucide/astro";
 import Tag from "@/components/Tag.astro";
 import { slugify } from "@/utils/slugify";
 import { SITE } from "@/consts";
+import { useTranslations } from "@/i18n";
 
 type Props = CollectionEntry<"blog">["data"] & { postId: string };
 
@@ -27,6 +28,8 @@ const ogUrl = new URL(
     ogImageUrl ?? `/posts/${postId}/index.png`,
     Astro.url.origin
 ).href;
+const currentLang = Astro.currentLocale;
+const localized = useTranslations(currentLang);
 ---
 
 <RootLayout
@@ -44,7 +47,7 @@ const ogUrl = new URL(
             onclick="history.back()"
         >
             <ChevronLeft class="size-4 stroke-2" />
-            <span class="inline-block">Go back</span>
+            <span class="inline-block">{localized.bloglayout.goback}</span>
         </button>
     </div>
 
@@ -58,7 +61,7 @@ const ogUrl = new URL(
         ) : (
             <div class="my-2 flex items-center text-sm italic opacity-80">
                 <Calendar class="mr-1 size-4" />
-                {modDatetime && "Updated:"}
+                {modDatetime && localized.bloglayout.updated}
                 &nbsp;
                 <FormattedDate date={modDatetime || pubDatetime} />
             </div>
@@ -82,7 +85,7 @@ const ogUrl = new URL(
             class="focus-outline flex cursor-pointer items-center justify-start gap-2 py-1 whitespace-nowrap hover:opacity-75"
         >
             <Share2 class="size-4" />
-            Share
+            {localized.bloglayout.share}
         </button>
     </div>
 </RootLayout>

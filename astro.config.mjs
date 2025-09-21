@@ -32,7 +32,7 @@ export default defineConfig({
                 defaultLocale: "en",
                 locales: {
                     en: "en",
-                    ja: "ja"
+                    ja: "ja-JP"
                 }
             }
         }),
