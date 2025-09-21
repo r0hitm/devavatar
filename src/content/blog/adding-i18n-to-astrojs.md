@@ -64,3 +64,13 @@ export const languages = {
 
 Let's setup lang attribute on our root layout using `Astro.currentLocale`.
 I setup this on my root layout html lang attribute, and input to format date.
+
+## creating locales text mapping
+
+It turns out I really don't want to rewrite my site pages again in different langauge when most of the layout/code is same w/ minimal text changes.
+
+~~SO, I am creating `/src/i18n/locales-map.ts` that export keys for each language that maps to localized texts. using layout files as template for all locales via this approach.~~
+
+create `i18n/en.ts`, `i18n/ja.ts` and `i18n/index.ts` w/ two objects, using en's to typecheck ja's against for consistency. with a helper function in index.ts
+
+add those to the pages/layouts.
