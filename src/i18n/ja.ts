@@ -1,4 +1,4 @@
-import type { Translations } from "./en";
+import { en, type Translations } from "./en";
 
 /*
  * All the text that is used all over the site in Japanese.
@@ -8,39 +8,39 @@ import type { Translations } from "./en";
 
 export const ja: Translations = {
     // common stuff like header text, button labels etc.
-    COM: {
-        header: {
-            posts: "投稿",
-            projects: "プロジェクト",
-            tags: "タグ",
-            about: "プロフィール"
-        },
-        card: {
-            updated: "更新日: ",
-            draft: "下書き"
-        },
-        search: {
-            main: "検索",
-            notfound: "何も見つけませんでした",
-            input_box_placeholder: "",
-            before: "",
-            found: ""
-        },
-        footer: {
-            support: "コーヒーを買ってください",
-            report: "バグ報告",
-            "no-cookie": "クッキーなし、広告なし、トラッキングなしーブログだけ",
-            me: "ロヒット・メヘタ"
-        },
-        bloglayout: {
-            goback: "戻る",
-            updated: "更新日: ",
-            share: "共有"
-        },
-        pagelayout: {
-            updated: "更新日: "
-        }
+    header: {
+        posts: "投稿",
+        projects: "プロジェクト",
+        tags: "タグ",
+        about: "プロフィール"
     },
+    card: {
+        updated: "更新日: ",
+        draft: "下書き"
+    },
+    search: {
+        main: "検索",
+        notfound: "何も見つけませんでした",
+        input_box_placeholder: en.search.input_box_placeholder,
+        before: en.search.before,
+        found: en.search.found
+    },
+    footer: {
+        support: "コーヒーを買ってください",
+        report: "バグ報告",
+        "no-cookie": "クッキーなし、広告なし、トラッキングなしーブログだけ",
+        me: "ロヒット・メヘタ"
+    },
+    bloglayout: {
+        goback: "戻る",
+        updated: "更新日: ",
+        share: "共有"
+    },
+    pagelayout: {
+        updated: "更新日: "
+    },
+
+    // 404 page
     PAGE404: {
         notfound: "ページが存在しない",
         goback: "ホームに戻る"
@@ -48,8 +48,8 @@ export const ja: Translations = {
     // Home page (/)
     INDEX: {
         heading: "Ahoy!!",
-        "para-1": "...", // TODO: translation of 420 chars english
-        "para-2": "...",
+        "para-1": en.INDEX["para-1"], // TODO: localize this
+        "para-2": en.INDEX["para-2"],
 
         recentposts: "最新投稿",
         allposts: "すべての投稿",

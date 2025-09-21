@@ -1,9 +1,7 @@
 import { en } from "./en";
 import { ja } from "./ja";
 
-// TODO: Optimize it later, instead of returning everything
-// a curried function to return the translation directly maybe
-export function useTranslations(lang?: string) {
+export function useTranslations(lang: string | undefined) {
     if (lang === "ja") {
         return ja;
     } else {

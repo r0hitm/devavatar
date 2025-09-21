@@ -4,40 +4,39 @@
 
 export const en = {
     // common stuff like header text, button labels etc.
-    COM: {
-        header: {
-            posts: "posts",
-            projects: "projects",
-            tags: "tags",
-            about: "about"
-        },
-        card: {
-            updated: "Updated: ",
-            draft: "DRAFT"
-        },
-        search: {
-            main: "Search",
-            input_box_placeholder: "how to do...",
-            found: " results found.",
-            notfound: "No results found.",
-            before: "Search for anything..."
-        },
-        footer: {
-            support: "Buy me a coffee",
-            report: "Report an issue",
-            "no-cookie": "No cookies, no ads, no tracking - just blog.",
-            me: "Rohit Mehta"
-        },
-        bloglayout: {
-            goback: "Go back",
-            updated: "Updated: ",
-            share: "Share"
-        },
-        pagelayout: {
-            updated: "Updated: "
-        }
+    header: {
+        posts: "posts",
+        projects: "projects",
+        tags: "tags",
+        about: "about"
+    },
+    card: {
+        updated: "Updated: ",
+        draft: "DRAFT"
+    },
+    search: {
+        main: "Search",
+        input_box_placeholder: "how to do...",
+        found: " results found.",
+        notfound: "No results found.",
+        before: "Search for anything..."
+    },
+    footer: {
+        support: "Buy me a coffee",
+        report: "Report an issue",
+        "no-cookie": "No cookies, no ads, no tracking - just blog.",
+        me: "Rohit Mehta"
+    },
+    bloglayout: {
+        goback: "Go back",
+        updated: "Updated: ",
+        share: "Share"
+    },
+    pagelayout: {
+        updated: "Updated: "
     },
 
+    // 404 page
     PAGE404: {
         notfound: "Page Not Found",
         goback: "Go back home"

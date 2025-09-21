@@ -68,10 +68,10 @@ export default function Search({ searchList, lang }: Props) {
             <button
                 className="group p-2"
                 onClick={() => setIsOpen(true)}
-                aria-label={localized.COM.search.main}
+                aria-label={localized.search.main}
             >
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
-                <span className="sr-only">{localized.COM.search.main}</span>
+                <span className="sr-only">{localized.search.main}</span>
             </button>
 
             {isOpen && (
@@ -91,7 +91,7 @@ export default function Search({ searchList, lang }: Props) {
                                 value={query}
                                 onChange={e => setQuery(e.target.value)}
                                 placeholder={
-                                    localized.COM.search.input_box_placeholder
+                                    localized.search.input_box_placeholder
                                 }
                                 className="border-d-border w-full rounded-md border py-2 pr-4 pl-10"
                             />
@@ -101,7 +101,7 @@ export default function Search({ searchList, lang }: Props) {
                                 <>
                                     <p className="mb-2 text-xs">
                                         {results.length}
-                                        {localized.COM.search.found}
+                                        {localized.search.found}
                                     </p>
                                     <ul className="max-h-96 space-y-2 overflow-y-auto">
                                         {results.map(({ item }) => (
@@ -130,8 +130,8 @@ export default function Search({ searchList, lang }: Props) {
                             ) : (
                                 <p className="py-4 text-center">
                                     {query.length > 2
-                                        ? localized.COM.search.notfound
-                                        : localized.COM.search.before}
+                                        ? localized.search.notfound
+                                        : localized.search.before}
                                 </p>
                             )}
                         </div>
