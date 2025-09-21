@@ -46,7 +46,7 @@ export const ja: Translations = {
     },
     // Home page (/)
     INDEX: {
-        heading: "Ahoy!!",
+        heading: en.INDEX.heading,
         "para-1": en.INDEX["para-1"], // TODO: localize this
         "para-2": en.INDEX["para-2"],
 

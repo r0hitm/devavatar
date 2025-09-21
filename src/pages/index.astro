@@ -3,6 +3,7 @@ import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
+import { useTranslations } from "@/i18n";
 import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
@@ -12,12 +13,15 @@ const posts = await getPosts();
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const currentLang = Astro.currentLocale;
+const localized = useTranslations(currentLang);
 ---
 
 <RootLayout>
     <section>
         <h1 class="my-4 text-3xl font-bold">
-            Ahoy!
+            {localized.INDEX.heading}
             <a
                 target="_blank"
                 href="/rss.xml"
@@ -34,18 +38,10 @@ const projects = (await getCollection("project")).sort(
         <Prose>
             <article>
                 <p>
-                    Ahoy! I'm Rohit, and this is my corner of the internet for
-                    all things tech and more! I write about software
-                    development, share project devlogs, and document my learning
-                    journey. You'll find posts about coding adventures, new
-                    technologies I'm exploring, and the occasional deep dive
-                    into interesting problems I've solved.
+                    {localized.INDEX["para-1"]}
                 </p>
                 <p>
-                    Outside of computers, I'm passionate about Japanese culture,
-                    anime, music, hitting the gym, and all things adorably cute.
-                    I'm always excited to share discoveries from these worlds
-                    too!
+                    {localized.INDEX["para-2"]}
                 </p>
             </article>
         </Prose>
@@ -54,7 +50,9 @@ const projects = (await getCollection("project")).sort(
     <Hr />
 
     <section>
-        <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+        <h2 class="text-2xl font-semibold tracking-wide">
+            {localized.INDEX.recentposts}
+        </h2>
         <ul>
             {
                 posts.map(
@@ -74,7 +72,7 @@ const projects = (await getCollection("project")).sort(
                 href="/posts"
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
-                All Posts
+                {localized.INDEX.allposts}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
@@ -85,7 +83,9 @@ const projects = (await getCollection("project")).sort(
     <Hr />
 
     <section>
-        <h2 class="text-2xl font-semibold tracking-wide">Recent Project</h2>
+        <h2 class="text-2xl font-semibold tracking-wide">
+            {localized.INDEX.recentprojects}
+        </h2>
         <ul>
             {
                 projects.map(
@@ -99,7 +99,7 @@ const projects = (await getCollection("project")).sort(
                 href="/projects"
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
-                View More
+                {localized.INDEX.viewmore}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
