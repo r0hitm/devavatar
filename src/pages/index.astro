@@ -8,6 +8,7 @@ import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
 import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const posts = await getPosts();
 const projects = (await getCollection("project")).sort(
@@ -69,7 +70,7 @@ const localized = useTranslations(currentLang);
         </ul>
         <div class="my-4 text-center">
             <a
-                href="/posts"
+                href={getRelativeLocaleUrl(currentLang ?? "en", "posts")}
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
                 {localized.INDEX.allposts}
@@ -96,7 +97,7 @@ const localized = useTranslations(currentLang);
         </ul>
         <div class="my-4 text-center">
             <a
-                href="/projects"
+                href={getRelativeLocaleUrl(currentLang ?? "en", "projects")}
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
                 {localized.INDEX.viewmore}

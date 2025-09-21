@@ -1,17 +1,26 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 type Props = HTMLAttributes<"a">;
 
 const { href, class: className, ...props } = Astro.props;
+
+const localizedHref = getRelativeLocaleUrl(
+    Astro.currentLocale ?? "en",
+    href?.toString()
+);
+
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
+
+// BUG: isActive is NOT working for locale prefixed urls
 ---
 
 <a
     data-astro-prefetch="load"
-    href={href}
+    href={localizedHref}
     class:list={[
         "decoration-none hover:text-d-accent inline-block text-center font-medium",
         isActive && "active",
