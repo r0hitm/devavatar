@@ -22,7 +22,8 @@ export const SITE: SiteType = {
 
 // Available w/ display name.
 // Keys must match the i18n confing in astro.config
-export const languages = {
+// TODO: maybe move this to src/i18n ?
+export const LANG = {
     en: "English",
     ja: "日本語"
 } as const;
