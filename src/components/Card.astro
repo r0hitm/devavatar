@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import { Calendar } from "@lucide/astro";
+import { useTranslations } from "@/i18n";
 
 export interface Props {
     href?: string;
@@ -12,6 +13,9 @@ export interface Props {
 const { href, postId, frontmatter } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, draft } = frontmatter;
+
+const currentLang = Astro.currentLocale;
+const localized = useTranslations(currentLang);
 ---
 
 <li class="my-6 list-none">
@@ -27,11 +31,13 @@ const { title, description, pubDatetime, modDatetime, draft } = frontmatter;
 
     {
         draft ? (
-            <div class="text-d-card-muted text-sm uppercase">[Draft]</div>
+            <div class="text-d-card-muted text-sm uppercase">
+                [{localized.COM.card.draft}]
+            </div>
         ) : (
             <div class="my-2 flex items-center text-sm italic opacity-80">
                 <Calendar class="mr-1 size-4" />
-                {modDatetime && "Updated:"}
+                {modDatetime && localized.COM.card.updated}
                 &nbsp;
                 <FormattedDate date={modDatetime || pubDatetime} />
             </div>
