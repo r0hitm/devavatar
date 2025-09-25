@@ -1,3 +1,0 @@
-- [ ] i18n
-    - Just make sure to set up canonical and hreflang alternative tags according to SEO practices.
-    - route translations ?
