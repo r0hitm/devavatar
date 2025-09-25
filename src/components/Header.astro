@@ -7,6 +7,7 @@ import getPosts from "@/utils/getPosts";
 import ThemeBtn from "./ThemeBtn.astro";
 import { useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import LangSel from "./LangSel";
 
 const posts = await getPosts();
 
@@ -90,6 +91,13 @@ const localized = useTranslations(currentLang);
                     <li>
                         <ThemeBtn />
                     </li>
+                    <li>
+                        <LangSel
+                            lang={currentLang ?? "en"}
+                            langList={["en", "ja"]}
+                            client:load
+                        />
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -149,6 +157,14 @@ const localized = useTranslations(currentLang);
                     >
                 </li>
                 <li>
+                    <LangSel
+                        lang={currentLang ?? "en"}
+                        langList={["en", "ja"]}
+                        showLabel
+                        client:load
+                    />
+                </li>
+                <li class="">
                     <ThemeBtn />
                 </li>
             </ul>

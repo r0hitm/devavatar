@@ -5,6 +5,7 @@ import { useState } from "react";
 type LangSelProps = {
     lang: string;
     langList: (keyof typeof LANG)[];
+    showLabel?: boolean;
 };
 
 export default function LangSel(props: LangSelProps) {
@@ -32,13 +33,18 @@ export default function LangSel(props: LangSelProps) {
     };
 
     return (
-        <div className="relative w-4">
+        <div className="relative">
             <button
                 aria-label="language selector"
-                className="hover:text-d-accent text-d-txt-base inline-block cursor-pointer p-2"
+                className="hover:text-d-accent text-d-txt-base inline-flex cursor-pointer items-center p-2"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <Languages className="size-4" />
+                <Languages className="inline-block size-4" />
+                {props.showLabel && (
+                    <span className="ml-2 inline-block">
+                        {LANG[props.lang as "en" | "ja"]}
+                    </span>
+                )}
             </button>
 
             {isOpen && (
