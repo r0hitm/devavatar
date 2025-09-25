@@ -17,7 +17,13 @@ export interface Props {
     modDatetime?: Date | null;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentLocale = Astro.currentLocale;
+const pathname = Astro.url.pathname.replace(
+    new RegExp(`^/${currentLocale}`),
+    ""
+);
+const canonicalURL = new URL(pathname, Astro.site);
+const alternateJaURL = new URL(`/ja${pathname}`, Astro.site);
 
 const {
     title = SITE.title,
@@ -32,8 +38,6 @@ const socialImageURL = new URL(
     ogImage ?? SITE.ogImage ?? "og.png",
     Astro.url.origin
 ).href;
-
-const currentLocale = Astro.currentLocale;
 
 // TODO: add event listener to skip to 'main-content'
 ---
@@ -79,6 +83,7 @@ const currentLocale = Astro.currentLocale;
 
         <!-- Canonical URL -->
         <link rel="canonical" href={canonicalURL} />
+        <link rel="alternate" hreflang={"ja"} href={alternateJaURL} />
 
         <!-- Primary Meta Tags -->
         <title>{title ?? SITE.title}</title>
