@@ -67,7 +67,7 @@ export default function Search({ searchList, lang }: Props) {
     return (
         <>
             <button
-                className="group p-2"
+                className="group cursor-pointer p-2"
                 onClick={() => setIsOpen(true)}
                 aria-label={localized.search.main}
             >
@@ -77,7 +77,7 @@ export default function Search({ searchList, lang }: Props) {
 
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 pt-20"
+                    className="bg-d-fill/50 fixed inset-0 z-50 flex items-start justify-center pt-20"
                     onClick={() => setIsOpen(false)}
                 >
                     <div
