@@ -1,6 +1,7 @@
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState, useMemo } from "react";
 import type { CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "@/i18n";
 
@@ -107,7 +108,10 @@ export default function Search({ searchList, lang }: Props) {
                                         {results.map(({ item }) => (
                                             <li key={item.postId}>
                                                 <a
-                                                    href={`/posts/${item.postId}`}
+                                                    href={getRelativeLocaleUrl(
+                                                        lang ?? "en",
+                                                        `posts/${item.postId}`
+                                                    )}
                                                     className="hover:bg-d-card-muted/30 block rounded-md p-3"
                                                 >
                                                     <h3

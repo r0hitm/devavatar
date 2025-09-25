@@ -3,6 +3,7 @@ import { SITE } from "@/consts";
 import { useTranslations } from "@/i18n";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { ArrowLeft } from "@lucide/astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLang = Astro.currentLocale;
 const localized = useTranslations(currentLang);
@@ -16,7 +17,7 @@ const localized = useTranslations(currentLang);
         <span aria-hidden="true">¯\_(ツ)_/¯</span>
         <p class="mt-4 text-2xl sm:text-3xl">{localized.PAGE404.notfound}</p>
         <a
-            href="/"
+            href={getRelativeLocaleUrl(currentLang ?? "en", "/")}
             class="hover:text-d-accent my-6 mt-14 inline-flex items-center justify-between underline decoration-dashed underline-offset-8"
         >
             <ArrowLeft class="mr-2 size-4" />

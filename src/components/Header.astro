@@ -113,28 +113,37 @@ const localized = useTranslations(currentLang);
             >
                 <li>
                     <HeaderLink
-                        href="/posts"
+                        href={getRelativeLocaleUrl(
+                            currentLang ?? "en",
+                            "posts"
+                        )}
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
                         >{localized.header.posts}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
-                        href="/projects"
+                        href={getRelativeLocaleUrl(
+                            currentLang ?? "en",
+                            "projects"
+                        )}
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
                         >{localized.header.projects}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
-                        href="/tags"
+                        href={getRelativeLocaleUrl(currentLang ?? "en", "tags")}
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
                         >{localized.header.tags}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
-                        href="/about"
+                        href={getRelativeLocaleUrl(
+                            currentLang ?? "en",
+                            "about"
+                        )}
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
                         >{localized.header.about}</HeaderLink
                     >
