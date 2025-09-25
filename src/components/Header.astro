@@ -47,23 +47,37 @@ const localized = useTranslations(currentLang);
             <nav>
                 <ul class="flex items-center justify-end gap-4">
                     <li>
-                        <HeaderLink href="/posts"
-                            >{localized.header.posts}</HeaderLink
+                        <HeaderLink
+                            href={getRelativeLocaleUrl(
+                                currentLang ?? "en",
+                                "posts"
+                            )}
+                        >
+                            {localized.header.posts}</HeaderLink
                         >
                     </li>
                     <li>
-                        <HeaderLink href="/projects"
-                            >{localized.header.projects}</HeaderLink
+                        <HeaderLink
+                            href={getRelativeLocaleUrl(
+                                currentLang ?? "en",
+                                "projects"
+                            )}>{localized.header.projects}</HeaderLink
                         >
                     </li>
                     <li>
-                        <HeaderLink href="/tags"
-                            >{localized.header.tags}</HeaderLink
+                        <HeaderLink
+                            href={getRelativeLocaleUrl(
+                                currentLang ?? "en",
+                                "tags"
+                            )}>{localized.header.tags}</HeaderLink
                         >
                     </li>
                     <li>
-                        <HeaderLink href="/about"
-                            >{localized.header.about}</HeaderLink
+                        <HeaderLink
+                            href={getRelativeLocaleUrl(
+                                currentLang ?? "en",
+                                "about"
+                            )}>{localized.header.about}</HeaderLink
                         >
                     </li>
                     <li>
