@@ -21,9 +21,9 @@ export const ja: Translations = {
     search: {
         main: "検索",
         notfound: "何も見つけませんでした",
-        input_box_placeholder: en.search.input_box_placeholder,
-        before: en.search.before,
-        found: en.search.found
+        input_box_placeholder: "入力してください",
+        before: "何でも検索…",
+        found: "つ記事が見つけました"
     },
     footer: {
         support: "コーヒーを買ってください",
@@ -47,8 +47,12 @@ export const ja: Translations = {
     // Home page (/)
     INDEX: {
         heading: en.INDEX.heading,
-        "para-1": en.INDEX["para-1"], // TODO: localize this
-        "para-2": en.INDEX["para-2"],
+        "para-1":
+            "Ahoy! ロヒットと申します。インタネット上で僕のところへようこそ！ここは個人プロジェクトでブロック、技術、ソフトウェア開発など、\
+            または学ぶことを記事で投稿していおります。プログラミング冒険から個人面白くトラブル解決とかも見つけますよ。",
+        "para-2":
+            "コンピュター以外は、僕は日本文化、アニメ、音楽、運動と可愛いものが大好きです。新しい人と出会うのが好きなのでぜひ\
+        フッターのSNSリンクで連絡を待っております。",
 
         recentposts: "最新投稿",
         allposts: "すべての投稿",
