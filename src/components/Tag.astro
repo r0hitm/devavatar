@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl } from "@/i18n";
 import { Hash } from "@lucide/astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -9,7 +10,7 @@ export interface Props {
 }
 
 const { tag, tagName, size = "sm" } = Astro.props;
-
+const lang = getLangFromUrl(Astro.url);
 const tiltLeft = Math.random() > 0.5;
 ---
 
@@ -24,7 +25,7 @@ const tiltLeft = Math.random() > 0.5;
     ]}
 >
     <a
-        href={getRelativeLocaleUrl(Astro.currentLocale ?? "en", `tags/${tag}`)}
+        href={getRelativeLocaleUrl(lang, `tags/${tag}`)}
         transition:name={tag}
         class:list={[
             "group hover:text-d-accent border-d-border focus-visible:bg-d-accent focus-visible:text-apricot-50 relative inline-block rounded border border-dashed px-2 hover:-top-0.5",
