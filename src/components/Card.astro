@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import { Calendar } from "@lucide/astro";
-import { useTranslations } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 export interface Props {
@@ -15,12 +15,12 @@ const { href, postId, frontmatter } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, draft } = frontmatter;
 
-const currentLang = Astro.currentLocale;
-const localized = useTranslations(currentLang);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <li class="my-6 list-none">
-    <a href={getRelativeLocaleUrl(currentLang ?? "en", href)}>
+    <a href={getRelativeLocaleUrl(lang, href)}>
         <!-- <img width={720} height={360} src={} alt="" /> -->
         <h2
             class="text-d-accent inline-block text-lg font-semibold decoration-dashed underline-offset-4 hover:underline hover:decoration-dashed hover:underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
@@ -33,12 +33,12 @@ const localized = useTranslations(currentLang);
     {
         draft ? (
             <div class="text-d-card-muted text-sm uppercase">
-                [{localized.card.draft}]
+                [{t("page.draft")}]
             </div>
         ) : (
             <div class="my-2 flex items-center text-sm italic opacity-80">
                 <Calendar class="mr-1 size-4" />
-                {modDatetime && localized.card.updated}
+                {modDatetime && t("page.updated")}
                 &nbsp;
                 <FormattedDate date={modDatetime || pubDatetime} />
             </div>

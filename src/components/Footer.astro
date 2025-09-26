@@ -1,12 +1,12 @@
 ---
-import { useTranslations } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Socials from "./Socials.astro";
 
 const currentYear = new Date().getFullYear();
 
-const currentLang = Astro.currentLocale;
-const localized = useTranslations(currentLang);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -18,10 +18,10 @@ const localized = useTranslations(currentLang);
         class="mt-2 flex flex-col items-center justify-center gap-y-2 text-sm sm:flex-row sm:gap-x-4"
     >
         <a
-            href={getRelativeLocaleUrl(currentLang ?? "en", "support")}
+            href={getRelativeLocaleUrl(lang, "support")}
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
         >
-            {localized.footer.support}
+            {t("footer.support")}
         </a>
         <span class="hidden sm:block">・</span>
         <a
@@ -30,12 +30,12 @@ const localized = useTranslations(currentLang);
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
             rel="noopener noreferrer"
         >
-            {localized.footer.report}
+            {t("footer.report")}
         </a>
     </div>
 
     <p class="mt-4 text-center text-sm">
-        {localized.footer["no-cookie"]}
+        {t("footer.cookie")}
     </p>
 
     <div

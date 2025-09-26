@@ -3,7 +3,7 @@ import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
-import { useTranslations } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
@@ -15,14 +15,14 @@ const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const currentLang = Astro.currentLocale;
-const localized = useTranslations(currentLang);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <RootLayout>
     <section>
         <h1 class="my-4 text-3xl font-bold">
-            {localized.INDEX.heading}
+            Ahoy!!
             <a
                 target="_blank"
                 href="/rss.xml"
@@ -39,10 +39,18 @@ const localized = useTranslations(currentLang);
         <Prose>
             <article>
                 <p>
-                    {localized.INDEX["para-1"]}
+                    Ahoy! I'm Rohit, and this is my corner of the internet for
+                    all things tech and more! I write about software
+                    development, share project devlogs, and document my learning
+                    journey. You'll find posts about coding adventures, new
+                    technologies I'm exploring, and the occasional deep dive
+                    into interesting problems I've solved.
                 </p>
                 <p>
-                    {localized.INDEX["para-2"]}
+                    Outside of computers, I'm passionate about Japanese culture,
+                    anime, music, hitting the gym, and all things adorably cute.
+                    I'm always excited to share discoveries from these worlds
+                    too!
                 </p>
             </article>
         </Prose>
@@ -52,7 +60,7 @@ const localized = useTranslations(currentLang);
 
     <section>
         <h2 class="text-2xl font-semibold tracking-wide">
-            {localized.INDEX.recentposts}
+            {t("index.recentposts")}
         </h2>
         <ul>
             {
@@ -70,10 +78,10 @@ const localized = useTranslations(currentLang);
         </ul>
         <div class="my-4 text-center">
             <a
-                href={getRelativeLocaleUrl(currentLang ?? "en", "posts")}
+                href={getRelativeLocaleUrl(lang, "posts")}
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
-                {localized.INDEX.allposts}
+                {t("index.allposts")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
@@ -85,7 +93,7 @@ const localized = useTranslations(currentLang);
 
     <section>
         <h2 class="text-2xl font-semibold tracking-wide">
-            {localized.INDEX.recentprojects}
+            {t("index.recentprojects")}
         </h2>
         <ul>
             {
@@ -97,10 +105,10 @@ const localized = useTranslations(currentLang);
         </ul>
         <div class="my-4 text-center">
             <a
-                href={getRelativeLocaleUrl(currentLang ?? "en", "projects")}
+                href={getRelativeLocaleUrl(lang, "projects")}
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
             >
-                {localized.INDEX.viewmore}
+                {t("index.allprojects")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />

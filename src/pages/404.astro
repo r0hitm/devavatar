@@ -1,12 +1,12 @@
 ---
 import { SITE } from "@/consts";
-import { useTranslations } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { ArrowLeft } from "@lucide/astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-const currentLang = Astro.currentLocale;
-const localized = useTranslations(currentLang);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <RootLayout title={`404 Not Found | ${SITE.title}`}>
@@ -15,13 +15,13 @@ const localized = useTranslations(currentLang);
             404
         </h1>
         <span aria-hidden="true">¯\_(ツ)_/¯</span>
-        <p class="mt-4 text-2xl sm:text-3xl">{localized.PAGE404.notfound}</p>
+        <p class="mt-4 text-2xl sm:text-3xl">{t("404.label")}</p>
         <a
-            href={getRelativeLocaleUrl(currentLang ?? "en", "/")}
+            href={getRelativeLocaleUrl(lang, "/")}
             class="hover:text-d-accent my-6 mt-14 inline-flex items-center justify-between underline decoration-dashed underline-offset-8"
         >
             <ArrowLeft class="mr-2 size-4" />
-            {localized.PAGE404.goback}
+            {t("404.gohome")}
         </a>
     </div>
 </RootLayout>

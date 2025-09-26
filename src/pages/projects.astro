@@ -4,14 +4,14 @@ import { SITE } from "@/consts";
 import { getCollection } from "astro:content";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
-import { useTranslations } from "@/i18n";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const currentLang = Astro.currentLocale;
-const localized = useTranslations(currentLang);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <RootLayout
@@ -19,9 +19,10 @@ const localized = useTranslations(currentLang);
     description="Some of my personal projects"
 >
     <Prose>
-        <h1 class="mb-2 text-3xl font-bold">{localized.PROJECTS.heading}</h1>
+        <h1 class="mb-2 text-3xl font-bold">Projects</h1>
         <p>
-            {localized.PROJECTS.p}
+            Here are some of my personal projects I've worked on. You can find
+            more on my
             <a href="https://github.com/r0hitm?tab=repositories" target="_blank"
                 >GitHub</a
             >.

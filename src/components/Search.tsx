@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "@/i18n";
+import type { ui } from "@/i18n/ui";
 
 export type SearchItem = {
     title: string;
@@ -21,7 +22,7 @@ export default function Search({ searchList, lang }: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [query, setQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
-    const localized = useMemo(() => useTranslations(lang), [lang]);
+    const t = useMemo(() => useTranslations(lang as keyof typeof ui), [lang]);
 
     const fuse = useMemo(
         () =>
@@ -69,10 +70,10 @@ export default function Search({ searchList, lang }: Props) {
             <button
                 className="group cursor-pointer p-2"
                 onClick={() => setIsOpen(true)}
-                aria-label={localized.search.main}
+                aria-label={t("search.title")}
             >
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
-                <span className="sr-only">{localized.search.main}</span>
+                <span className="sr-only">{t("search.title")}</span>
             </button>
 
             {isOpen && (
@@ -91,9 +92,7 @@ export default function Search({ searchList, lang }: Props) {
                                 type="text"
                                 value={query}
                                 onChange={e => setQuery(e.target.value)}
-                                placeholder={
-                                    localized.search.input_box_placeholder
-                                }
+                                placeholder={t("search.input_placeholder")}
                                 className="border-d-border w-full rounded-md border py-2 pr-4 pl-10"
                             />
                         </div>
@@ -102,7 +101,7 @@ export default function Search({ searchList, lang }: Props) {
                                 <>
                                     <p className="mb-2 text-xs">
                                         {results.length}
-                                        {localized.search.found}
+                                        {t("search.found")}
                                     </p>
                                     <ul className="max-h-96 space-y-2 overflow-y-auto">
                                         {results.map(({ item }) => (
@@ -134,8 +133,8 @@ export default function Search({ searchList, lang }: Props) {
                             ) : (
                                 <p className="py-4 text-center">
                                     {query.length > 2
-                                        ? localized.search.notfound
-                                        : localized.search.before}
+                                        ? t("search.notfound")
+                                        : t("search.before_search")}
                                 </p>
                             )}
                         </div>

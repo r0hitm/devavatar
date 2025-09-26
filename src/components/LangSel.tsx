@@ -1,5 +1,5 @@
 import { Languages } from "lucide-react";
-import { LANG } from "@/consts";
+import { LANG } from "@/i18n/ui";
 import { useState } from "react";
 
 type LangSelProps = {

@@ -18,16 +18,6 @@ export const SITE: SiteType = {
     scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
 } as const;
 
-// i18n
-
-// Available w/ display name.
-// Keys must match the i18n confing in astro.config
-// TODO: maybe move this to src/i18n ?
-export const LANG = {
-    en: "English",
-    ja: "日本語"
-} as const;
-
 export type SocialObjects = {
     name: keyof typeof socialIcons;
     href: string;
