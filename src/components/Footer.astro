@@ -1,7 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Socials from "./Socials.astro";
 
 const currentYear = new Date().getFullYear();
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -13,23 +18,24 @@ const currentYear = new Date().getFullYear();
         class="mt-2 flex flex-col items-center justify-center gap-y-2 text-sm sm:flex-row sm:gap-x-4"
     >
         <a
-            href="/support"
+            href={getRelativeLocaleUrl(lang, "support")}
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
         >
-            Buy me a coffee
+            {t("footer.support")}
         </a>
         <span class="hidden sm:block">・</span>
         <a
-            href="https://github.com/r0hitm/devavatar-kaisei/issues"
+            href="https://github.com/r0hitm/devavatar/issues"
+            target="_blank"
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
             rel="noopener noreferrer"
         >
-            Report an issue
+            {t("footer.report")}
         </a>
     </div>
 
     <p class="mt-4 text-center text-sm">
-        No cookies, no ads, no tracking ― just blog.
+        {t("footer.cookie")}
     </p>
 
     <div

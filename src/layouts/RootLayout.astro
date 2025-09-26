@@ -1,10 +1,11 @@
 ---
 import "@/styles/global.css";
-import { LOCALE, SITE } from "@/consts";
+import { SITE } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ScrollToTop from "@/components/ScrollToTop";
+import { getLangFromUrl } from "@/i18n";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -17,7 +18,10 @@ export interface Props {
     modDatetime?: Date | null;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const lang = getLangFromUrl(Astro.url);
+const pathname = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
+const canonicalURL = new URL(pathname, Astro.site);
+const alternateJaURL = new URL(`/ja${pathname}`, Astro.site);
 
 const {
     title = SITE.title,
@@ -37,7 +41,7 @@ const socialImageURL = new URL(
 ---
 
 <!doctype html>
-<html lang=`${LOCALE.lang ?? "en"}` class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
     <head>
         <!-- Global Metadata -->
         <meta charset="utf-8" />
@@ -77,6 +81,7 @@ const socialImageURL = new URL(
 
         <!-- Canonical URL -->
         <link rel="canonical" href={canonicalURL} />
+        <link rel="alternate" hreflang={"ja"} href={alternateJaURL} />
 
         <!-- Primary Meta Tags -->
         <title>{title ?? SITE.title}</title>

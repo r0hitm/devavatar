@@ -4,10 +4,14 @@ import { SITE } from "@/consts";
 import { getCollection } from "astro:content";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n";
 
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <RootLayout
