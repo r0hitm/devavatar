@@ -268,3 +268,11 @@ This is the part that I semi-hate because it requires creating a localized direc
 That's it! Your site has i18n now. If you found this helpful, please let me know by joining the Discord! You can switch to Japanese on this blog post from the header. Try it out now!
 
 ![silent voice baka handsign](https://media1.tenor.com/m/9hpTx40GEKsAAAAC/baka-idiot.gif)
+
+# CHange approach - less headache
+
+https://docs.astro.build/en/recipes/i18n/#translate-ui-strings
+
+- define new `ui.ts`
+- rewrite stuff
+- copy over index (reluctantly) /about to /ja/
