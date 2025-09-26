@@ -1,0 +1,113 @@
+---
+import Card from "@/components/Card.astro";
+import Hr from "@/components/Hr.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Prose from "@/components/Prose.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n";
+import RootLayout from "@/layouts/RootLayout.astro";
+import getPosts from "@/utils/getPosts";
+import { ArrowRight, Rss } from "@lucide/astro";
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const posts = await getPosts();
+const projects = (await getCollection("project")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<RootLayout>
+    <section>
+        <h1 class="my-4 text-3xl font-bold">
+            Ahoy!!
+            <a
+                target="_blank"
+                href="/rss.xml"
+                rel="noopener noreferrer"
+                aria-label="rss-link"
+                title="RSS Feed"
+            >
+                <Rss
+                    class="stroke-d-accent m-auto inline-block size-5 align-middle"
+                />
+            </a>
+        </h1>
+
+        <Prose>
+            <article>
+                <p>
+                    やっほー！<br />
+                    ヒロと申します。 ここで個人的にブロック、技術、ソフトウェア開発、学習などについてを記事で投稿しています。
+                    プログラミングをはじめ個人的に面白いと感じたトラブルの解決方法も載せています。
+                </p>
+                <p>
+                    コンピュータ以外は、日本文化やアニメ、音楽、運動、可愛いものが大好きです。
+                    新しい人と出会うのが好きなのでぜひフッターのSNSリンクで連絡をお待ちしております。
+                </p>
+            </article>
+        </Prose>
+    </section>
+
+    <Hr />
+
+    <section>
+        <h2 class="text-2xl font-semibold tracking-wide">
+            {t("index.recentposts")}
+        </h2>
+        <ul>
+            {
+                posts.map(
+                    ({ data, id }, index) =>
+                        index < 4 && (
+                            <Card
+                                href={`/posts/${id}`}
+                                postId={id}
+                                frontmatter={data}
+                            />
+                        )
+                )
+            }
+        </ul>
+        <div class="my-4 text-center">
+            <a
+                href={getRelativeLocaleUrl(lang, "posts")}
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
+            >
+                {t("index.allposts")}
+                <ArrowRight
+                    class="group-hover:text-d-accent text-d-txt-base size-4"
+                />
+            </a>
+        </div>
+    </section>
+
+    <Hr />
+
+    <section>
+        <h2 class="text-2xl font-semibold tracking-wide">
+            {t("index.recentprojects")}
+        </h2>
+        <ul>
+            {
+                projects.map(
+                    (project, index) =>
+                        index < 1 && <ProjectCard {...project.data} />
+                )
+            }
+        </ul>
+        <div class="my-4 text-center">
+            <a
+                href={getRelativeLocaleUrl(lang, "projects")}
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
+            >
+                {t("index.allprojects")}
+                <ArrowRight
+                    class="group-hover:text-d-accent text-d-txt-base size-4"
+                />
+            </a>
+        </div>
+    </section>
+</RootLayout>

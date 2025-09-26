@@ -1,11 +1,13 @@
 ---
 layout: ../../layouts/PageLayout.astro
-title: "プロフィール 😎"
+title: "自己紹介 😎"
 lastUpdated: 2025-09-13T11:10:04.510Z
 ---
 
-やっほー！ロヒト・メヘタと申します。サイトにi18nを開発中なので、自分のプロフィール翻訳はまだまだです。
+やっほー！
 
-**少々お待ちください**
+ロヒト・メヘタと申します。僕の自己紹介を読んでくれてありがとう！
 
-![Frieren Proud Smile GIF](https://media1.tenor.com/m/clPun4-Kdu0AAAAd/anime-frieren.gif)
+**日本語版は開発中ですので、少々お待ちください**
+
+![Frieren Face](https://media.tenor.com/oRj8vT1BBwYAAAAj/%D0%B4%D0%BE%D0%B1%D1%80%D1%8B%D0%B9.gif)
