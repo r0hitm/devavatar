@@ -5,6 +5,7 @@ import getPosts from "@/utils/getPosts";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Card from "@/components/Card.astro";
 import { slugifyAll } from "@/utils/slugify";
+import type { LANG } from "@/i18n/ui";
 
 export const getStaticPaths = (async () => {
     const posts = await getPosts();
@@ -23,24 +24,39 @@ const { tag, tagName, posts } = Astro.props;
 const postsByTag = posts.filter(post =>
     slugifyAll(post.data.tags).includes(tag)
 );
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 ---
 
 <RootLayout
-    title={`Tag: ${tagName}`}
-    description={`All the posts with ${tagName} tag.`}
+    title={lang === "ja" ? `タグ | ${tagName}` : `Tag: ${tagName}`}
+    description={lang === "ja"
+        ? `タグ${tagName}を付けられた記事`
+        : `All the posts with ${tagName} tag.`}
 >
     <!-- TODO: breadcrumbs -->
 
     <h1 class="mb-2 text-3xl font-bold" transition:name={tag}>
-        Tag: {tagName}
+        {lang === "ja" ? `タグ： ${tagName}` : `Tag: ${tagName}`}
     </h1>
 
-    <p class="italic">
-        There are {postsByTag.length} posts tagged
-        <span class="decoration-d-border underline underline-offset-4">
-            {tagName}
-        </span>
-    </p>
+    {
+        lang === "ja" ? (
+            <p class="italic">
+                タグ
+                <span class="decoration-d-border underline underline-offset-4">
+                    {tagName}
+                </span>
+                を付けられた記事数は{postsByTag.length}です。
+            </p>
+        ) : (
+            <p class="italic">
+                There are {postsByTag.length} posts tagged
+                <span class="decoration-d-border underline underline-offset-4">
+                    {tagName}
+                </span>
+            </p>
+        )
+    }
 
     <ul>
         {
