@@ -5,12 +5,14 @@ import { getCollection } from "astro:content";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n";
+import type { LANG } from "@/i18n/ui";
 
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 
@@ -19,14 +21,35 @@ const t = useTranslations(lang);
     description="Some of my personal projects"
 >
     <Prose>
-        <h1 class="mb-2 text-3xl font-bold">Projects</h1>
-        <p>
-            Here are some of my personal projects I've worked on. You can find
-            more on my
-            <a href="https://github.com/r0hitm?tab=repositories" target="_blank"
-                >GitHub</a
-            >.
-        </p>
+        <h1 class="mb-2 text-3xl font-bold">
+            {lang === "ja" ? "プロジェクト" : "Projects"}
+        </h1>
+        {
+            lang === "ja" ? (
+                <p>
+                    以下には私の最近の個人プロジェクトでございます。
+                    <a
+                        href="https://github.com/r0hitm?tab=repositories"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+                    で全てのプロジェクトをご覧ください。
+                </p>
+            ) : (
+                <p>
+                    Here are some of my personal projects I've worked on. You
+                    can find more on my
+                    <a
+                        href="https://github.com/r0hitm?tab=repositories"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+                    .
+                </p>
+            )
+        }
     </Prose>
 
     <ul class="mt-8 space-y-4">

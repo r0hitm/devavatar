@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl } from "@/i18n";
+import type { LANG } from "@/i18n/ui";
 import { Hash } from "@lucide/astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -10,7 +11,8 @@ export interface Props {
 }
 
 const { tag, tagName, size = "sm" } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const tiltLeft = Math.random() > 0.5;
 ---
 

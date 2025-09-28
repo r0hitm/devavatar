@@ -2,10 +2,12 @@
 import { getLangFromUrl, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Socials from "./Socials.astro";
+import type { LANG } from "@/i18n/ui";
 
 const currentYear = new Date().getFullYear();
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 

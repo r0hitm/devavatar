@@ -4,6 +4,7 @@ import Hr from "@/components/Hr.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n";
+import type { LANG } from "@/i18n/ui";
 import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
@@ -15,7 +16,8 @@ const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 
@@ -25,7 +27,7 @@ const t = useTranslations(lang);
             Ahoy!!
             <a
                 target="_blank"
-                href="/rss.xml"
+                href={getRelativeLocaleUrl(lang, "rss.xml")}
                 rel="noopener noreferrer"
                 aria-label="rss-link"
                 title="RSS Feed"
@@ -38,20 +40,41 @@ const t = useTranslations(lang);
 
         <Prose>
             <article>
-                <p>
-                    Ahoy! I'm Rohit, and this is my corner of the internet for
-                    all things tech and more! I write about software
-                    development, share project devlogs, and document my learning
-                    journey. You'll find posts about coding adventures, new
-                    technologies I'm exploring, and the occasional deep dive
-                    into interesting problems I've solved.
-                </p>
-                <p>
-                    Outside of computers, I'm passionate about Japanese culture,
-                    anime, music, hitting the gym, and all things adorably cute.
-                    I'm always excited to share discoveries from these worlds
-                    too!
-                </p>
+                {
+                    lang === "ja" ? (
+                        <>
+                            <p>
+                                やっほー！
+                                <br />
+                                ヒロと申します。
+                                ここで個人的にブロック、技術、ソフトウェア開発、学習などについてを記事で投稿しています。
+                                プログラミングをはじめ個人的に面白いと感じたトラブルの解決方法も載せています。
+                            </p>
+                            <p>
+                                コンピュータ以外は、日本文化やアニメ、音楽、運動、可愛いものが大好きです。
+                                新しい人と出会うのが好きなのでぜひフッターのSNSリンクで連絡をお待ちしております。
+                            </p>
+                        </>
+                    ) : (
+                        <>
+                            <p>
+                                Ahoy! I'm Rohit, and this is my corner of the
+                                internet for all things tech and more! I write
+                                about software development, share project
+                                devlogs, and document my learning journey.
+                                You'll find posts about coding adventures, new
+                                technologies I'm exploring, and the occasional
+                                deep dive into interesting problems I've solved.
+                            </p>
+                            <p>
+                                Outside of computers, I'm passionate about
+                                Japanese culture, anime, music, hitting the gym,
+                                and all things adorably cute. I'm always excited
+                                to share discoveries from these worlds too!
+                            </p>
+                        </>
+                    )
+                }
             </article>
         </Prose>
     </section>

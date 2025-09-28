@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate.astro";
 import { Calendar } from "@lucide/astro";
 import { getLangFromUrl, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import type { LANG } from "@/i18n/ui";
 
 export interface Props {
     href?: string;
@@ -15,7 +16,8 @@ const { href, postId, frontmatter } = Astro.props;
 
 const { title, description, pubDatetime, modDatetime, draft } = frontmatter;
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 

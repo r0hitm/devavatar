@@ -8,6 +8,7 @@ import ThemeBtn from "./ThemeBtn.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import LangSel from "./LangSel";
+import type { LANG } from "@/i18n/ui";
 
 const posts = await getPosts();
 
@@ -18,7 +19,8 @@ const searchList = posts.map(({ data, id }) => ({
     postId: id
 }));
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 

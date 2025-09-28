@@ -5,6 +5,7 @@ import Prose from "@/components/Prose.astro";
 import { Calendar } from "@lucide/astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n";
+import type { LANG } from "@/i18n/ui";
 // TODO: import Breadcrumbs from "@components/Breadcrumbs.astro";
 
 interface Props {
@@ -16,7 +17,8 @@ interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const t = useTranslations(lang);
 ---
 

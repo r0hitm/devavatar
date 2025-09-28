@@ -3,15 +3,19 @@ import getPosts from "@/utils/getPosts";
 import Card from "@/components/Card.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { SITE } from "@/consts";
+import type { LANG } from "@/i18n/ui";
 
 const posts = await getPosts();
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 ---
 
 <RootLayout
-    title=`Posts | ${SITE.title}`
-    description={`All of the published blogs on ${SITE.title}`}
+    title={lang === "ja" ? `記事 | ${SITE.title}` : `Posts | ${SITE.title}`}
+    description={lang === "ja"
+        ? `全ての投稿した記事 | ${SITE.title}`
+        : `All of the published blogs on ${SITE.title}`}
 >
-    <h1 class="mb-2 text-3xl font-bold">Posts</h1>
+    <h1 class="mb-2 text-3xl font-bold">{lang === "ja" ? "記事" : "Posts"}</h1>
 
     <ul>
         {

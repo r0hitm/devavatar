@@ -6,6 +6,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ScrollToTop from "@/components/ScrollToTop";
 import { getLangFromUrl } from "@/i18n";
+import type { LANG } from "@/i18n/ui";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -18,7 +19,8 @@ export interface Props {
     modDatetime?: Date | null;
 }
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+const lang = (Astro.currentLocale || "en") as keyof typeof LANG;
 const pathname = Astro.url.pathname.replace(new RegExp(`^/${lang}`), "");
 const canonicalURL = new URL(pathname, Astro.site);
 const alternateJaURL = new URL(`/ja${pathname}`, Astro.site);
