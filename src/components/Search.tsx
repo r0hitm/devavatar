@@ -1,10 +1,7 @@
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState, useMemo } from "react";
 import type { CollectionEntry } from "astro:content";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { SearchIcon } from "lucide-react";
-import { useTranslations } from "@/i18n";
-import type { ui } from "@/i18n/ui";
 
 export type SearchItem = {
     title: string;
@@ -15,14 +12,12 @@ export type SearchItem = {
 
 interface Props {
     searchList: SearchItem[];
-    lang?: string;
 }
 
-export default function Search({ searchList, lang }: Props) {
+export default function Search({ searchList }: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [query, setQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
-    const t = useMemo(() => useTranslations(lang as keyof typeof ui), [lang]);
 
     const fuse = useMemo(
         () =>
@@ -68,17 +63,17 @@ export default function Search({ searchList, lang }: Props) {
     return (
         <>
             <button
-                className="group cursor-pointer p-2"
+                className="group p-2"
                 onClick={() => setIsOpen(true)}
-                aria-label={t("search.title")}
+                aria-label="Search"
             >
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
-                <span className="sr-only">{t("search.title")}</span>
+                <span className="sr-only">Search</span>
             </button>
 
             {isOpen && (
                 <div
-                    className="bg-d-fill/50 fixed inset-0 z-50 flex items-start justify-center pt-20"
+                    className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 pt-20"
                     onClick={() => setIsOpen(false)}
                 >
                     <div
@@ -92,7 +87,7 @@ export default function Search({ searchList, lang }: Props) {
                                 type="text"
                                 value={query}
                                 onChange={e => setQuery(e.target.value)}
-                                placeholder={t("search.input_placeholder")}
+                                placeholder="how to do ..."
                                 className="border-d-border w-full rounded-md border py-2 pr-4 pl-10"
                             />
                         </div>
@@ -100,17 +95,13 @@ export default function Search({ searchList, lang }: Props) {
                             {results.length > 0 ? (
                                 <>
                                     <p className="mb-2 text-xs">
-                                        {results.length}
-                                        {t("search.found")}
+                                        {results.length} results found.
                                     </p>
                                     <ul className="max-h-96 space-y-2 overflow-y-auto">
                                         {results.map(({ item }) => (
                                             <li key={item.postId}>
                                                 <a
-                                                    href={getRelativeLocaleUrl(
-                                                        lang ?? "en",
-                                                        `posts/${item.postId}`
-                                                    )}
+                                                    href={`/posts/${item.postId}`}
                                                     className="hover:bg-d-card-muted/30 block rounded-md p-3"
                                                 >
                                                     <h3
@@ -133,8 +124,8 @@ export default function Search({ searchList, lang }: Props) {
                             ) : (
                                 <p className="py-4 text-center">
                                     {query.length > 2
-                                        ? t("search.notfound")
-                                        : t("search.before_search")}
+                                        ? "No results found."
+                                        : "Search for anything..."}
                                 </p>
                             )}
                         </div>

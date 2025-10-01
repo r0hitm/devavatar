@@ -8,36 +8,15 @@ import remarkToc from "remark-toc";
 import rehypeExternalLinks from "rehype-external-links";
 import { SITE } from "./src/consts";
 
-const isProd = import.meta.env.PROD;
-
 // https://astro.build/config
 export default defineConfig({
-    site: isProd ? SITE.website : "http://localhost:4321",
+    site: SITE.website,
     i18n: {
-        locales: ["en", "ja"],
-        defaultLocale: "en",
-        fallback: {
-            ja: "en"
-        },
-        routing: {
-            prefixDefaultLocale: false,
-            fallbackType: "rewrite" // TODO: later add not-translated warning to those pages
-        }
+        locales: ["en", "ja-JP"],
+        defaultLocale: "en"
     },
     prefetch: true,
-    integrations: [
-        mdx(),
-        sitemap({
-            i18n: {
-                defaultLocale: "en",
-                locales: {
-                    en: "en",
-                    ja: "ja-JP"
-                }
-            }
-        }),
-        react()
-    ],
+    integrations: [mdx(), sitemap(), react()],
     markdown: {
         shikiConfig: {
             theme: "one-dark-pro",
