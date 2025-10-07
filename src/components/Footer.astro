@@ -1,5 +1,6 @@
 ---
 import Socials from "./Socials.astro";
+import { CircleOff } from "@lucide/astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -29,7 +30,12 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <p class="mt-4 text-center text-sm">
-        No cookies, no ads, no tracking ― just blog.
+        <!-- No cookies, no ads, no tracking ― just blog. -->
+        <CircleOff class="mr-1 inline-block size-3 fill-inherit align-middle" />
+        {" "}
+        AI Training Prohibited
+        {" "}
+        <CircleOff class="ml-1 inline-block size-3 fill-inherit align-middle" />
     </p>
 
     <div
