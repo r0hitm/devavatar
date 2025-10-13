@@ -1,12 +1,13 @@
 {
   "name": "Dev Avatar",
-  "short_name": "DevAvatar",
+  "short_name": "deva",
+  "id": "devavatar.com",
+  "description": "Yo, this is a shortcut for tecnical blog site at Dev Avatar [dot] com",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "/web-app-manifest-512x512.png",
