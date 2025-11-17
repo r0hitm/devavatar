@@ -5,6 +5,9 @@ on:
     # Using a different branch name? Replace `main` with your branch’s name
     push:
         branches: [main]
+    # When new content is pushed on the content repo
+    repository_dispatch:
+        types: [content-push]
     # Allows you to run this workflow manually from the Actions tab on GitHub.
     workflow_dispatch:
 
@@ -26,8 +29,8 @@ jobs:
             - name: Checkout content repo
               uses: actions/checkout@v4
               with:
-                repository: r0hitm/devavatar-content
-                path: devavatar-content
+                  repository: r0hitm/devavatar-content
+                  path: devavatar-content
 
             - name: astro action - Install, build, and upload your site
               uses: withastro/action@v4
