@@ -4,7 +4,10 @@ import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
-    loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+    loader: glob({
+        base: "../devavatar-content/content/blog",
+        pattern: "**/*.{md,mdx}"
+    }),
 
     // Type-check frontmatter using a schema
     schema: ({ image }) =>
@@ -28,7 +31,7 @@ const blog = defineCollection({
 });
 
 const project = defineCollection({
-    loader: file("src/content/data/projects.json"),
+    loader: file("../devavatar-content/content/data/projects.json"),
     schema: () =>
         z.object({
             id: z.string(),
