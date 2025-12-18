@@ -1,17 +1,29 @@
 ---
 layout: ../layouts/PageLayout.astro
-title: "About Me 😎"
-lastUpdated: 2025-09-13T11:10:04.510Z
+title: "About Me <(´= ⩊ =`)>"
+lastUpdated: 2025-12-18T05:04:27.395Z
 ---
 
-Hi there! Hello! I'm Rohit, aka Moe Programmer. I love using computers to create things that make life easier, more fun, or just plain wacky xD. I'm also a huge fan of Japanese culture. Outside of development, I enjoy anime, reading, gaming (especially titles like The Legend of Zelda and Sekiro!), music, and hitting the gym.
+Hi, I'm Rohit.
 
-I speak Hindi, English, and Japanese. I passed the JLPT N3 last year and I will take N1 this year (yeah, I'm skipping N2, just like I skipped N4 and N5—exams are easy, communication is hard, that's me xD). I'm considering adding Japanese localization to my site soon, so stay tuned!
+I like using computers to make small tools, websites, and random experiments that either make my life easier or are just fun to play with. That curiosity really kicked off back in middle school after watching Iron Man and wondering how close real-world tech could get to that.
 
-On the technical side, I graduated from the University of Delhi with a BSc (Hons) in Electronics, focusing on electronic devices, digital electronics, and low-level programming. I also pursued my interests through [OSSU's Computer Science curriculum](https://github.com/ossu/computer-science) and finished [The Odin Project](https://www.theodinproject.com/) a while back. I was a moderator for the official OSSU Discord community for over three years.
+I'm also really into Japanese culture. When I'm not coding, I'm probably watching anime, reading, gaming, listening to music, or at the gym pretending training to be the next shounen protagonist.
 
-Currently, I'm working full-time as a remote Principal Software Engineer for a startup based in the Netherlands. For more, feel free to check out my socials in the site footer below.
+I speak Hindi, English, and Japanese. I'm slowly working on adding a Japanese version of this site, so if you ever see half-broken JP text here, that's probably me experimenting.
 
-**P.S.**: I'll be waiting for your message—or even better, join the Discord server!
+### A bit about my background
 
-![Frieren Proud Smile GIF](https://media1.tenor.com/m/clPun4-Kdu0AAAAd/anime-frieren.gif)
+I studied Electronics at the University of Delhi, where I spent a lot of time with digital circuits, electronic devices, and low-level programming. Around the same time, I fell down the computer science rabbit hole through open curricula like OSSU and [The Odin Project](https://www.theodinproject.com/), plus more online courses than I can reasonably list.
+
+Online communities have been a big part of how I learned. I helped moderate the official OSSU Discord for over three years, and from that community grew [The Borr Project](https://borrproject.github.io/), a community fork of OSSU that I now co‑run with friends I met there.
+
+For more than a year, I worked as the lead developer at a small startup based in the Netherlands. The company eventually closed after the sudden passing of the founder, but building things from scratch with a tiny team shaped a lot of how I think about software and collaboration.
+
+### What I like to work with
+
+On the web side, I enjoy working with TypeScript/JavaScript, React, Astro, and Svelte. When I want to get closer to the metal or write backend logic, I usually reach for C, Python, and FastAPI, and I still enjoy poking at low-level and embedded stuff with C or assembly.
+
+Most days you'll find me living inside Vim, tweaking my setup and shaving a little friction off whatever I'm working on.
+
+If any of this sounds familiar or you're building something interesting, feel free to say hi.
