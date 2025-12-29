@@ -137,6 +137,6 @@ export const SOCIALS: SocialObjects = [
         name: "Bluesky",
         href: "https://bsky.app/profile/devavatar.com",
         linkTitle: `Follow me on Bluesky`,
-        active: true
+        active: false
     }
 ];
