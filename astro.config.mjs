@@ -11,7 +11,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 const locales = Object.keys(LOCALES);
 const defaultLocale = LOCALE.lang;
-const heading = defaultLocale === "ja" ? "目次" : "Table of contents";
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,7 +38,7 @@ export default defineConfig({
             theme: "one-dark-pro",
             wrap: true
         },
-        remarkPlugins: [[remarkToc, { heading }]],
+        remarkPlugins: [[remarkToc, { heading: '(Table[ -]of[ -])?contents?|toc|目次' }]],
         rehypePlugins: [
             [
                 rehypeExternalLinks,
