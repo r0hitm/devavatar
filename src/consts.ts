@@ -18,10 +18,19 @@ export const SITE: SiteType = {
     scheduledPostMargin: 15 * 60 * 1000 // 15 minutes
 } as const;
 
-export const LOCALE = {
-    lang: "en",
-    langTag: ["en-EN"] // BCP 47 langauge tag
+export const LOCALES = {
+    ja: {
+        lang: "ja",
+        langTag: ["ja-JP", "en-EN"] // BCP 47 langauge tag, with fallback
+    },
+    en: {
+        lang: "en",
+        langTag: ["en-EN"]
+    }
 } as const;
+
+// Default locale
+export const LOCALE = LOCALES.ja;
 
 export type SocialObjects = {
     name: keyof typeof socialIcons;
