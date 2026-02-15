@@ -4,6 +4,7 @@ import RootLayout from "./RootLayout.astro";
 import Prose from "@/components/Prose.astro";
 import { Calendar } from "@lucide/astro";
 import FormattedDate from "@/components/FormattedDate.astro";
+import { t } from "@/i18n/helpers.astro";
 // TODO: import Breadcrumbs from "@components/Breadcrumbs.astro";
 
 interface Props {
@@ -28,7 +29,7 @@ const { frontmatter } = Astro.props;
         frontmatter.lastUpdated && (
             <div class="my-2 flex items-center text-sm italic opacity-80">
                 <Calendar class="mr-1 size-4" />
-                Updated:&nbsp;
+                {`${t("content.updated")}:`}&nbsp;
                 <FormattedDate date={new Date(frontmatter.lastUpdated)} />
             </div>
         )

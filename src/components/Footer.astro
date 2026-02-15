@@ -1,8 +1,11 @@
 ---
+import { SITE } from "@/consts";
 import Socials from "./Socials.astro";
 import { CircleOff } from "@lucide/astro";
+import { t } from "@/i18n/helpers.astro";
 
 const currentYear = new Date().getFullYear();
+const author = SITE.author;
 ---
 
 <footer
@@ -17,7 +20,7 @@ const currentYear = new Date().getFullYear();
             href="/support"
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
         >
-            Buy me a coffee
+            {t("footer.support")}
         </a>
         <span class="hidden sm:block">・</span>
         <a
@@ -25,16 +28,14 @@ const currentYear = new Date().getFullYear();
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
             rel="noopener noreferrer"
         >
-            Report an issue
+            {t("footer.issue")}
         </a>
     </div>
 
     <p class="mt-4 text-center text-sm">
         <!-- No cookies, no ads, no tracking ― just blog. -->
         <CircleOff class="mr-1 inline-block size-3 fill-inherit align-middle" />
-        {" "}
-        AI Training Prohibited
-        {" "}
+        {t("footer.ai")}
         <CircleOff class="ml-1 inline-block size-3 fill-inherit align-middle" />
     </p>
 
@@ -43,7 +44,7 @@ const currentYear = new Date().getFullYear();
     >
         <span>
             &copy; {currentYear}
-            Rohit Mehta
+            {author}
         </span>
         <span class="hidden sm:block">・</span>
         <span>

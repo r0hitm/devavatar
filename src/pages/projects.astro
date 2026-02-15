@@ -4,6 +4,7 @@ import { SITE } from "@/consts";
 import { getCollection } from "astro:content";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Prose from "@/components/Prose.astro";
+import { t } from "@/i18n/helpers.astro";
 
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -15,7 +16,7 @@ const projects = (await getCollection("project")).sort(
     description="Some of my personal projects"
 >
     <Prose>
-        <h1 class="mb-2 text-3xl font-bold">Projects</h1>
+        <h1 class="mb-2 text-3xl font-bold">{t("page.projects.heading")}</h1>
         <p>
             Here are some of my personal projects I've worked on. You can find
             more on my

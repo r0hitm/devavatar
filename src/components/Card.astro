@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import { Calendar } from "@lucide/astro";
+import { t } from "@/i18n/helpers.astro";
 
 export interface Props {
     href?: string;
@@ -31,8 +32,7 @@ const { title, description, pubDatetime, modDatetime, draft } = frontmatter;
         ) : (
             <div class="my-2 flex items-center text-sm italic opacity-80">
                 <Calendar class="mr-1 size-4" />
-                {modDatetime && "Updated:"}
-                &nbsp;
+                {modDatetime && `${t("content.updated")}:`}&nbsp;
                 <FormattedDate date={modDatetime || pubDatetime} />
             </div>
         )

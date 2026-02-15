@@ -11,7 +11,7 @@ type SiteType = {
 
 export const SITE: SiteType = {
     website: "https://devavatar.com",
-    author: "Rohit Mehta",
+    author: "Rohit Mehta", // TODO: 日本語に訳す
     description:
         "My space on the wild-wild internet! For all things tech and more",
     title: "Dev Avatar",

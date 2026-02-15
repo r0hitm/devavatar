@@ -5,6 +5,7 @@ import getPosts from "@/utils/getPosts";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Card from "@/components/Card.astro";
 import { slugifyAll } from "@/utils/slugify";
+import { t } from "@/i18n/helpers.astro";
 
 export const getStaticPaths = (async () => {
     const posts = await getPosts();
@@ -26,20 +27,21 @@ const postsByTag = posts.filter(post =>
 ---
 
 <RootLayout
-    title={`Tag: ${tagName}`}
-    description={`All the posts with ${tagName} tag.`}
+    title={`${t("page.tag.label")}: ${tagName}`}
+    description={`${t("page.tag.posts")}: ${tagName}`}
 >
     <!-- TODO: breadcrumbs -->
 
     <h1 class="mb-2 text-3xl font-bold" transition:name={tag}>
-        Tag: {tagName}
+        {t("page.tag.label")}: {tagName}
     </h1>
 
     <p class="italic">
-        There are {postsByTag.length} posts tagged
-        <span class="decoration-d-border underline underline-offset-4">
+        {postsByTag.length}
+        {t("page.tag.posts")}
+        <!-- <span class="decoration-d-border underline underline-offset-4">
             {tagName}
-        </span>
+        </span> -->
     </p>
 
     <ul>

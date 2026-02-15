@@ -5,6 +5,7 @@ import { Menu, X } from "@lucide/astro";
 import Search from "./Search";
 import getPosts from "@/utils/getPosts";
 import ThemeBtn from "./ThemeBtn.astro";
+import { Lang, t } from "@/i18n/helpers.astro";
 
 const posts = await getPosts();
 
@@ -42,19 +43,29 @@ const searchList = posts.map(({ data, id }) => ({
             <nav>
                 <ul class="flex items-center justify-end gap-4">
                     <li>
-                        <HeaderLink href="/posts">posts</HeaderLink>
+                        <HeaderLink href="/posts"
+                            >{t("header.posts")}</HeaderLink
+                        >
                     </li>
                     <li>
-                        <HeaderLink href="/projects">projects</HeaderLink>
+                        <HeaderLink href="/projects"
+                            >{t("header.projects")}</HeaderLink
+                        >
                     </li>
                     <li>
-                        <HeaderLink href="/tags">tags</HeaderLink>
+                        <HeaderLink href="/tags">{t("header.tags")}</HeaderLink>
                     </li>
                     <li>
-                        <HeaderLink href="/about">about</HeaderLink>
+                        <HeaderLink href="/about"
+                            >{t("header.about")}</HeaderLink
+                        >
                     </li>
                     <li>
-                        <Search searchList={searchList} client:load />
+                        <Search
+                            searchList={searchList}
+                            lang={Lang}
+                            client:load
+                        />
                     </li>
                     <li>
                         <ThemeBtn />
@@ -65,7 +76,7 @@ const searchList = posts.map(({ data, id }) => ({
 
         {/* Search Button & Mobile Menu */}
         <div class="flex items-center gap-2 sm:hidden">
-            <Search searchList={searchList} client:load />
+            <Search searchList={searchList} lang={Lang} client:load />
 
             <button id="hamburger-menu" class="p-2" aria-label="Menu Button">
                 <Menu class="size-6" id="menu-icon" />
@@ -84,28 +95,28 @@ const searchList = posts.map(({ data, id }) => ({
                     <HeaderLink
                         href="/posts"
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >posts</HeaderLink
+                        >{t("header.posts")}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
                         href="/projects"
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >projects</HeaderLink
+                        >{t("header.projects")}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
                         href="/tags"
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >tags</HeaderLink
+                        >{t("header.tags")}</HeaderLink
                     >
                 </li>
                 <li>
                     <HeaderLink
                         href="/about"
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
-                        >about</HeaderLink
+                        >{t("header.about")}</HeaderLink
                     >
                 </li>
                 <li>

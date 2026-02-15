@@ -3,15 +3,16 @@ import getPosts from "@/utils/getPosts";
 import Card from "@/components/Card.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { SITE } from "@/consts";
+import { t } from "@/i18n/helpers.astro";
 
 const posts = await getPosts();
 ---
 
 <RootLayout
-    title=`Posts | ${SITE.title}`
-    description={`All of the published blogs on ${SITE.title}`}
+    title=`${t("page.posts.heading")} | ${SITE.title}`
+    description={`${t("page.posts.desc")} | ${SITE.title}`}
 >
-    <h1 class="mb-2 text-3xl font-bold">Posts</h1>
+    <h1 class="mb-2 text-3xl font-bold">{t("page.posts.heading")}</h1>
 
     <ul>
         {

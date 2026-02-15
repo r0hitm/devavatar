@@ -1,10 +1,11 @@
 ---
 import "@/styles/global.css";
-import { LOCALE, SITE } from "@/consts";
+import { SITE } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ScrollToTop from "@/components/ScrollToTop";
+import { Lang } from "@/i18n/helpers.astro";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -37,7 +38,7 @@ const socialImageURL = new URL(
 ---
 
 <!doctype html>
-<html lang=`${LOCALE.lang ?? "en"}` class="scroll-smooth">
+<html lang={Lang} class="scroll-smooth">
     <head>
         <!-- Global Metadata -->
         <meta charset="utf-8" />

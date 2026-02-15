@@ -2,6 +2,7 @@
 import { SITE } from "@/consts";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { ArrowLeft } from "@lucide/astro";
+import { t } from "@/i18n/helpers.astro";
 ---
 
 <RootLayout title={`404 Not Found | ${SITE.title}`}>
@@ -10,13 +11,13 @@ import { ArrowLeft } from "@lucide/astro";
             404
         </h1>
         <span aria-hidden="true">¯\_(ツ)_/¯</span>
-        <p class="mt-4 text-2xl sm:text-3xl">Page Not Found</p>
+        <p class="mt-4 text-2xl sm:text-3xl">{t("page.404.msg")}</p>
         <a
             href=""
             class="hover:text-d-accent my-6 mt-14 inline-flex items-center justify-between underline decoration-dashed underline-offset-8"
         >
             <ArrowLeft class="mr-2 size-4" />
-            Go back home
+            {t("page.404.back")}
         </a>
     </div>
 </RootLayout>

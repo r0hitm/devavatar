@@ -1,7 +1,9 @@
-import Fuse from "fuse.js";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
 import type { CollectionEntry } from "astro:content";
+import Fuse from "fuse.js";
 import { SearchIcon } from "lucide-react";
+import { useTranslations } from "@/i18n/utils";
 
 export type SearchItem = {
     title: string;
@@ -12,12 +14,14 @@ export type SearchItem = {
 
 interface Props {
     searchList: SearchItem[];
+    lang: "ja" | "en";
 }
 
-export default function Search({ searchList }: Props) {
+export default function Search({ searchList, lang }: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
     const [query, setQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations(lang);
 
     const fuse = useMemo(
         () =>
@@ -68,7 +72,7 @@ export default function Search({ searchList }: Props) {
                 aria-label="Search"
             >
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
-                <span className="sr-only">Search</span>
+                <span className="sr-only">{t("search.sr-only")}</span>
             </button>
 
             {isOpen && (
@@ -87,7 +91,7 @@ export default function Search({ searchList }: Props) {
                                 type="text"
                                 value={query}
                                 onChange={e => setQuery(e.target.value)}
-                                placeholder="how to do ..."
+                                placeholder={t("search.placeholder")}
                                 className="border-d-border w-full rounded-md border py-2 pr-4 pl-10"
                             />
                         </div>
@@ -95,7 +99,7 @@ export default function Search({ searchList }: Props) {
                             {results.length > 0 ? (
                                 <>
                                     <p className="mb-2 text-xs">
-                                        {results.length} results found.
+                                        {results.length} {t("search.hitcount")}
                                     </p>
                                     <ul className="max-h-96 space-y-2 overflow-y-auto">
                                         {results.map(({ item }) => (
@@ -124,8 +128,8 @@ export default function Search({ searchList }: Props) {
                             ) : (
                                 <p className="py-4 text-center">
                                     {query.length > 2
-                                        ? "No results found."
-                                        : "Search for anything..."}
+                                        ? t("search.miss")
+                                        : t("search.label")}
                                 </p>
                             )}
                         </div>
