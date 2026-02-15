@@ -38,7 +38,9 @@ export default defineConfig({
             theme: "one-dark-pro",
             wrap: true
         },
-        remarkPlugins: [[remarkToc, { heading: '(Table[ -]of[ -])?contents?|toc|目次' }]],
+        remarkPlugins: [
+            [remarkToc, { heading: "(Table[ -]of[ -])?contents?|toc|目次" }]
+        ],
         rehypePlugins: [
             [
                 rehypeExternalLinks,
