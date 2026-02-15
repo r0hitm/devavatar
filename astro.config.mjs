@@ -1,28 +1,45 @@
+import { LOCALE, LOCALES, SITE } from "./src/consts";
+
 // @ts-check
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
+import rehypeExternalLinks from "rehype-external-links";
+import remarkToc from "remark-toc";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import react from "@astrojs/react";
-import remarkToc from "remark-toc";
-import rehypeExternalLinks from "rehype-external-links";
-import { SITE } from "./src/consts";
+
+const locales = Object.keys(LOCALES);
+const defaultLocale = LOCALE.lang;
+const heading = defaultLocale === "ja" ? "目次" : "Table of contents";
 
 // https://astro.build/config
 export default defineConfig({
     site: SITE.website,
     i18n: {
-        locales: ["en", "ja-JP"],
-        defaultLocale: "en"
+        locales,
+        defaultLocale
     },
     prefetch: true,
-    integrations: [mdx(), sitemap(), react()],
+    integrations: [
+        mdx(),
+        sitemap({
+            i18n: {
+                locales: {
+                    ja: "ja-JP",
+                    en: "en-US"
+                },
+                defaultLocale
+            }
+        }),
+        react()
+    ],
     markdown: {
         shikiConfig: {
             theme: "one-dark-pro",
             wrap: true
         },
-        remarkPlugins: [[remarkToc, { heading: "Table of contents" }]],
+        remarkPlugins: [[remarkToc, { heading }]],
         rehypePlugins: [
             [
                 rehypeExternalLinks,
