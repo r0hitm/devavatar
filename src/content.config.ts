@@ -7,7 +7,6 @@ const blog = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
     loader: glob({
         base: "../devavatar-content/content/blog",
-        // pattern: "^en|ja/*.{md,mdx}"
         pattern: "**/*.{md,mdx}"
     }),
 
@@ -31,7 +30,7 @@ const blog = defineCollection({
             canonicalURL: z.string().optional(),
 
             // consts.tsにあるLOCALESと同じくなければならない
-            lang: z.enum(["en", "ja"]).default("en")
+            lang: z.enum(["en", "ja"])
         })
 });
 

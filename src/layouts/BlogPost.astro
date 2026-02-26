@@ -8,6 +8,7 @@ import Tag from "@/components/Tag.astro";
 import { slugify } from "@/utils/slugify";
 import { SITE } from "@/consts";
 import { t } from "@/i18n/helpers.astro";
+import LangBadge from "@/components/LangBadge.astro";
 
 type Props = CollectionEntry<"blog">["data"] & { postId: string };
 
@@ -20,7 +21,8 @@ const {
     modDatetime,
     tags,
     draft,
-    ogImage
+    ogImage,
+    lang
 } = Astro.props;
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
@@ -37,6 +39,7 @@ const ogUrl = new URL(
     pubDatetime={pubDatetime}
     modDatetime={modDatetime}
     ogImage={ogUrl}
+    lang={lang}
 >
     <div class="my-4">
         <button
@@ -52,6 +55,7 @@ const ogUrl = new URL(
     <h1 class="text-d-accent mb-2 text-3xl font-bold" transition:name={postId}>
         {title}
     </h1>
+    <LangBadge lang={lang} />
 
     {
         draft ? (
