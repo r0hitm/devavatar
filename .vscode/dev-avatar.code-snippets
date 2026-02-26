@@ -11,6 +11,7 @@
             "  - $4",
             "pubDatetime: $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000Z",
             "modDatetime: $5",
+            "lang: ja",
             "---"
         ],
         "description": "Adds the frontmatter block for markdown blogpost"
@@ -24,7 +25,7 @@
             "",
             "${2: Intro}",
             "",
-            "## Table of contents",
+            "## Table of contents | 目次",
             "",
             "## ${3: heading 1}"
         ],

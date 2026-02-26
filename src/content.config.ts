@@ -1,6 +1,7 @@
-import { SITE } from "@/consts";
-import { file, glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
+import { file, glob } from "astro/loaders";
+
+import { SITE } from "@/consts";
 
 const blog = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -26,7 +27,10 @@ const blog = defineCollection({
                 })
                 .or(z.string())
                 .optional(),
-            canonicalURL: z.string().optional()
+            canonicalURL: z.string().optional(),
+
+            // consts.tsにあるLOCALESと同じくなければならない
+            lang: z.enum(["en", "ja"]).default("ja")
         })
 });
 
@@ -40,7 +44,10 @@ const project = defineCollection({
             tags: z.array(z.string()).default(["project"]),
             date: z.coerce.date(), // Only used for sorting by most recent
             projectUrl: z.string().default("#"),
-            liveUrl: z.string().default("#")
+            liveUrl: z.string().default("#"),
+
+            // consts.tsにあるLOCALESと同じくなければならない
+            lang: z.enum(["en", "ja"]).default("ja")
         })
 });
 
