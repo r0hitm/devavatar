@@ -7,6 +7,7 @@ const blog = defineCollection({
     // Load Markdown and MDX files in the `src/content/blog/` directory.
     loader: glob({
         base: "../devavatar-content/content/blog",
+        // pattern: "^en|ja/*.{md,mdx}"
         pattern: "**/*.{md,mdx}"
     }),
 
@@ -30,10 +31,11 @@ const blog = defineCollection({
             canonicalURL: z.string().optional(),
 
             // consts.tsにあるLOCALESと同じくなければならない
-            lang: z.enum(["en", "ja"]).default("ja")
+            lang: z.enum(["en", "ja"]).default("en")
         })
 });
 
+// TODO: project_enとproject_jaに別ける
 const project = defineCollection({
     loader: file("../devavatar-content/content/data/projects.json"),
     schema: () =>
@@ -44,10 +46,10 @@ const project = defineCollection({
             tags: z.array(z.string()).default(["project"]),
             date: z.coerce.date(), // Only used for sorting by most recent
             projectUrl: z.string().default("#"),
-            liveUrl: z.string().default("#"),
+            liveUrl: z.string().default("#")
 
             // consts.tsにあるLOCALESと同じくなければならない
-            lang: z.enum(["en", "ja"]).default("ja")
+            // lang: z.enum(["en", "ja"]).default("ja")
         })
 });
 

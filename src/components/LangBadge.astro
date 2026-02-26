@@ -1,0 +1,19 @@
+---
+type Props = { lang: "en" | "ja" }; // consts.ts/LOCALESに従える
+
+const { lang } = Astro.props;
+
+const langInfo = {
+    en: { emoji: "🇬🇧", label: "EN" },
+    ja: { emoji: "🇯🇵", label: "日" }
+};
+
+const { emoji, label } = langInfo[lang];
+---
+
+<span
+    class="bg-d-card text-d-txt-base inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-xs font-medium tracking-wide"
+    data-lang={lang}
+>
+    {emoji}&nbsp;{label}
+</span>
