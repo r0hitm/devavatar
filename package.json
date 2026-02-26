@@ -14,7 +14,12 @@
         "format:check": "prettier --check .",
         "format": "prettier --write .",
         "lint": "eslint .",
-        "prepare": "husky"
+        "prepare": "husky",
+        "test": "pnpm exec playwright test",
+        "test:ui": "pnpm exec playwright test --ui",
+        "test:chromium": "pnpm exec playwright test --project=chromium",
+        "test:debug": "pnpm exec playwright test --debug",
+        "test:generate:codegen": "pnpm exec playwright codegen"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.6",
@@ -42,7 +47,9 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.28.0",
+        "@playwright/test": "^1.58.2",
         "@tailwindcss/typography": "^0.5.16",
+        "@types/node": "^25.3.1",
         "@typescript-eslint/parser": "^8.34.0",
         "eslint": "^9.28.0",
         "eslint-config-prettier": "^10.1.5",

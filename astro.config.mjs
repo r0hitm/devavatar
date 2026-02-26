@@ -53,5 +53,9 @@ export default defineConfig({
             exclude: ["@resvg/resvg-js"]
         },
         plugins: [tailwindcss()]
+    },
+
+    server: {
+        port: 3000
     }
 });
