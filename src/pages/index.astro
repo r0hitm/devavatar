@@ -8,11 +8,15 @@ import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
 import { getCollection } from "astro:content";
 import { t } from "@/i18n/helpers.astro";
+import getUniqueTags from "@/utils/getUniqueTags";
+import Tag from "@/components/Tag.astro";
 
+// BUG: 最適化バグだ。以下のせいでdevサーバーが遅すぎるかもね
 const posts = await getPosts();
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+const tags = getUniqueTags(posts);
 ---
 
 <RootLayout>
@@ -24,8 +28,7 @@ const projects = (await getCollection("project")).sort(
                 href="/rss.xml"
                 rel="noopener noreferrer"
                 aria-label="rss-link"
-                title="RSS Feed"
-            >
+                title="RSS Feed">
                 <Rss
                     class="stroke-d-accent m-auto inline-block size-5 align-middle"
                 />
@@ -71,8 +74,7 @@ const projects = (await getCollection("project")).sort(
         <div class="my-4 text-center">
             <a
                 href="/posts"
-                class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
-            >
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
                 {t("page.home.posts.all")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
@@ -98,9 +100,38 @@ const projects = (await getCollection("project")).sort(
         <div class="my-4 text-center">
             <a
                 href="/projects"
-                class="group hover:text-d-accent inline-flex items-center justify-center gap-2"
-            >
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
                 {t("page.home.projects.all")}
+                <ArrowRight
+                    class="group-hover:text-d-accent text-d-txt-base size-4"
+                />
+            </a>
+        </div>
+    </section>
+
+    <Hr />
+
+    <section>
+        <h2 class="text-2xl font-semibold tracking-wide">
+            {t("page.tags.heading")}
+        </h2>
+
+        <ul>
+            {
+                // TODO: タグを記事数に従って、ソート化
+                tags.map(
+                    ({ tag, tagName }, index) =>
+                        index < 5 && (
+                            <Tag tag={tag} tagName={tagName} size="lg" />
+                        )
+                )
+            }
+        </ul>
+        <div class="my-4 text-center">
+            <a
+                href="/tags"
+                class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
+                {t("page.tag.gotoall")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />

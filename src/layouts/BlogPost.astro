@@ -39,14 +39,12 @@ const ogUrl = new URL(
     pubDatetime={pubDatetime}
     modDatetime={modDatetime}
     ogImage={ogUrl}
-    lang={lang}
->
+    lang={lang}>
     <div class="my-4">
         <button
             aria-label="Go Back"
             class="flex cursor-pointer items-center justify-start gap-2 transition-opacity hover:opacity-75"
-            onclick="history.back()"
-        >
+            onclick="history.back()">
             <ChevronLeft class="size-4 stroke-2" />
             <span class="inline-block">{t("blog.back")}</span>
         </button>
@@ -83,8 +81,7 @@ const ogUrl = new URL(
         <button
             aria-label="Share"
             id="share-btn"
-            class="focus-outline flex cursor-pointer items-center justify-start gap-2 py-1 whitespace-nowrap hover:opacity-75"
-        >
+            class="focus-outline flex cursor-pointer items-center justify-start gap-2 py-1 whitespace-nowrap hover:opacity-75">
             <Share2 class="size-4" />
             {t("blog.share")}
         </button>

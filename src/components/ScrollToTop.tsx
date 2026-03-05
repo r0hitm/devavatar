@@ -26,8 +26,7 @@ export default function ScrollToTop() {
                             window.scrollTo({ top: 0, behavior: "smooth" })
                         }
                         aria-label="Scroll to Top"
-                        title="Scroll to Top"
-                    >
+                        title="Scroll to Top">
                         <ChevronUp className="text-d-txt-base size-6" />
                     </button>
                 </div>

@@ -69,8 +69,7 @@ export default function Search({ searchList, lang }: Props) {
             <button
                 className="group p-2"
                 onClick={() => setIsOpen(true)}
-                aria-label="Search"
-            >
+                aria-label="Search">
                 <SearchIcon className="text-d-txt-base group-hover:text-d-accent size-4" />
                 <span className="sr-only">{t("search.sr-only")}</span>
             </button>
@@ -78,12 +77,10 @@ export default function Search({ searchList, lang }: Props) {
             {isOpen && (
                 <div
                     className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 pt-20"
-                    onClick={() => setIsOpen(false)}
-                >
+                    onClick={() => setIsOpen(false)}>
                     <div
                         className="bg-d-fill text-d-txt-base border-d-border/30 w-full max-w-xl rounded-lg border p-4 shadow-lg"
-                        onClick={e => e.stopPropagation()}
-                    >
+                        onClick={e => e.stopPropagation()}>
                         <div className="relative">
                             <SearchIcon className="text-d-card-muted absolute top-3 left-3 size-5" />
                             <input
@@ -106,8 +103,7 @@ export default function Search({ searchList, lang }: Props) {
                                             <li key={item.postId}>
                                                 <a
                                                     href={`/posts/${item.postId}`}
-                                                    className="hover:bg-d-card-muted/30 block rounded-md p-3"
-                                                >
+                                                    className="hover:bg-d-card-muted/30 block rounded-md p-3">
                                                     <h3
                                                         className="text-d-accent font-semibold"
                                                         // style={{

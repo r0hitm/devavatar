@@ -8,7 +8,7 @@ import { t } from "@/i18n/helpers.astro";
 
 const posts = await getPosts();
 
-let tags = getUniqueTags(posts);
+const tags = getUniqueTags(posts);
 ---
 
 <RootLayout title={`Tags | ${SITE.title}`}>

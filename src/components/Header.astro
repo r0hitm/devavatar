@@ -22,8 +22,7 @@ const searchList = posts.map(({ data, id }) => ({
         <!-- Header Logo -->
         <a
             href="/"
-            class="group relative block text-xl font-semibold whitespace-nowrap sm:text-2xl"
-        >
+            class="group relative block text-xl font-semibold whitespace-nowrap sm:text-2xl">
             <span class="relative font-mono tracking-wider">
                 <span class="text-d-accent opacity-60">&lt;</span>
                 <span class="text-d-accent font-bold">
@@ -32,8 +31,7 @@ const searchList = posts.map(({ data, id }) => ({
                 <span class="text-d-accent opacity-60">/&gt;</span>
             </span>
             <span
-                class="text-d-accent absolute -top-1 -right-1 text-xs opacity-0 transition-opacity group-hover:opacity-100"
-            >
+                class="text-d-accent absolute -top-1 -right-1 text-xs opacity-0 transition-opacity group-hover:opacity-100">
                 ●
             </span>
         </a>
@@ -52,9 +50,9 @@ const searchList = posts.map(({ data, id }) => ({
                             >{t("header.projects")}</HeaderLink
                         >
                     </li>
-                    <li>
+                    <!-- <li>
                         <HeaderLink href="/tags">{t("header.tags")}</HeaderLink>
-                    </li>
+                    </li> -->
                     <li>
                         <HeaderLink href="/about"
                             >{t("header.about")}</HeaderLink
@@ -89,8 +87,7 @@ const searchList = posts.map(({ data, id }) => ({
     <div id="mobile-nav-items" class="mt-2 hidden flex-col sm:hidden">
         <nav class="w-full">
             <ul
-                class="border-d-border flex flex-col items-start gap-1 border-t pt-2"
-            >
+                class="border-d-border flex flex-col items-start gap-1 border-t pt-2">
                 <li>
                     <HeaderLink
                         href="/posts"
@@ -105,13 +102,13 @@ const searchList = posts.map(({ data, id }) => ({
                         >{t("header.projects")}</HeaderLink
                     >
                 </li>
-                <li>
+                <!-- <li>
                     <HeaderLink
                         href="/tags"
                         class="hover:bg-d-accent/10 block w-full rounded-md px-2 py-2"
                         >{t("header.tags")}</HeaderLink
                     >
-                </li>
+                </li> -->
                 <li>
                     <HeaderLink
                         href="/about"

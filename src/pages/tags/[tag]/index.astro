@@ -6,6 +6,8 @@ import getUniqueTags from "@/utils/getUniqueTags";
 import Card from "@/components/Card.astro";
 import { slugifyAll } from "@/utils/slugify";
 import { t } from "@/i18n/helpers.astro";
+import { SITE } from "@/consts";
+import { Tags } from "@lucide/astro";
 
 export const getStaticPaths = (async () => {
     const posts = await getPosts();
@@ -27,22 +29,28 @@ const postsByTag = posts.filter(post =>
 ---
 
 <RootLayout
-    title={`${t("page.tag.label")}: ${tagName}`}
-    description={`${t("page.tag.posts")}: ${tagName}`}
->
+    title={`${tagName} | ${SITE.title}`}
+    description={`${t("page.tag.active")}: ${tagName}`}>
     <!-- TODO: breadcrumbs -->
 
-    <h1 class="mb-2 text-3xl font-bold" transition:name={tag}>
-        {t("page.tag.label")}: {tagName}
+    <h1 class="mb-2 text-3xl font-bold">
+        {t("page.tag.active")}: <span transition:name={tag}>{tagName}</span>
     </h1>
 
-    <p class="italic">
-        {postsByTag.length}
-        {t("page.tag.posts")}
-        <!-- <span class="decoration-d-border underline underline-offset-4">
-            {tagName}
-        </span> -->
-    </p>
+    <div
+        class="mb-4 flex flex-col items-start justify-between sm:flex-row sm:items-center">
+        <p class="italic">
+            {postsByTag.length}
+            {t("page.tag.posts")}
+        </p>
+        <a class="inline-flex items-center gap-2" href="/tags">
+            <Tags class="text-d-accent size-4" />
+            <span
+                class="decoration-d-accent underline decoration-dashed underline-offset-4 hover:no-underline"
+                >{t("page.tag.gotoall")}</span
+            >
+        </a>
+    </div>
 
     <ul>
         {

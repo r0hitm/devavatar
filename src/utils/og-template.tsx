@@ -16,8 +16,7 @@ export default (
             // 背景色: --color-warm-night-800 -> #2a211e
             backgroundColor: "#2a211e",
             position: "relative"
-        }}
-    >
+        }}>
         <div
             style={{
                 display: "flex",
@@ -31,8 +30,7 @@ export default (
                 border: "2px solid #f97316",
                 borderRadius: "16px",
                 padding: "20px"
-            }}
-        >
+            }}>
             {/* ヘッダー */}
             <div
                 style={{
@@ -41,8 +39,7 @@ export default (
                     // アクセントカラー: --color-apricot-400 -> #ff9a58
                     color: "#ff9a58",
                     fontSize: "32px"
-                }}
-            >
+                }}>
                 <span style={{ fontWeight: 700 }}>&lt; Dev Avatar /&gt;</span>
             </div>
 
@@ -52,8 +49,7 @@ export default (
                     display: "flex",
                     flexDirection: "column",
                     overflow: "hidden"
-                }}
-            >
+                }}>
                 <p
                     style={{
                         // メインテキスト: --color-apricot-50 -> #fff6ee
@@ -67,8 +63,7 @@ export default (
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
                         WebkitLineClamp: 3
-                    }}
-                >
+                    }}>
                     {title}
                 </p>
                 <p
@@ -84,8 +79,7 @@ export default (
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
                         WebkitLineClamp: 2
-                    }}
-                >
+                    }}>
                     {description}
                 </p>
             </div>
@@ -100,8 +94,7 @@ export default (
                     // 説明テキストと同じ色を使用
                     color: "#ffd5b1",
                     fontSize: "28px"
-                }}
-            >
+                }}>
                 <span>{website.substring(8)}</span>
             </div>
         </div>

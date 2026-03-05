@@ -17,8 +17,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
     class:list={[
         "flex flex-wrap items-center space-y-2 gap-x-4",
         { "justify-center": centered }
-    ]}
->
+    ]}>
     {
         activeSocials.map(social => {
             const icon = socialIcons[social.name];
@@ -29,8 +28,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
                     rel="noopener noreferrer nofollow"
                     aria-label={social.linkTitle}
                     title={social.linkTitle}
-                    class="group"
-                >
+                    class="group">
                     <div
                         class="group-hover:text-d-accent size-6 group-hover:scale-105"
                         set:html={icon}
@@ -48,8 +46,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
                 rel="noopener noreferrer"
                 aria-label="RSS feed"
                 title="RSS feed"
-                class="group"
-            >
+                class="group">
                 <Rss class="group-hover:text-d-accent size-6 stroke-2 align-middle group-hover:scale-105" />
                 <span class="sr-only">Rss Feed</span>
             </a>

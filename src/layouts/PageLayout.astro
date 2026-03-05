@@ -20,8 +20,7 @@ const { frontmatter } = Astro.props;
 
 <RootLayout
     title={`${frontmatter.title} | ${SITE.title}`}
-    description={frontmatter.description}
->
+    description={frontmatter.description}>
     <h1 class="mb-2 text-3xl font-bold">
         {frontmatter.title}
     </h1>
