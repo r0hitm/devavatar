@@ -1,18 +1,20 @@
 ---
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 type Props = { lang: "en" | "ja" }; // consts.ts/LOCALESに従える
 
 const { lang } = Astro.props;
 
 const langInfo = {
-    en: { emoji: "🎡", label: "ENG" },
-    ja: { emoji: "🌸", label: "和" }
+    en: { flag: "gb", label: "ENG" },
+    ja: { flag: "jp", label: "和" }
 };
 
-const { emoji, label } = langInfo[lang];
+const { flag, label } = langInfo[lang];
 ---
 
 <span
     class="bg-d-card text-d-txt-base inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-xs font-medium tracking-wide"
     data-lang={lang}>
-    {emoji}&nbsp;{label}
+    <span class={`fi fi-${flag}`}></span>&nbsp;{label}
 </span>
