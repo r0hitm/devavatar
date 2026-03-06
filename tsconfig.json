@@ -6,7 +6,7 @@
         "strictNullChecks": true,
         "baseUrl": "src",
         "paths": {
-            "@/*": ["*"]
+            "@/*": ["./*"]
         },
         "jsx": "react-jsx",
         "jsxImportSource": "react"
