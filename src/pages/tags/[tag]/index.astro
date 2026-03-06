@@ -5,9 +5,12 @@ import getPosts from "@/utils/getPosts";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Card from "@/components/Card.astro";
 import { slugifyAll } from "@/utils/slugify";
-import { t } from "@/i18n/helpers.astro";
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import { Tags } from "@lucide/astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 export const getStaticPaths = (async () => {
     const posts = await getPosts();

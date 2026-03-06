@@ -6,9 +6,12 @@ import Prose from "@/components/Prose.astro";
 import { ChevronLeft, Calendar, Share2 } from "@lucide/astro";
 import Tag from "@/components/Tag.astro";
 import { slugify } from "@/utils/slugify";
-import { SITE } from "@/consts";
-import { t } from "@/i18n/helpers.astro";
+import { LOCALE, SITE } from "@/consts";
 import LangBadge from "@/components/LangBadge.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 type Props = CollectionEntry<"blog">["data"] & { postId: string };
 

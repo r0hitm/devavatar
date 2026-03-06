@@ -1,11 +1,14 @@
 ---
 import "@/styles/global.css";
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Lang } from "@/i18n/helpers.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 

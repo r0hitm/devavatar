@@ -1,7 +1,0 @@
----
-import { LOCALE } from "@/consts";
-import { useTranslations } from "./utils";
-
-export const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
-export const t = useTranslations(Lang);
----

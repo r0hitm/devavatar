@@ -1,10 +1,13 @@
 ---
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import getUniqueTags from "@/utils/getUniqueTags";
 import RootLayout from "@/layouts/RootLayout.astro";
 import Tag from "@/components/Tag.astro";
 import getPosts from "@/utils/getPosts";
-import { t } from "@/i18n/helpers.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 const posts = await getPosts();
 

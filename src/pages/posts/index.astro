@@ -2,8 +2,11 @@
 import getPosts from "@/utils/getPosts";
 import Card from "@/components/Card.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
-import { SITE } from "@/consts";
-import { t } from "@/i18n/helpers.astro";
+import { LOCALE, SITE } from "@/consts";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 const posts = await getPosts();
 ---

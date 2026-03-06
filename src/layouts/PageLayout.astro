@@ -1,10 +1,14 @@
 ---
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import RootLayout from "./RootLayout.astro";
 import Prose from "@/components/Prose.astro";
 import { Calendar } from "@lucide/astro";
 import FormattedDate from "@/components/FormattedDate.astro";
-import { t } from "@/i18n/helpers.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
+
 // TODO: import Breadcrumbs from "@components/Breadcrumbs.astro";
 
 interface Props {

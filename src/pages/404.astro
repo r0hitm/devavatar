@@ -1,8 +1,11 @@
 ---
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { ArrowLeft } from "@lucide/astro";
-import { t } from "@/i18n/helpers.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 ---
 
 <RootLayout title={`404 ${t("page.404.msg")} | ${SITE.title}`}>

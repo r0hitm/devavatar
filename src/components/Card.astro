@@ -2,8 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
 import { Calendar } from "@lucide/astro";
-import { t } from "@/i18n/helpers.astro";
 import LangBadge from "./LangBadge.astro";
+import { useTranslations } from "@/i18n/utils";
+import { LOCALE } from "@/consts";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 export interface Props {
     href?: string;

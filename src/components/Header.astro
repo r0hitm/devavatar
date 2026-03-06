@@ -1,12 +1,15 @@
 ---
 import HeaderLink from "@/components/HeaderLink.astro";
-import { SITE } from "@/consts";
+import { LOCALE, SITE } from "@/consts";
 import { Menu, X } from "@lucide/astro";
 import Search from "./Search";
 import getPosts from "@/utils/getPosts";
 import ThemeBtn from "./ThemeBtn.astro";
-import { Lang, t } from "@/i18n/helpers.astro";
 import LangBtn from "./LangBtn.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 const posts = await getPosts();
 
