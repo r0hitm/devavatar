@@ -17,12 +17,19 @@ export default defineConfig({
     site: SITE.website,
     i18n: {
         locales,
-        defaultLocale
+        defaultLocale,
+        // fallback: {
+        //     en: "ja"
+        // },
+        // routing: {
+        //     fallbackType: "redirect"
+        // }
     },
     prefetch: true,
     integrations: [
         mdx(),
         sitemap({
+            // TODO: ちゃんとテストする必要だ
             i18n: {
                 locales: {
                     ja: "ja-JP",
