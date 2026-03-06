@@ -5,7 +5,7 @@ import { ArrowLeft } from "@lucide/astro";
 import { t } from "@/i18n/helpers.astro";
 ---
 
-<RootLayout title={`404 Not Found | ${SITE.title}`}>
+<RootLayout title={`404 ${t("page.404.msg")} | ${SITE.title}`}>
     <div class="mt-12 flex flex-col items-center justify-center">
         <h1 aria-label="404 Not Found" class="text-d-accent text-9xl font-bold">
             404
