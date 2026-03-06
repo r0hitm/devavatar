@@ -7,9 +7,14 @@ import RootLayout from "@/layouts/RootLayout.astro";
 import getPosts from "@/utils/getPosts";
 import { ArrowRight, Rss } from "@lucide/astro";
 import { getCollection } from "astro:content";
-import { t } from "@/i18n/helpers.astro";
+// import { t } from "@/i18n/helpers.astro";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Tag from "@/components/Tag.astro";
+import { LOCALE } from "@/consts";
+import { useTranslations } from "@/i18n/utils";
+
+const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+const t = useTranslations(Lang);
 
 // BUG: 最適化バグだ。以下のせいでdevサーバーが遅すぎるかもね
 const posts = await getPosts();
@@ -37,16 +42,7 @@ const tags = getUniqueTags(posts);
 
         <Prose>
             <article>
-                <p>
-                    This is my corner of the internet for all things tech and
-                    more! I write mostly about software development, and my
-                    project devlogs.
-                </p>
-                <p>
-                    Outside of computers, I'm love Japanese culture, anime,
-                    music, gym, and all things adorably cute. I'm always excited
-                    to share discoveries from these worlds too!
-                </p>
+                <slot />
             </article>
         </Prose>
     </section>
