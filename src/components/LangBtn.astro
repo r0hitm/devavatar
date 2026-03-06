@@ -1,0 +1,7 @@
+---
+import LangBtnR from "@/components/LangBtnR";
+const lang = Astro.currentLocale as "en" | "ja";
+const currentPath = Astro.url.pathname;
+---
+
+<LangBtnR client:load currentLocale={lang} currentPath={currentPath} />

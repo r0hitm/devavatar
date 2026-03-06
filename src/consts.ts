@@ -21,11 +21,13 @@ export const SITE: SiteType = {
 export const LOCALES = {
     ja: {
         lang: "ja",
-        langTag: ["ja-JP", "en-US"] // BCP 47 langauge tag, with fallback
+        langTag: ["ja-JP", "en-US"], // BCP 47 langauge tag, with fallback
+        label: "日本語"
     },
     en: {
         lang: "en",
-        langTag: ["en-US"]
+        langTag: ["en-US"],
+        label: "English"
     }
 } as const;
 
