@@ -2,3 +2,7 @@
     - [x] relativeLinks()
     - [ ] ユーザーの言語が違うであれば、言語変更のポップアップ
     - [ ] ⭐ fallback BUGのせいで、Blogの表示をサイトと別ける
+    - [ ] 記事Urlを　/posts/en/blog と /posts/ja/blog にする。つまり、contentCollectionの変更というのこと
+    - [ ] 日本語のみ / English Only　記事のフィルターブタン・設定
+    - [ ] posts、tags、404、projectsなどをレイアウトにして、`pages/`から`layouts/`に移動。`pages`に空.mdファイルを置く
+    - [ ]
