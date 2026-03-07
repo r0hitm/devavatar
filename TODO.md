@@ -1,4 +1,4 @@
 - [ ] i18n
-    - [ ] relativeLinks()
+    - [x] relativeLinks()
     - [ ] ユーザーの言語が違うであれば、言語変更のポップアップ
-    - [ ]
+    - [ ] ⭐ fallback BUGのせいで、Blogの表示をサイトと別ける

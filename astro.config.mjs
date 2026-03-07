@@ -17,13 +17,15 @@ export default defineConfig({
     site: SITE.website,
     i18n: {
         locales,
-        defaultLocale,
-        fallback: {
-            ja: "en"
-        },
-        routing: {
-            fallbackType: "rewrite"
-        }
+        defaultLocale
+
+        // BUG: https://github.com/withastro/astro/issues/12175#issuecomment-4016266962
+        // fallback: {
+        //     ja: "en"
+        // },
+        // routing: {
+        //     fallbackType: "rewrite"
+        // }
     },
     prefetch: true,
     integrations: [

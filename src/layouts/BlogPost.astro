@@ -29,7 +29,9 @@ const {
 } = Astro.props;
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
+
 const ogUrl = new URL(
+    // BUG: i18nではないUrl
     ogImageUrl ?? `/posts/${postId}/index.png`,
     Astro.url.origin
 ).href;
