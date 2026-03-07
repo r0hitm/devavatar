@@ -66,7 +66,7 @@ export default function LangBtnR({ currentLocale, currentPath }: Props) {
                         <li role="menuitem" key={locale}>
                             <a
                                 href={
-                                    locale === "ja"
+                                    locale === "en"
                                         ? basePath || "/"
                                         : `/${locale}${basePath}`
                                 }

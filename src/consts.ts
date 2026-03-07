@@ -32,7 +32,7 @@ export const LOCALES = {
 } as const;
 
 // Default locale
-export const LOCALE = LOCALES.ja;
+export const LOCALE = LOCALES.en;
 
 export type SocialObjects = {
     name: keyof typeof socialIcons;

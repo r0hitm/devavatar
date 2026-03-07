@@ -18,12 +18,12 @@ export default defineConfig({
     i18n: {
         locales,
         defaultLocale,
-        // fallback: {
-        //     en: "ja"
-        // },
-        // routing: {
-        //     fallbackType: "redirect"
-        // }
+        fallback: {
+            ja: "en"
+        },
+        routing: {
+            fallbackType: "rewrite"
+        }
     },
     prefetch: true,
     integrations: [
@@ -60,5 +60,8 @@ export default defineConfig({
             exclude: ["@resvg/resvg-js"]
         },
         plugins: [tailwindcss()]
+    },
+    server: {
+        open: false
     }
 });
