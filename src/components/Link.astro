@@ -1,0 +1,19 @@
+---
+// <a href=""></a>にi18nの対応機能の追加
+import { LOCALE } from "@/consts";
+import type { HTMLAttributes } from "astro/types";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+type Props = HTMLAttributes<"a">;
+const { href, ...rest } = Astro.props;
+
+const locale = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
+
+const relativeHref = href?.toString().startsWith("/")
+    ? getRelativeLocaleUrl(locale, href?.toString())
+    : href;
+---
+
+<a href={relativeHref} {...rest}>
+    <slot />
+</a>

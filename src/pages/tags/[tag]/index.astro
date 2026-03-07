@@ -8,6 +8,7 @@ import { slugifyAll } from "@/utils/slugify";
 import { LOCALE, SITE } from "@/consts";
 import { Tags } from "@lucide/astro";
 import { useTranslations } from "@/i18n/utils";
+import Link from "@/components/Link.astro";
 
 const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
 const t = useTranslations(Lang);
@@ -46,13 +47,13 @@ const postsByTag = posts.filter(post =>
             {postsByTag.length}
             {t("page.tag.posts")}
         </p>
-        <a class="inline-flex items-center gap-2" href="/tags">
+        <Link class="inline-flex items-center gap-2" href="/tags">
             <Tags class="text-d-accent size-4" />
             <span
                 class="decoration-d-accent underline decoration-dashed underline-offset-4 hover:no-underline"
                 >{t("page.tag.gotoall")}</span
             >
-        </a>
+        </Link>
     </div>
 
     <ul>

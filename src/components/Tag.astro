@@ -1,5 +1,6 @@
 ---
 import { Hash } from "@lucide/astro";
+import Link from "@/components/Link.astro";
 
 export interface Props {
     tag: string;
@@ -21,7 +22,7 @@ const tiltLeft = Math.random() > 0.5;
         }`,
         tiltLeft ? "-rotate-1" : "rotate-1"
     ]}>
-    <a
+    <Link
         href={`/tags/${tag}`}
         transition:name={tag}
         class:list={[
@@ -30,5 +31,5 @@ const tiltLeft = Math.random() > 0.5;
         ]}>
         <Hash class="inline-block size-4 align-middle" />
         <span>{tagName}</span>
-    </a>
+    </Link>
 </li>

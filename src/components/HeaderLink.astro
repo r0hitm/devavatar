@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import Link from "./Link.astro";
 
 type Props = HTMLAttributes<"a">;
 
@@ -7,11 +8,9 @@ const { href, class: className, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
-
-// TODO getRelativeLink() ローカリゼーション
 ---
 
-<a
+<Link
     data-astro-prefetch="load"
     href={href}
     class:list={[
@@ -21,7 +20,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
     ]}
     {...props}>
     <slot />
-</a>
+</Link>
 
 <style>
     @reference "../styles/global.css";

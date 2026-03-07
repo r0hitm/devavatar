@@ -2,6 +2,7 @@
 import socialIcons from "@/assets/socialIcons";
 import { SOCIALS } from "@/consts";
 import { Rss } from "@lucide/astro";
+import Link from "@/components/Link.astro";
 
 export interface Props {
     centered?: boolean;
@@ -22,7 +23,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
         activeSocials.map(social => {
             const icon = socialIcons[social.name];
             return (
-                <a
+                <Link
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -34,13 +35,13 @@ const activeSocials = SOCIALS.filter(social => social.active);
                         set:html={icon}
                     />
                     <span class="sr-only">{social.linkTitle}</span>
-                </a>
+                </Link>
             );
         })
     }
     {
         showRss && (
-            <a
+            <Link
                 href="/rss.xml"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,7 +50,7 @@ const activeSocials = SOCIALS.filter(social => social.active);
                 class="group">
                 <Rss class="group-hover:text-d-accent size-6 stroke-2 align-middle group-hover:scale-105" />
                 <span class="sr-only">Rss Feed</span>
-            </a>
+            </Link>
         )
     }
 </div>

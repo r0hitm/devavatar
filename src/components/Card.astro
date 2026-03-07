@@ -5,6 +5,7 @@ import { Calendar } from "@lucide/astro";
 import LangBadge from "./LangBadge.astro";
 import { useTranslations } from "@/i18n/utils";
 import { LOCALE } from "@/consts";
+import Link from "./Link.astro";
 
 const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
 const t = useTranslations(Lang);
@@ -22,7 +23,7 @@ const { title, description, pubDatetime, modDatetime, draft, lang } =
 ---
 
 <li class="my-6 list-none">
-    <a href={href}>
+    <Link href={href}>
         <!-- <img width={720} height={360} src={} alt="" /> -->
         <h2
             class="text-d-accent inline-block text-lg font-semibold decoration-dashed underline-offset-4 hover:underline hover:decoration-dashed hover:underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
@@ -30,7 +31,7 @@ const { title, description, pubDatetime, modDatetime, draft, lang } =
             {title}
         </h2>
         <LangBadge lang={lang} />
-    </a>
+    </Link>
 
     {
         draft ? (

@@ -7,6 +7,7 @@ import getPosts from "@/utils/getPosts";
 import ThemeBtn from "./ThemeBtn.astro";
 import LangBtn from "./LangBtn.astro";
 import { useTranslations } from "@/i18n/utils";
+import Link from "@/components/Link.astro";
 
 const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
 const t = useTranslations(Lang);
@@ -24,7 +25,7 @@ const searchList = posts.map(({ data, id }) => ({
 <header class="border-d-border mx-auto w-full max-w-4xl border-b py-2 sm:py-4">
     <div class="flex items-center justify-between">
         <!-- Header Logo -->
-        <a
+        <Link
             href="/"
             class="group relative block text-xl font-semibold whitespace-nowrap sm:text-2xl">
             <span class="relative font-mono tracking-wider">
@@ -38,7 +39,7 @@ const searchList = posts.map(({ data, id }) => ({
                 class="text-d-accent absolute -top-1 -right-1 text-xs opacity-0 transition-opacity group-hover:opacity-100">
                 ●
             </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation & Theme Toggle */}
         <div class="hidden items-center justify-end gap-4 sm:flex">

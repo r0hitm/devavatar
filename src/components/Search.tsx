@@ -102,7 +102,11 @@ export default function Search({ searchList, lang }: Props) {
                                         {results.map(({ item }) => (
                                             <li key={item.postId}>
                                                 <a
-                                                    href={`/posts/${item.postId}`}
+                                                    href={
+                                                        lang === "en"
+                                                            ? `/posts/${item.postId}`
+                                                            : `/${lang}/${item.postId}`
+                                                    }
                                                     className="hover:bg-d-card-muted/30 block rounded-md p-3">
                                                     <h3
                                                         className="text-d-accent font-semibold"

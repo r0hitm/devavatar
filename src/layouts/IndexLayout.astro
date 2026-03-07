@@ -9,6 +9,7 @@ import { ArrowRight, Rss } from "@lucide/astro";
 import { getCollection } from "astro:content";
 import getUniqueTags from "@/utils/getUniqueTags";
 import Tag from "@/components/Tag.astro";
+import Link from "@/components/Link.astro";
 import { LOCALE } from "@/consts";
 import { useTranslations } from "@/i18n/utils";
 
@@ -27,7 +28,7 @@ const tags = getUniqueTags(posts);
     <section>
         <h1 class="my-4 text-3xl font-bold">
             {t("page.home.welcome")}
-            <a
+            <Link
                 target="_blank"
                 href="/rss.xml"
                 rel="noopener noreferrer"
@@ -36,7 +37,7 @@ const tags = getUniqueTags(posts);
                 <Rss
                     class="stroke-d-accent m-auto inline-block size-5 align-middle"
                 />
-            </a>
+            </Link>
         </h1>
 
         <Prose>
@@ -67,14 +68,14 @@ const tags = getUniqueTags(posts);
             }
         </ul>
         <div class="my-4 text-center">
-            <a
+            <Link
                 href="/posts"
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
                 {t("page.home.posts.all")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
-            </a>
+            </Link>
         </div>
     </section>
 
@@ -93,14 +94,14 @@ const tags = getUniqueTags(posts);
             }
         </ul>
         <div class="my-4 text-center">
-            <a
+            <Link
                 href="/projects"
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
                 {t("page.home.projects.all")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
-            </a>
+            </Link>
         </div>
     </section>
 
@@ -123,14 +124,14 @@ const tags = getUniqueTags(posts);
             }
         </ul>
         <div class="my-4 text-center">
-            <a
+            <Link
                 href="/tags"
                 class="group hover:text-d-accent inline-flex items-center justify-center gap-2">
                 {t("page.tag.gotoall")}
                 <ArrowRight
                     class="group-hover:text-d-accent text-d-txt-base size-4"
                 />
-            </a>
+            </Link>
         </div>
     </section>
 </RootLayout>

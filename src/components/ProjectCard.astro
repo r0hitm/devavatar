@@ -1,6 +1,7 @@
 ---
 import { ExternalLink, CodeIcon } from "@lucide/astro";
 import type { CollectionEntry } from "astro:content";
+import Link from "./Link.astro";
 
 type Props = CollectionEntry<"project">["data"];
 
@@ -16,26 +17,26 @@ const { description, name, tags, projectUrl, liveUrl } = Astro.props;
         <div class="flex items-center gap-4">
             {
                 projectUrl && (
-                    <a
+                    <Link
                         href={projectUrl}
                         target="_blank"
                         class="text-d-card-muted hover:text-d-accent inline-block"
                         title="View Repo"
                         aria-label="View Repo">
                         <CodeIcon class="size-5" />
-                    </a>
+                    </Link>
                 )
             }
             {
                 liveUrl && (
-                    <a
+                    <Link
                         href={liveUrl}
                         target="_blank"
                         title="Live"
                         aria-label="View Live"
                         class="text-d-card-muted hover:text-d-accent inline-block">
                         <ExternalLink class="size-5" />
-                    </a>
+                    </Link>
                 )
             }
         </div>

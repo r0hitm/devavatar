@@ -3,6 +3,7 @@ import { LOCALE, SITE } from "@/consts";
 import Socials from "./Socials.astro";
 import { CircleOff } from "@lucide/astro";
 import { useTranslations } from "@/i18n/utils";
+import Link from "./Link.astro";
 
 const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
 const t = useTranslations(Lang);
@@ -17,18 +18,18 @@ const author = SITE.author;
 
     <div
         class="mt-2 flex flex-col items-center justify-center gap-y-2 text-sm sm:flex-row sm:gap-x-4">
-        <a
+        <Link
             href="/support"
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy">
             {t("footer.support")}
-        </a>
+        </Link>
         <span class="hidden sm:block">・</span>
-        <a
+        <Link
             href="https://github.com/r0hitm/devavatar-kaisei/issues"
             class="block underline decoration-dashed underline-offset-4 hover:decoration-wavy"
             rel="noopener noreferrer">
             {t("footer.issue")}
-        </a>
+        </Link>
     </div>
 
     <p class="mt-4 text-center text-sm">
@@ -46,12 +47,12 @@ const author = SITE.author;
         </span>
         <span class="hidden sm:block">・</span>
         <span>
-            <a
+            <Link
                 href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
                 class="hover:underline hover:decoration-wavy hover:underline-offset-4"
                 target="_blank">
                 CC BY-NC-SA 4.0
-            </a>
+            </Link>
         </span>
     </div>
 </footer>

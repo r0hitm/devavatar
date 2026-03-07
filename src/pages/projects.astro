@@ -12,6 +12,8 @@ const t = useTranslations(Lang);
 const projects = (await getCollection("project")).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+// TODO: 日本語に翻訳
 ---
 
 <RootLayout

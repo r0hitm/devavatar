@@ -3,6 +3,7 @@ import { LOCALE, SITE } from "@/consts";
 import RootLayout from "@/layouts/RootLayout.astro";
 import { ArrowLeft } from "@lucide/astro";
 import { useTranslations } from "@/i18n/utils";
+import Link from "@/components/Link.astro";
 
 const Lang = (Astro.currentLocale as "ja" | "en") || LOCALE.lang;
 const t = useTranslations(Lang);
@@ -15,11 +16,11 @@ const t = useTranslations(Lang);
         </h1>
         <span aria-hidden="true">¯\_(ツ)_/¯</span>
         <p class="mt-4 text-2xl sm:text-3xl">{t("page.404.msg")}</p>
-        <a
-            href=""
+        <Link
+            href="/"
             class="hover:text-d-accent my-6 mt-14 inline-flex items-center justify-between underline decoration-dashed underline-offset-8">
             <ArrowLeft class="mr-2 size-4" />
             {t("page.404.back")}
-        </a>
+        </Link>
     </div>
 </RootLayout>
