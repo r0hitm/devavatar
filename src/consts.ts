@@ -51,7 +51,7 @@ export const SOCIALS: SocialObjects = [
     },
     {
         name: "LinkedIn",
-        href: "https://linkedin.com/in/r0hitm",
+        href: "#",
         linkTitle: `LinkedIn`,
         active: false
     },
