@@ -35,7 +35,7 @@ jobs:
             - name: astro action - Install, build, and upload your site
               uses: withastro/action@v4
               with:
-                  package-manager: pnpm
+                  package-manager: pnpm@10.12.4
                   path: ./devavatar
                   node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
               # with:
