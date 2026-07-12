@@ -34,7 +34,7 @@ export const SOCIALS: SocialObjects = [
     {
         name: "Github",
         href: "https://github.com/r0hitm",
-        linkTitle: `My GitHub profile`,
+        linkTitle: `Github`,
         active: true
     },
     {
@@ -52,8 +52,8 @@ export const SOCIALS: SocialObjects = [
     {
         name: "LinkedIn",
         href: "https://linkedin.com/in/r0hitm",
-        linkTitle: `Connect with me on LinkedIn`,
-        active: true
+        linkTitle: `LinkedIn`,
+        active: false
     },
     {
         name: "Mail",
