@@ -1,13 +1,12 @@
-import { SITE } from "./src/consts";
 // @ts-check
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import react from "@astrojs/react";
-import rehypeExternalLinks from "rehype-external-links";
-import remarkToc from "remark-toc";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { unified } from "@astrojs/markdown-remark";
+import react from "@astrojs/react";
+import remarkToc from "remark-toc";
+import rehypeExternalLinks from "rehype-external-links";
+import { SITE } from "./src/consts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,15 +22,13 @@ export default defineConfig({
             theme: "one-dark-pro",
             wrap: true
         },
-        processor: unified({
-            remarkPlugins: [[remarkToc, { heading: "Table of contents" }]],
-            rehypePlugins: [
-                [
-                    rehypeExternalLinks,
-                    { rel: ["nofollow", "noopener", "noreferrer"] }
-                ]
+        remarkPlugins: [[remarkToc, { heading: "Table of contents" }]],
+        rehypePlugins: [
+            [
+                rehypeExternalLinks,
+                { rel: ["nofollow", "noopener", "noreferrer"] }
             ]
-        })
+        ]
     },
     vite: {
         optimizeDeps: {
