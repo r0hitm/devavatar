@@ -4,7 +4,9 @@ title: "About Me <(´= ⩊ =`)>"
 lastUpdated: 2025-12-18T05:04:27.395Z
 ---
 
-## <b>🛑 Severly Out of date. 🛑</b>
+### <b>🛑 Severly Out of date. 🛑</b>
+
+<strong>I'm <u>reconsidering the future of this site</u>. Much of the content is out of date, and I may or may not update it. I may also shut the site down.</strong>
 
 ~~I like using computers to make small tools, websites, and random experiments that either make my life easier or are just fun to play with. That curiosity really kicked off back in middle school after watching Iron Man and wondering how close real-world tech could get to that.~~
 
