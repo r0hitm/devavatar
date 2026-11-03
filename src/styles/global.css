@@ -60,7 +60,7 @@
         overflow-y: scroll;
 
         @variant dark {
-            --color-d-fill: var(--color-warm-night-800);
+            --color-d-fill: oklch(0.15 0 0);
             --color-d-txt-base: var(--color-apricot-50);
             --color-d-accent: var(--color-apricot-400);
             --color-d-card: var(--color-warm-night-200);
